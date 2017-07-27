@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div id="login">
+    <div class="form-group" id="login">
       <form method="post" action="">
         <h2>Login <small>enter your credentials</small></h2>
         <p>
