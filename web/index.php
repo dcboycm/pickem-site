@@ -6,37 +6,83 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <script>
+    function showPassword() {
+
+        var key_attr = $('#key').attr('type');
+
+        if(key_attr != 'text') {
+
+            $('.checkbox').addClass('show');
+            $('#key').attr('type', 'text');
+
+        } else {
+
+            $('.checkbox').removeClass('show');
+            $('#key').attr('type', 'password');
+
+        }
+
+    }
+    </script>
   </head>
-  <body>
-    <div class="form-group" id="login">
-      <form method="post" class="form-horizontal">
-        <h2>Login <small>enter your credentials</small></h2>
-        <div class="form-group">
-          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+  <section id="login">
+      <div class="container">
+      	<div class="row">
+      	    <div class="col-xs-12">
+          	    <div class="form-wrap">
+                  <h1>Log in with your email account</h1>
+                      <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                          <div class="form-group">
+                              <label for="email" class="sr-only">Email</label>
+                              <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
+                          </div>
+                          <div class="form-group">
+                              <label for="key" class="sr-only">Password</label>
+                              <input type="password" name="key" id="key" class="form-control" placeholder="Password">
+                          </div>
+                          <div class="checkbox">
+                              <span class="character-checkbox" onclick="showPassword()"></span>
+                              <span class="label">Show password</span>
+                          </div>
+                          <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
+                      </form>
+                      <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                      <hr>
+          	    </div>
+      		</div> <!-- /.col-xs-12 -->
+      	</div> <!-- /.row -->
+      </div> <!-- /.container -->
+  </section>
+
+  <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+  	<div class="modal-dialog modal-sm">
+  		<div class="modal-content">
+  			<div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal">
+  					<span aria-hidden="true">×</span>
+  					<span class="sr-only">Close</span>
+  				</button>
+  				<h4 class="modal-title">Recovery password</h4>
+  			</div>
+  			<div class="modal-body">
+  				<p>Type your email account</p>
+  				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+  			</div>
+  			<div class="modal-footer">
+  				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+  				<button type="button" class="btn btn-custom">Recovery</button>
+  			</div>
+  		</div> <!-- /.modal-content -->
+  	</div> <!-- /.modal-dialog -->
+  </div> <!-- /.modal -->
+
+  <footer id="footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12">
+              </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default" id="submit" value="Sign In">Sign in</button>
-          </div>
-        </div>
-      </form>
-  </body>
+      </div>
+  </footer>
 </html>
