@@ -1,3 +1,10 @@
+<?php
+include('login.php'); // Includes Login Script
+
+if(isset($_SESSION['login_user'])){
+header("location: profile.php");
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,25 +13,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
-    <script>
-    function showPassword() {
-
-        var key_attr = $('#key').attr('type');
-
-        if(key_attr != 'text') {
-
-            $('.checkbox').addClass('show');
-            $('#key').attr('type', 'text');
-
-        } else {
-
-            $('.checkbox').removeClass('show');
-            $('#key').attr('type', 'password');
-
-        }
-
-    }
-    </script>
   </head>
   <section id="login">
       <div class="container">
