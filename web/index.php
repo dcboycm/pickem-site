@@ -1,9 +1,14 @@
-<?php
-include('login.php'); // Includes Login Script
+<?PHP
+require_once("./include/membersite_config.php");
 
-if(isset($_SESSION['login_user'])){
-header("location: profile.php");
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->Login())
+   {
+        $fgmembersite->RedirectToURL("login-home.php");
+   }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,6 +26,7 @@ header("location: profile.php");
           	    <div class="form-wrap">
                   <h1>Log in with your email account</h1>
                       <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                        <input type='hidden' name='submitted' id='submitted' value='1'/>
                           <div class="form-group">
                               <label for="email" class="sr-only">Email</label>
                               <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
