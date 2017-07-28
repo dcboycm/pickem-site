@@ -11,17 +11,16 @@
       $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-      $active = $row['active'];
+      // $active = $row['active'];
 
       $count = mysqli_num_rows($result);
 
       // If result matched $myusername and $mypassword, table row must be 1 row
 
       if($count == 1) {
-         session_register("myusername");
          $_SESSION['login_user'] = $myusername;
 
-         header("location: welcome.php");
+         header("location: home-page.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
@@ -41,9 +40,11 @@
       	<div class="row">
       	    <div class="col-xs-12">
           	    <div class="form-wrap">
+                  <?php
+                    echo $error;
+                   ?>
                   <h1>Log in with your email account</h1>
                       <form role="form" action="/" method="post" id="login-form" autocomplete="off">
-                        <input type='hidden' name='submitted' id='submitted' value='1'/>
                           <div class="form-group">
                               <label for="email" class="sr-only">Email</label>
                               <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
