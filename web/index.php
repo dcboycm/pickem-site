@@ -5,7 +5,7 @@
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form
 
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $myusername = mysqli_real_escape_string($db,$_POST['email']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']);
 
       $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
@@ -42,7 +42,7 @@
       	    <div class="col-xs-12">
           	    <div class="form-wrap">
                   <h1>Log in with your email account</h1>
-                      <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                      <form role="form" action="/" method="post" id="login-form" autocomplete="off">
                         <input type='hidden' name='submitted' id='submitted' value='1'/>
                           <div class="form-group">
                               <label for="email" class="sr-only">Email</label>
