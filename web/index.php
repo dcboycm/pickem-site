@@ -44,7 +44,7 @@
                     if ($error != ""):
                   ?>
 
-                  <div class="alert alert-danger" role="alert">$error</div>
+                  <div class="alert alert-danger" role="alert">Your Login Name or Password is invalid.</div>
 
                   <?php
                     endif;
