@@ -5,7 +5,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // escapes the strings entered by the user
   $myusername = pg_escape_string($conn,$_POST['email']);
-  $mypassword = pg_escape_string($conn,$_POST['password']);
+  $mypassword = pg_escape_string($conn,$_POST['key']);
 
   // builds the query into a result
   $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword'");
