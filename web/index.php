@@ -19,7 +19,8 @@
       }else {
          $error = "Your Login Name or Password is invalid";
       }
-   }
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html>
