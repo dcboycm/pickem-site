@@ -3,6 +3,9 @@ include("./include/config.php");
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
+  $myusername = mysqli_real_escape_string($db,$_POST['email']);
+  $mypassword = mysqli_real_escape_string($db,$_POST['password']);
+  
    $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
    // If result matched $myusername and $mypassword, table row must be 1 row
    if($result == 1) {
