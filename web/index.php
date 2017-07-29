@@ -41,7 +41,9 @@
       	    <div class="col-xs-12">
           	    <div class="form-wrap">
                   <?php
-                    echo $error;
+                    echo '<div class="alert alert-danger" role="alert">
+                      $error
+                    </div>';
                    ?>
                   <h1>Log in with your email account</h1>
                       <form role="form" action="/" method="post" id="login-form" autocomplete="off">
