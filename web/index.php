@@ -13,6 +13,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   // get the number of rows returned
   $rows = pg_num_rows($result);
 
+  error_log("*********** Rows: " + $rows + " returned. ***************");
+
   // If result matched $myusername and $mypassword, table row must be 1 row
   if($rows == 1) {
     $_SESSION['login_user'] = $myusername;
