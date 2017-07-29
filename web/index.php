@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $mypassword = pg_escape_string($conn,$_POST['password']);
 
   // builds the query into a result
-  $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
+  $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword'");
 
   // get the number of rows returned
   $rows = pg_num_rows($result);
