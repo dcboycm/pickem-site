@@ -11,8 +11,8 @@
   <body>
     <div id="profile">
       <h1>Welcome <?php echo $login_session; ?></h1>
-      <b id="logout"><a href="logout.php">Log Out</a></b>
+      <b id="logout"><a href="index.php">Log Out</a></b>
     </div>
   </body>
-  
+
 </html>

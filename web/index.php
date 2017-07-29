@@ -3,17 +3,23 @@ include("./include/config.php");
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
+  // escapes the strings entered by the user
   $myusername = pg_escape_string($conn,$_POST['email']);
   $mypassword = pg_escape_string($conn,$_POST['password']);
 
-   $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
-   // If result matched $myusername and $mypassword, table row must be 1 row
-   if($result > 1) {
-      $_SESSION['login_user'] = $myusername;
+  // builds the query into a result
+  $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
+
+  // get the number of rows returned
+  $rows = pg_num_rows($result);
+
+  // If result matched $myusername and $mypassword, table row must be 1 row
+  if($rows > 0) {
+    $_SESSION['login_user'] = $myusername;
       header("location: home-page.php");
-   }else {
+    }else {
       $error = "Your Login Name or Password is invalid";
-   }
+  }
 }
 ?>
 <!DOCTYPE html>
