@@ -32,9 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($error != ""):
                   ?>
 
-                  <?php echo $result $myusername $mypassword ?>
-
-                  <div class="alert alert-danger" role="alert">Your Login Name or Password is invalid.</div>
+                  <div class="alert alert-danger" role="alert"><?=$myusername?>, Your Login Name or Password is invalid.<?=$result?></div>
 
                   <?php
                     endif;
