@@ -40,9 +40,11 @@
       	<div class="row">
       	    <div class="col-xs-12">
           	    <div class="form-wrap">
-                  <div class="alert alert-danger" role="alert">
-                      <?php echo $error; ?>
-                  </div>
+                  <?php
+                    <div class="alert alert-danger" role="alert">
+                       echo $error;
+                    </div>
+                  ?>
                   <h1>Log in with your email account</h1>
                       <form role="form" action="/" method="post" id="login-form" autocomplete="off">
                           <div class="form-group">
