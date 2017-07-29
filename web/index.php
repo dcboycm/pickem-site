@@ -42,7 +42,7 @@
           	    <div class="form-wrap">
                   <?php
                     <div class="alert alert-danger" role="alert">
-                       echo $error;
+                       <?php echo $error; ?>
                     </div>
                   ?>
                   <h1>Log in with your email account</h1>
