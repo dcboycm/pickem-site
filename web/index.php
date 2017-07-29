@@ -3,10 +3,10 @@ include("./include/config.php");
 session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-  $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
+   $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
    // If result matched $myusername and $mypassword, table row must be 1 row
    if($result == 1) {
-      $_SESSION['login_user'] = pg_query($conn, "SELECT first_name FROM users WHERE email = '$myusername' and password = '$mypassword'");
+      $_SESSION['login_user'] = $myusername;
       header("location: home-page.php");
    }else {
       $error = "Your Login Name or Password is invalid";
@@ -31,6 +31,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                   <?php
                     if ($error != ""):
                   ?>
+
+                  <?php echo $result $myusername $mypassword ?>
 
                   <div class="alert alert-danger" role="alert">Your Login Name or Password is invalid.</div>
 
