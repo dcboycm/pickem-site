@@ -41,9 +41,13 @@
       	    <div class="col-xs-12">
           	    <div class="form-wrap">
                   <?php
-                    if ($error != "") {
-                      echo "<div class="alert alert-danger" role="alert">$error</div>"
-                    }
+                    if ($error != ""):
+                  ?>
+
+                  <div class="alert alert-danger" role="alert">$error</div>
+
+                  <?php
+                    endif;
                   ?>
                   <h1>Log in with your email account</h1>
                       <form role="form" action="/" method="post" id="login-form" autocomplete="off">
