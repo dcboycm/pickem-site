@@ -40,6 +40,11 @@
       	<div class="row">
       	    <div class="col-xs-12">
           	    <div class="form-wrap">
+                  <?php
+                    if ($error != "") {
+                      echo "<b>Error:</b> [$error] $error<br>";
+                    }
+                  ?>
                   <h1>Log in with your email account</h1>
                       <form role="form" action="/" method="post" id="login-form" autocomplete="off">
                           <div class="form-group">
