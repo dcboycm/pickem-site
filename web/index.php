@@ -2,25 +2,20 @@
    include("./include/config.php");
    session_start();
 
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form
+   $app->get('/db/', function() use($app) {
+  $st = $app['pdo']->prepare('SELECT name FROM test_table');
+  $st->execute();
 
-      $app->get('/db/', function() use($app) {
-      $st = $app['pdo']->prepare("SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword'");
-
-      $row = $st->execute();
-
-      // If result matched $myusername and $mypassword, table row must be 1 row
-
-      if($row == 1) {
-         $_SESSION['login_user'] = $myusername;
-
-         header("location: home-page.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      }
-    }
+  $names = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['name']);
+    $names[] = $row;
   }
+
+  return $app['twig']->render('database.twig', array(
+    'names' => $names
+  ));
+});
 ?>
 <!DOCTYPE html>
 <html>
