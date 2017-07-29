@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $rows = pg_num_rows($result);
 
   // If result matched $myusername and $mypassword, table row must be 1 row
-  if($rows > 0) {
+  if($rows == 1) {
     $_SESSION['login_user'] = $myusername;
       header("location: home-page.php");
     }else {
@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($error != ""):
                   ?>
 
-                  <div class="alert alert-danger" role="alert"><?=$myusername?>, Your Login Name or Password is invalid.<?=$result?></div>
+                  <div class="alert alert-danger" role="alert"><?=$myusername?>, Your Login Name or Password is invalid.<?=$rows?></div>
 
                   <?php
                     endif;
