@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
    $result = pg_query($conn, "SELECT count(*) FROM users WHERE email = '$myusername' and password = '$mypassword'");
    // If result matched $myusername and $mypassword, table row must be 1 row
-   if($result == 1) {
+   if($result > 1) {
       $_SESSION['login_user'] = $myusername;
       header("location: home-page.php");
    }else {
