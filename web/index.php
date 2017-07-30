@@ -9,16 +9,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // builds the query into a result
   $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword' and active = true");
+  $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = $results");
+  $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = $results");
 
   // get the number of rows returned
   $rows = pg_num_rows($result);
 
-  file_put_contents("php://stderr", "*********** Username: $myusername Password: $mypassword. ***************".PHP_EOL);
-  file_put_contents("php://stderr", "*********** Rows: $rows returned. ***************".PHP_EOL);
+  // file_put_contents("php://stderr", "*********** Username: $myusername Password: $mypassword. ***************".PHP_EOL);
+  // file_put_contents("php://stderr", "*********** Rows: $rows returned. ***************".PHP_EOL);
 
   // If result matched $myusername and $mypassword, table row must be 1 row
   if($rows == 1) {
     $_SESSION['login_user'] = $myusername;
+    $_SESSION['first_name'] = $result_first;
+    $_SESSION['last_name'] = $result_last;
       header("location: home-page.php");
     }else {
       $error = "Your Login Name or Password is invalid";
