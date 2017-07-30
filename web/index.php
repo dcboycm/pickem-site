@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     <script>
-      function myFunction() {
+      function checkPass() {
         var pass1 = document.getElementById("password").value;
         var pass2 = document.getElementById("re-password").value;
         var ok = true;
