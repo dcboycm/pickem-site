@@ -1,5 +1,7 @@
 <?php
    include('session.php');
+
+   $myusername = $_SESSION['login_user'];
 ?>
 <!DOCTYPE html>
 <html>
