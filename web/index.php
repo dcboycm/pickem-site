@@ -44,12 +44,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           document.getElementById("password").style.borderColor = "#E34234";
           document.getElementById("re-password").style.borderColor = "#E34234";
           ok = false;
+        } else {
+          $("#buttonActivate").prop("disabled", false);
         }
-      }
-    </script>
-    <script>
-      function validate(){
-          return ($("#password").val() === $("#re-password").val());
       }
     </script>
   </head>
@@ -109,11 +106,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Password</p>
             <input type="password" name="password" id="password" class="form-control" autocomplete="off">
             <p>Retype Password</p>
-            <input type="password" name="re-password" id="re-password" class="form-control" autocomplete="off" onSubmit="return validate();">
+            <input type="password" name="re-password" id="re-password" class="form-control" autocomplete="off">
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-custom">Submit</button>
+            <button type="submit" class="btn btn-custom" onSubmit="checkPass();" disabled="disabled">Submit</button>
           </div>
         </div> <!-- /.modal-content -->
       </div> <!-- /.modal-dialog -->
