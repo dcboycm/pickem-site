@@ -39,7 +39,7 @@
             <div class="col-xs-12">
                 <div class="form-wrap">
                   <h1>Thanks for registering!</h1>
-                  <input type="submit" action="index.php" id="return" class="btn btn-default" value="Log in">
+                  <input type="submit" action="index.php" id="return" class="btn btn-custom btn-lg btn-block" value="Log in">
                 </div>
             </div>
         </div>
