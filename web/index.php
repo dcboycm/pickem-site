@@ -62,6 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                           <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
                           <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
                       </form>
+                      <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
                       <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
                       <hr>
           	    </div>
@@ -71,29 +72,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   </section>
 
   <div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">
-            <span aria-hidden="true">×</span>
-            <span class="sr-only">Close</span>
-          </button>
-          <h4 class="modal-title">Register for a new account.</h4>
-        </div>
-        <div class="modal-body">
-          <p>First Name</p>
-          <input type="text" name="firstName" id="firstName" class="form-control" autocomplete="off">
-          <p>Last Name</p>
-          <input type="text" name="lastName" id="lastName" class="form-control" autocomplete="off">
-          <p>Email Address</p>
-          <input type="text" name="email" id="email" class="form-control" autocomplete="off">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-custom">Submit</button>
-        </div>
-      </div> <!-- /.modal-content -->
-    </div> <!-- /.modal-dialog -->
+    <form role="form" action="register-user.php" method="post" id="register-modal" autocomplete="off">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <h4 class="modal-title">Register for a new account.</h4>
+          </div>
+          <div class="modal-body">
+            <p>First Name</p>
+            <input type="text" name="firstName" id="firstName" class="form-control" autocomplete="off">
+            <p>Last Name</p>
+            <input type="text" name="lastName" id="lastName" class="form-control" autocomplete="off">
+            <p>Email Address</p>
+            <input type="text" name="email" id="email" class="form-control" autocomplete="off">
+            <p>Password</p>
+            <input type="password" name="password" id="password" class="form-control" autocomplete="off">
+            <p>Retype Password</p>
+            <input type="password" name="re-password" id="re-password" class="form-control" autocomplete="off">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-custom">Submit</button>
+          </div>
+        </div> <!-- /.modal-content -->
+      </div> <!-- /.modal-dialog -->
+    </form>
   </div> <!-- /.modal -->
 
   <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
