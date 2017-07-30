@@ -23,3 +23,17 @@
     printf ("These values were inserted into the database - %s %s %s", $firstname, $lastname, $emailaddress);
   }
 ?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Thanks for Registering!</title>
+  </head>
+  <body>
+
+    <h1>Thanks for registering!</h1>
+    <input type="submit" action="index.php" id="return" class="btn btn-custom btn-lg btn-block" value="Log in">
+
+  </body>
+</html>
