@@ -33,15 +33,17 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
   </head>
 
-    <div class="container">
-      <div class="row">
-          <div class="col-xs-12">
-              <div class="form-wrap">
-                <h1>Thanks for registering!</h1>
-                <input type="submit" action="index.php" id="return" class="btn btn-default" value="Log in">
-              </div>
-          </div>
+    <section id="registered">
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="form-wrap">
+                  <h1>Thanks for registering!</h1>
+                  <input type="submit" action="index.php" id="return" class="btn btn-default" value="Log in">
+                </div>
+            </div>
+        </div>
       </div>
-    </div>
+    </section>
   </body>
 </html>
