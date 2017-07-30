@@ -59,7 +59,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                               <label for="key" class="sr-only">Password</label>
                               <input type="password" name="key" id="key" class="form-control" placeholder="Password">
                           </div>
-                          <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
                           <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
                       </form>
                       <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
@@ -95,8 +94,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" name="re-password" id="re-password" class="form-control" autocomplete="off">
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-custom">Submit</button>
+            <button type="submit" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-custom">Submit</button>
           </div>
         </div> <!-- /.modal-content -->
       </div> <!-- /.modal-dialog -->

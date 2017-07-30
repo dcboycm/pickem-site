@@ -59,6 +59,11 @@
 	text-align: center;
 	display: block;
 }
+#login .register {
+    font-size: 13px;
+	text-align: center;
+	display: block;
+}
 
 /*    --------------------------------------------------
 	:: Inputs & Buttons
