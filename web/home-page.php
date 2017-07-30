@@ -4,8 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Your Home Page</title>
-<link href="style.css" rel="stylesheet" type="text/css">
+<title>Pickem Site - Home Page</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
 </head>
 
   <body>
@@ -64,10 +68,10 @@
     </nav>
 
     <div id="profile">
-      <h1>Welcome <?php echo $login_session; ?></h1>
+      <h1>Welcome <?php echo $myusername; ?></h1>
       <b id="logout"><a href="index.php">Log Out</a></b>
     </div>
-    
+
   </body>
 
 </html>
