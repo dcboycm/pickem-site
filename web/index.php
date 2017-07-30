@@ -55,11 +55,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                               <label for="email" class="sr-only">Email</label>
                               <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
                           </div>
-                          <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
                           <div class="form-group">
                               <label for="key" class="sr-only">Password</label>
                               <input type="password" name="key" id="key" class="form-control" placeholder="Password">
                           </div>
+                          <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
                           <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
                       </form>
                       <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
