@@ -47,6 +47,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       }
     </script>
+    <script>
+      function submit(){
+              if(var==1){
+                  return true;
+             }
+             else{
+                 alert("Passwords do not match.")
+                 return false;
+             }
+      }
+    </script>
   </head>
   <section id="login">
       <div class="container">
@@ -104,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Password</p>
             <input type="password" name="password" id="password" class="form-control" autocomplete="off">
             <p>Retype Password</p>
-            <input type="password" name="re-password" id="re-password" class="form-control" autocomplete="off">
+            <input type="password" name="re-password" id="re-password" class="form-control" autocomplete="off" onSubmit="return submit();">
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-default" data-dismiss="modal">Cancel</button>
