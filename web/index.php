@@ -108,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <input type="submit" class="btn btn-custom">Submit</button>
+            <button type="submit" class="btn btn-custom">Submit</button>
           </div>
         </div> <!-- /.modal-content -->
       </div> <!-- /.modal-dialog -->
