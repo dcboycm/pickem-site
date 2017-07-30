@@ -34,6 +34,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <script>
+      function myFunction() {
+        var pass1 = document.getElementById("password").value;
+        var pass2 = document.getElementById("re-password").value;
+        var ok = true;
+        if (pass1 != pass2) {
+          //alert("Passwords Do not match");
+          document.getElementById("password").style.borderColor = "#E34234";
+          document.getElementById("re-password").style.borderColor = "#E34234";
+          ok = false;
+        }
+      }
+    </script>
   </head>
   <section id="login">
       <div class="container">
@@ -71,7 +84,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   </section>
 
   <div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-    <form role="form" action="register-user.php" method="post" id="register-modal" autocomplete="off">
+    <form role="form" action="register-user.php" onsubmit="return checkPass()" method="post" id="register-modal" autocomplete="off">
       <div class="modal-dialog modal-sm">
         <div class="modal-content">
           <div class="modal-header">
@@ -95,7 +108,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-custom">Submit</button>
+            <input type="submit" class="btn btn-custom">Submit</button>
           </div>
         </div> <!-- /.modal-content -->
       </div> <!-- /.modal-dialog -->
