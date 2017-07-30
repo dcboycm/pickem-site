@@ -55,13 +55,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                               <label for="email" class="sr-only">Email</label>
                               <input type="email" name="email" id="email" class="form-control" placeholder="somebody@example.com">
                           </div>
+                          <a href="javascript:;" class="register" data-toggle="modal" data-target=".register-modal">Register</a>
                           <div class="form-group">
                               <label for="key" class="sr-only">Password</label>
                               <input type="password" name="key" id="key" class="form-control" placeholder="Password">
-                          </div>
-                          <div class="checkbox">
-                              <span class="character-checkbox" onclick="showPassword()"></span>
-                              <span class="label">Show password</span>
                           </div>
                           <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">
                       </form>
@@ -72,6 +69,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       	</div> <!-- /.row -->
       </div> <!-- /.container -->
   </section>
+
+  <div class="modal fade register-modal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title">Register for a new account.</h4>
+        </div>
+        <div class="modal-body">
+          <p>First Name</p>
+          <input type="text" name="firstName" id="firstName" class="form-control" autocomplete="off">
+          <p>Last Name</p>
+          <input type="text" name="lastName" id="lastName" class="form-control" autocomplete="off">
+          <p>Email Address</p>
+          <input type="text" name="email" id="email" class="form-control" autocomplete="off">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-custom">Submit</button>
+        </div>
+      </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+  </div> <!-- /.modal -->
 
   <div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
   	<div class="modal-dialog modal-sm">
