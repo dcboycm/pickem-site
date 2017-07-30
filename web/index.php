@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $mypassword = pg_escape_string($conn,$_POST['key']);
 
   // builds the query into a result
-  $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword'");
+  $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword' and active = true");
 
   // get the number of rows returned
   $rows = pg_num_rows($result);
@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($error != ""):
                   ?>
 
-                  <div class="alert alert-danger" role="alert"><?=$myusername?>, Your Login Name or Password is invalid.<?=$rows?></div>
+                  <div class="alert alert-danger" role="alert">Your Login Name or Password is invalid.</div>
 
                   <?php
                     endif;
