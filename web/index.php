@@ -42,14 +42,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       function checkPass() {
         var pass1 = document.getElementById("password").value;
         var pass2 = document.getElementById("re-password").value;
-        var ok = true;
         if (pass1 != pass2) {
           //alert("Passwords Do not match");
           document.getElementById("password").style.borderColor = "#E34234";
           document.getElementById("re-password").style.borderColor = "#E34234";
-          ok = false;
-        } else {
-          $("#buttonActivate").prop("disabled", false);
+          return false;
         }
       }
     </script>
@@ -114,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-custom" onSubmit="checkPass();" disabled="disabled">Submit</button>
+            <button type="submit" class="btn btn-custom" onSubmit="checkPass();">Submit</button>
           </div>
         </div> <!-- /.modal-content -->
       </div> <!-- /.modal-dialog -->
