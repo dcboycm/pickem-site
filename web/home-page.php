@@ -17,7 +17,7 @@
 </head>
 
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default center">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -45,13 +45,13 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div id="profile">
+    <div class="center" id="profile">
       <h1>Welcome <?php echo $firstname; ?> <?php echo $lastname; ?></h1>
     </div>
 
   </body>
 
-  <footer>
+  <footer class="center">
       <b id="logout"><a href="index.php">Log Out</a></b>
   </footer>
 
