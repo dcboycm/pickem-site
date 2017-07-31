@@ -45,9 +45,12 @@
 
     <div id="profile">
       <h1>Welcome <?php echo $myusername; ?></h1>
-      <b id="logout"><a href="index.php">Log Out</a></b>
     </div>
 
   </body>
+
+  <footer>
+      <b id="logout"><a href="index.php">Log Out</a></b>
+  </footer>
 
 </html>

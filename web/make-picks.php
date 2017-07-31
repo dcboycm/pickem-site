@@ -40,7 +40,10 @@
 
     <div id="all-picks">
       <h1>Make Picks</h1>
-      <b id="logout"><a href="index.php">Log Out</a></b>
     </div>
   </body>
+
+  <footer>
+    <b id="logout"><a href="index.php">Log Out</a></b>
+  </footer>
 </html>
