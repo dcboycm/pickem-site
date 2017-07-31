@@ -45,7 +45,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div id="all-picks">
+    <div class="center" id="all-picks">
       <h1>Everyone's Picks</h1>
     </div>
   </body>
