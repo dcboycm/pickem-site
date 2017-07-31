@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default center">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -51,6 +51,6 @@
   </body>
 
   <footer>
-    <b id="logout"><a href="logout.php">Log Out</a></b>
+    <b class="center" id="logout"><a href="logout.php">Log Out</a></b>
   </footer>
 </html>
