@@ -51,6 +51,6 @@
   </body>
 
   <footer>
-    <b id="logout"><a href="index.php">Log Out</a></b>
+    <b id="logout"><a href="logout.php">Log Out</a></b>
   </footer>
 </html>

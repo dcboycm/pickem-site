@@ -46,13 +46,13 @@
     </nav>
 
     <div class="center" id="profile">
-      <h1>Welcome <?php echo $firstname; ?> <?php echo $lastname; ?></h1>
+      <h1>Welcome <?php echo $firstname; ?> !</h1>a
     </div>
 
   </body>
 
   <footer class="center">
-      <b id="logout"><a href="index.php">Log Out</a></b>
+      <b id="logout"><a href="logout.php">Log Out</a></b>
   </footer>
 
 </html>
