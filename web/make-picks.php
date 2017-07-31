@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pickem Site - Everyone's Picks</title>
+    <title>Pickem Site - Make Picks</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -28,7 +28,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class=""><a href="#"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+            <li class=""><a href="home-page.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
             <li class="active"><a href="make-picks.php"><i class="glyphicon glyphicon-file"></i>Make Picks</a></li>
             <li class=""><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
             <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li>
@@ -39,7 +39,7 @@
     </nav>
 
     <div id="all-picks">
-      <h1>Everyone's Picks</h1>
+      <h1>Make Picks</h1>
       <b id="logout"><a href="index.php">Log Out</a></b>
     </div>
   </body>
