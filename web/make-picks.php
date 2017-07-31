@@ -50,7 +50,7 @@
     </div>
   </body>
 
-  <footer>
-    <b class="center" id="logout"><a href="logout.php">Log Out</a></b>
+  <footer class="center">
+    <b id="logout"><a href="logout.php">Log Out</a></b>
   </footer>
 </html>
