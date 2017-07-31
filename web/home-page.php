@@ -46,7 +46,7 @@
     </nav>
 
     <div id="profile">
-      <h1>Welcome <?php echo $firstname $lastname; ?></h1>
+      <h1>Welcome <?php echo $firstname; ?> <?php echo $lastname; ?></h1>
     </div>
 
   </body>
