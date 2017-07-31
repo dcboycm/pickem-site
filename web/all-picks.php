@@ -1,3 +1,10 @@
+<?php
+   include('session.php');
+
+   $myusername = $_SESSION['login_user'];
+   $firstname = $_SESSION['first_name'];
+   $lastname = $_SESSION['last_name'];
+?>
 <!DOCTYPE html>
 <html>
   <head>

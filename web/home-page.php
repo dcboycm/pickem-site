@@ -2,6 +2,8 @@
    include('session.php');
 
    $myusername = $_SESSION['login_user'];
+   $firstname = $_SESSION['first_name'];
+   $lastname = $_SESSION['last_name'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,7 +46,7 @@
     </nav>
 
     <div id="profile">
-      <h1>Welcome <?php echo $myusername; ?></h1>
+      <h1>Welcome <?php echo $firstname $lastname; ?></h1>
     </div>
 
   </body>
