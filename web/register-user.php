@@ -17,7 +17,7 @@
           echo "Error with query: " . $errormessage;
           exit();
       }
-      printf ("These values were inserted into the database - %s %s %s", $firstname, $lastname, $emailaddress);
+      // printf ("These values were inserted into the database - %s %s %s", $firstname, $lastname, $emailaddress);
     }
   }
 ?>
@@ -39,7 +39,7 @@
             <div class="col-xs-12">
                 <div class="form-wrap">
                   <h1>Thanks for registering!</h1>
-                  <input type="submit" action="index.php" id="return" class="btn btn-custom btn-lg btn-block" value="Log In">
+                  <a href="index.php" class="btn btn-custom btn-lg btn-block">Log In</a>
                 </div>
             </div>
         </div>
