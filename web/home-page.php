@@ -1,5 +1,5 @@
 <?php
-   include('session.php');
+  //  include('session.php');
 
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];

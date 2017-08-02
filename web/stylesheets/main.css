@@ -172,6 +172,7 @@ div .tiebreaker-points {
     color: #6d6d6d;
     font-size: 12px;
     text-align: center;
+    height: 50px;
 }
 #footer p {
     margin-bottom: 0;
