@@ -168,7 +168,7 @@ div .tiebreaker-points {
 /*    --------------------------------------------------
     :: Footer
 	-------------------------------------------------- */
-#footer {
+#footer, footer {
     color: #6d6d6d;
     font-size: 12px;
     text-align: center;
