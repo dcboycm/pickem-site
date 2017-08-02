@@ -157,6 +157,12 @@ i {
     border-radius: 25px;
     padding: 20px;
 }
+
+div .tiebreaker-points {
+  display: table-cell;
+  vertical-align: middle;
+  height: auto;
+}
 /*    --------------------------------------------------
     :: Footer
 	-------------------------------------------------- */
