@@ -20,8 +20,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   file_put_contents("php://stderr", "*********** Username: $myusername Password: $hashedpassword. ***************".PHP_EOL);
   file_put_contents("php://stderr", "*********** Rows: $rows returned. ***************".PHP_EOL);
 
-  file_put_contents("php://stderr", "****** First Name: $arr['first_name']. *******".PHP_EOL);
-  file_put_contents("php://stderr", "****** First Name: $arr['last_name']. *******".PHP_EOL);
+  // file_put_contents("php://stderr", "****** First Name: $arr['first_name']. *******".PHP_EOL);
+  // file_put_contents("php://stderr", "****** First Name: $arr['last_name']. *******".PHP_EOL);
 
   // If result matched $myusername and $mypassword, table row must be 1 row
   if($rows == 1) {
