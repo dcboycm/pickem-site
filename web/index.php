@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $mypassword = pg_escape_string($conn,$_POST['key']);
 
   // builds the query into a result
-  $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$mypassword' and active = true");
+  $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = 'md5($mypassword)' and active = true");
   $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = $results");
   $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = $results");
 

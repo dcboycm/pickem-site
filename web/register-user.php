@@ -11,7 +11,7 @@
     } else {
       $password = pg_escape_string($_POST['password']);
 
-      $result = pg_query($conn, "INSERT INTO users (first_name, last_name, email, password, active) VALUES ('$firstname', '$lastname', '$emailaddress', '$password', true);");
+      $result = pg_query($conn, "INSERT INTO users (first_name, last_name, email, password, active) VALUES ('$firstname', '$lastname', '$emailaddress', 'md5($password)', true);");
       if (!$result) {
           $errormessage = pg_last_error();
           echo "Error with query: " . $errormessage;
