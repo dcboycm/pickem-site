@@ -9,24 +9,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $hashedpassword = md5($mypassword);
 
   // builds the query into a result
-  $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$hashedpassword' and active = true");
-  $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = $result");
-  $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = $result");
-
-  file_put_contents("php://stderr", "****** First Name: $result_first. *******".PHP_EOL);
-  file_put_contents("php://stderr", "****** First Name: $result_last. *******".PHP_EOL);
+  $result = pg_query($conn, "SELECT first_name, last_name FROM users WHERE email = '$myusername' and password = '$hashedpassword' and active = true");
+  // $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = $result");
+  // $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = $result");
 
   // get the number of rows returned
   $rows = pg_num_rows($result);
+  $arr = pg_fetch_array($result);
 
   file_put_contents("php://stderr", "*********** Username: $myusername Password: $hashedpassword. ***************".PHP_EOL);
   file_put_contents("php://stderr", "*********** Rows: $rows returned. ***************".PHP_EOL);
 
+  file_put_contents("php://stderr", "****** First Name: $arr['first_name']. *******".PHP_EOL);
+  file_put_contents("php://stderr", "****** First Name: $arr['last_name']. *******".PHP_EOL);
+
   // If result matched $myusername and $mypassword, table row must be 1 row
   if($rows == 1) {
     $_SESSION['login_user'] = $myusername;
-    $_SESSION['first_name'] = $result_first;
-    $_SESSION['last_name'] = $result_last;
+    $_SESSION['first_name'] = $arr['first_name'];
+    $_SESSION['last_name'] = $arr['last_name'];
       header("location: home-page.php");
     }else {
       $error = "Your Login Name or Password is invalid";
