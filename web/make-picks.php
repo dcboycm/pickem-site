@@ -165,7 +165,7 @@
               </tr>
             </tbody>
   		</table>
-      <div class="tiebreaker-points">
+      <div class="tiebreaker-points center">
         <label for="">Tie-Breaker Points: <?php echo "DEN/LAC" ?></label>
         <input type="text" name="tiebreaker" placeholder="50 pts."></input>
       </div>

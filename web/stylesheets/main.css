@@ -138,12 +138,22 @@ i {
 /*    --------------------------------------------------
     :: Table
 	-------------------------------------------------- */
+.table {
+    padding-bottom: 10px;
+}
+
 .table th {
    text-align: center;
 }
 
 .table td {
    text-align: center;
+}
+
+.tiebreaker-points {
+    border: 2px solid #1fa67b;
+    border-radius: 25px;
+    padding: 20px;
 }
 /*    --------------------------------------------------
     :: Footer
