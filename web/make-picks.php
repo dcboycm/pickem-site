@@ -46,8 +46,123 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <h1>Make Picks</h1>
-    </div>
+  		<h1>Football Pool 2017-2018</h1>
+      <h2>Week 1 - September 7th - September 11th</h2>
+      <h2>Thursday</h2>
+  		<table class="table">
+  			<thead>
+  				<tr>
+  					<th>Favorite</th>
+  					<th>Spread</th>
+  					<th>Underdog</th>
+  				</tr>
+  			</thead>
+  			<tbody>
+  				<tr>
+  					<td>@NE</td>
+  					<td>5.5</td>
+  					<td>KC</td>
+  				</tr>
+  			</tbody>
+        <h2>Sunday</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Favorite</th>
+              <th>Spread</th>
+              <th>Underdog</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>@BUF</td>
+              <td>5.5</td>
+              <td>NYJ</td>
+            </tr>
+            <tr>
+              <td>@CHI</td>
+              <td>5.5</td>
+              <td>ATL</td>
+            </tr>
+            <tr>
+              <td>@CIN</td>
+              <td>5.5</td>
+              <td>BAL</td>
+            </tr>
+            <tr>
+              <td>@CLE</td>
+              <td>5.5</td>
+              <td>PIT</td>
+            </tr>
+            <tr>
+              <td>@DET</td>
+              <td>5.5</td>
+              <td>ARI</td>
+            </tr>
+            <tr>
+              <td>@HOU</td>
+              <td>5.5</td>
+              <td>JAX</td>
+            </tr>
+            <tr>
+              <td>@MIA</td>
+              <td>5.5</td>
+              <td>TB</td>
+            </tr>
+            <tr>
+              <td>@TEN</td>
+              <td>5.5</td>
+              <td>OAK</td>
+            </tr>
+            <tr>
+              <td>@WAS</td>
+              <td>5.5</td>
+              <td>PHI</td>
+            </tr>
+            <tr>
+              <td>@LAR</td>
+              <td>5.5</td>
+              <td>IND</td>
+            </tr>
+            <tr>
+              <td>@GB</td>
+              <td>5.5</td>
+              <td>SEA</td>
+            </tr>
+            <tr>
+              <td>@SF</td>
+              <td>5.5</td>
+              <td>CAR</td>
+            </tr>
+            <tr>
+              <td>@DAL</td>
+              <td>5.5</td>
+              <td>NYG</td>
+            </tr>
+          </tbody>
+          <h2>Monday</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Favorite</th>
+                <th>Spread</th>
+                <th>Underdog</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>@MIN</td>
+                <td>3</td>
+                <td>NO</td>
+              </tr>
+              <tr>
+                <td>@DEN</td>
+                <td>5</td>
+                <td>LAC</td>
+              </tr>
+            </tbody>
+  		</table>
+  	</div>
   </body>
 
   <footer class="center">
