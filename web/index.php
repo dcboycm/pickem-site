@@ -13,6 +13,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = $results");
   $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = $results");
 
+  file_put_contents("php://stderr", "****** First Name: $result_first. *******")
+  file_put_contents("php://stderr", "****** First Name: $result_last. *******")
+
   // get the number of rows returned
   $rows = pg_num_rows($result);
 
