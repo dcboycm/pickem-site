@@ -49,7 +49,7 @@
   		<h1>Football Pool 2017-2018</h1>
       <h2>Week 1 - September 7th - September 11th</h2>
       <h2>Thursday</h2>
-  		<table class="table">
+  		<table class="table center">
   			<thead>
   				<tr>
   					<th>Favorite</th>
@@ -65,7 +65,7 @@
   				</tr>
   			</tbody>
         <h2>Sunday</h2>
-        <table class="table">
+        <table class="table center">
           <thead>
             <tr>
               <th>Favorite</th>
@@ -141,7 +141,7 @@
             </tr>
           </tbody>
           <h2>Monday</h2>
-          <table class="table">
+          <table class="table center">
             <thead>
               <tr>
                 <th>Favorite</th>
