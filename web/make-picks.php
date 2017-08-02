@@ -55,9 +55,11 @@
   			<thead>
           <h2>Thursday</h2>
   				<tr>
+            <th>Select</th>
   					<th>Favorite</th>
   					<th>Spread</th>
   					<th>Underdog</th>
+            <th>Select</th>
   				</tr>
   			</thead>
   			<tbody>
