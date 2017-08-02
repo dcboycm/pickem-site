@@ -1,5 +1,5 @@
 <?php
-  //  include('session.php');
+   include('session.php');
 
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
@@ -49,7 +49,7 @@
     </nav>
 
     <div class="center" id="profile">
-      <h1>Welcome "<?php echo $firstname; ?>" !</h1>
+      <h1>Welcome "<?php echo $firstname.' '.$lastname; ?>" !</h1>
     </div>
 
   </body>
