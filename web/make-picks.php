@@ -173,7 +173,7 @@
         <h2>Tie-Breaker Points: <?php echo "DEN/LAC" ?></h2>
       </div>
       <div class="tiebreaker-points center">
-        <input type="text" name="tiebreaker" placeholder="50">pts.</input>
+        <input style="text-align: center;" type="text" name="tiebreaker" placeholder="50">  pts.</input>
       </div>
   	</div>
   </body>
