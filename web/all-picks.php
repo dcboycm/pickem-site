@@ -40,6 +40,9 @@
             <li class="active"><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
             <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li>
           </ul>
+          <ul class="nav navbar-nav pull-right ">
+            <li><a href="logout.php">Log Out</a></li>
+          </ul>
 
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -51,6 +54,6 @@
   </body>
 
   <footer class="center">
-    <b id="logout"><a href="logout.php">Log Out</a></b>
+    <!-- <b id="logout"><a href="logout.php">Log Out</a></b> -->
   </footer>
 </html>

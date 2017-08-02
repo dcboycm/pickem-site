@@ -48,7 +48,7 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="center" id="all-picks">
+    <div class="center" id="make-picks">
   		<h1>Football Pool 2017-2018</h1>
       <h2>Week 1 - September 7th - September 11th</h2>
       <h2>Thursday</h2>
@@ -169,6 +169,6 @@
   </body>
 
   <footer class="center">
-    <b id="logout"><a href="logout.php">Log Out</a></b>
+    <!-- <b id="logout"><a href="logout.php">Log Out</a></b> -->
   </footer>
 </html>

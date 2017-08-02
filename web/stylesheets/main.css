@@ -123,11 +123,15 @@ i {
 }
 
 .center {
-	width: 80%;
+	width: 1000px;
 	margin: 0 auto;
 }
 
 #all-picks h1, h2 {
+  text-align: center;
+}
+
+#make-picks h1, h2 {
   text-align: center;
 }
 
