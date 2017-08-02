@@ -10,8 +10,9 @@
          echo("Oops! Password did not match! Try again.");
     } else {
       $password = pg_escape_string($_POST['password']);
+      $hashedpassword = md5($password);
 
-      $result = pg_query($conn, "INSERT INTO users (first_name, last_name, email, password, active) VALUES ('$firstname', '$lastname', '$emailaddress', 'md5($password)', true);");
+      $result = pg_query($conn, "INSERT INTO users (first_name, last_name, email, password, active) VALUES ('$firstname', '$lastname', '$emailaddress', '$hashedpassword', true);");
       if (!$result) {
           $errormessage = pg_last_error();
           echo "Error with query: " . $errormessage;
