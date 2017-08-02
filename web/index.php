@@ -10,8 +10,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // builds the query into a result
   $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername' and password = '$hashedpassword' and active = true");
-  $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = $results");
-  $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = $results");
+  $result_first = pg_query($conn, "SELECT first_name FROM users WHERE id = '$results'");
+  $result_last = pg_query($conn, "SELECT last_name FROM users WHERE id = '$results'");
 
   file_put_contents("php://stderr", "****** First Name: $result_first. *******".PHP_EOL);
   file_put_contents("php://stderr", "****** First Name: $result_last. *******".PHP_EOL);
