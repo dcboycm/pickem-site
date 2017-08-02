@@ -62,9 +62,11 @@
   			</thead>
   			<tbody>
   				<tr>
+            <td><input type="radio" name="picked1" value="Select"><br></td>
   					<td>@NE</td>
   					<td>5.5</td>
   					<td>KC</td>
+            <td><input type="radio" name="picked1" value="Select"><br></td>
   				</tr>
   			</tbody>
         <table class="table center">
