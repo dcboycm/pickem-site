@@ -17,7 +17,7 @@
      else{
  	    $from="From: $name<$email>\r\nReturn-path: $email";
          $subject="Message sent using your contact form";
- 		// mail("youremail@yoursite.com", $subject, $message, $from);
+ 		mail("curtischristophermiller@gmail.com", $subject, $message, $from);
     file_put_contents("php://stderr", "Email sent!".PHP_EOL);
  	    }
    }
