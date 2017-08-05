@@ -5,7 +5,7 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
+   if($_SERVER["REQUEST_METHOD"] == "POST")
    {
      $name=$_REQUEST['name'];
      $email=$_REQUEST['email'];
