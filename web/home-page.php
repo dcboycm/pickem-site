@@ -60,17 +60,19 @@
     					<span aria-hidden="true">×</span>
     					<span class="sr-only">Close</span>
     				</button>
-    				<h4 class="modal-title">Recovery password</h4>
+    				<h4 class="modal-title">Contact Us</h4>
     			</div>
-    			<div class="modal-body">
-    				<p>Type your email account</p>
-    				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
-    			</div>
-    			<div class="modal-footer">
-    				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-    				<button type="button" class="btn btn-custom">Recovery</button>
-    			</div>
-    		</div> <!-- /.modal-content -->
+          <form action="mailto:curtischristophermiller@gmail.com" method="post" enctype="text/plain">
+            Name:<br>
+            <input type="text" name="name"><br>
+            E-mail:<br>
+            <input type="text" name="mail"><br>
+            Comment:<br>
+            <input type="text" name="comment" size="50"><br><br>
+            <input type="submit" value="Send">
+            <input type="reset" value="Reset">
+          </form>
+        </div> <!-- /.modal-content -->
     	</div> <!-- /.modal-dialog -->
     </div> <!-- /.modal -->
 
