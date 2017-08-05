@@ -5,22 +5,21 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
-   if (isset($_POST['Submit']))
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
    {
-     $name = $_POST['full-name'];
-     $email = $_POST['email'];
-     $message = $_POST['message'];
-
-      if (($name=="")||($email=="")||($message==""))
-      {
-        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
-      }
-      else{
-        $from="From: $name<$email>\r\nReturn-path: $email";
-        $subject="Message sent using your contact form";
-        // mail("youremail@yoursite.com", $subject, $message, $from);
-        echo "Email sent!";
-      }
+     $name=$_REQUEST['name'];
+     $email=$_REQUEST['email'];
+     $message=$_REQUEST['message'];
+     if (($name=="")||($email=="")||($message==""))
+         {
+ 		echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+ 	    }
+     else{
+ 	    $from="From: $name<$email>\r\nReturn-path: $email";
+         $subject="Message sent using your contact form";
+ 		// mail("youremail@yoursite.com", $subject, $message, $from);
+ 		echo "Email sent!";
+ 	    }
    }
 
 ?>
@@ -81,16 +80,16 @@
     				</button>
     				<h4 class="modal-title">Contact Us</h4>
     			</div>
-    			<div class="modal-body">
-    				<p>Fill out the contact form:</p>
-            <label for="Full Name"></label><input type="text" name="full-name" value="">
-    				<label for="Email"></label><input type="email" name="email" id="recovery-email" class="form-control" autocomplete="off">
-            <label for="Message"></label><input type="text" name="message" value="">
-      		</div>
-    			<div class="modal-footer">
-    				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-    				<button type="submit" class="btn btn-custom" value="Submit">Submit</button>
-    			</div>
+          <form  action="" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="submit">
+            Your name:<br>
+            <input name="name" type="text" value="" size="30"/><br>
+            Your email:<br>
+            <input name="email" type="text" value="" size="30"/><br>
+            Your message:<br>
+            <textarea name="message" rows="7" cols="30"></textarea><br>
+            <input type="submit" value="Send email"/>
+          </form>
     		</div> <!-- /.modal-content -->
     	</div> <!-- /.modal-dialog -->
     </div> <!-- /.modal -->
