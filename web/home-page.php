@@ -12,13 +12,13 @@
      $message=$_REQUEST['message'];
      if (($name=="")||($email=="")||($message==""))
          {
- 		echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+           file_put_contents("php://stderr", "All fields are required, please fill out the form again.".PHP_EOL);
  	    }
      else{
  	    $from="From: $name<$email>\r\nReturn-path: $email";
          $subject="Message sent using your contact form";
  		// mail("youremail@yoursite.com", $subject, $message, $from);
- 		echo "Email sent!";
+    file_put_contents("php://stderr", "Email sent!".PHP_EOL);
  	    }
    }
 
