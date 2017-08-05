@@ -38,7 +38,7 @@
             <li class="active"><a href="#"><i class="glyphicon glyphicon-home"></i>Home</a></li>
             <li class=""><a href="make-picks.php"><i class="glyphicon glyphicon-file"></i>Make Picks</a></li>
             <li class=""><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
-            <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li>
+            <li class=""><a href="javascript:;" class="contact" data-toggle="modal" data-target=".contact-modal"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li>
           </ul>
           <ul class="nav navbar-nav pull-right ">
             <li><a href="logout.php">Log Out</a></li>
@@ -51,6 +51,28 @@
     <div class="center" id="profile">
       <h1>Welcome "<?php echo $firstname.' '.$lastname; ?>" !</h1>
     </div>
+
+    <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsModal" aria-hidden="true">
+    	<div class="modal-dialog modal-sm">
+    		<div class="modal-content">
+    			<div class="modal-header">
+    				<button type="button" class="close" data-dismiss="modal">
+    					<span aria-hidden="true">×</span>
+    					<span class="sr-only">Close</span>
+    				</button>
+    				<h4 class="modal-title">Recovery password</h4>
+    			</div>
+    			<div class="modal-body">
+    				<p>Type your email account</p>
+    				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+    			</div>
+    			<div class="modal-footer">
+    				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    				<button type="button" class="btn btn-custom">Recovery</button>
+    			</div>
+    		</div> <!-- /.modal-content -->
+    	</div> <!-- /.modal-dialog -->
+    </div> <!-- /.modal -->
 
   </body>
 
