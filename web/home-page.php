@@ -4,6 +4,25 @@
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
+
+   if (isset($_POST['Submit']))
+   {
+     $name = $_POST['full-name'];
+     $email = $_POST['email'];
+     $message = $_POST['message'];
+
+      if (($name=="")||($email=="")||($message==""))
+      {
+        echo "All fields are required, please fill <a href=\"\">the form</a> again.";
+      }
+      else{
+        $from="From: $name<$email>\r\nReturn-path: $email";
+        $subject="Message sent using your contact form";
+        // mail("youremail@yoursite.com", $subject, $message, $from);
+        echo "Email sent!";
+      }
+   }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,17 +81,17 @@
     				</button>
     				<h4 class="modal-title">Contact Us</h4>
     			</div>
-          <form action="mailto:curtischristophermiller@gmail.com" method="post" enctype="text/plain">
-            Name:<br>
-            <input type="text" name="name"><br>
-            E-mail:<br>
-            <input type="text" name="mail"><br>
-            Comment:<br>
-            <input type="text" name="comment" size="50"><br><br>
-            <input type="submit" value="Send">
-            <input type="reset" value="Reset">
-          </form>
-        </div> <!-- /.modal-content -->
+    			<div class="modal-body">
+    				<p>Fill out the contact form:</p>
+            <label for="Full Name"></label><input type="text" name="full-name" value="">
+    				<label for="Email"></label><input type="email" name="email" id="recovery-email" class="form-control" autocomplete="off">
+            <label for="Message"></label><input type="text" name="message" value="">
+      		</div>
+    			<div class="modal-footer">
+    				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+    				<button type="submit" class="btn btn-custom" value="Submit">Submit</button>
+    			</div>
+    		</div> <!-- /.modal-content -->
     	</div> <!-- /.modal-dialog -->
     </div> <!-- /.modal -->
 
