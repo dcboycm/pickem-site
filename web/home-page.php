@@ -1,6 +1,14 @@
 <?php
    include('session.php');
 
+   use SparkPost\SparkPost;
+   use GuzzleHttp\Client;
+   use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
+
+   $httpClient = new GuzzleAdapter(new Client());
+   $sparky = new SparkPost($httpClient, ['key' => 'f1c4469925d124f0509dfd2eaa61142f63c5f398']);
+   $sparky->setOptions(['async' => false]);
+
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
@@ -10,18 +18,33 @@
      $name=$_REQUEST['name'];
      $email=$_REQUEST['email'];
      $message=$_REQUEST['message'];
-     if (($name=="")||($email=="")||($message==""))
-         {
-           file_put_contents("php://stderr", "All fields are required, please fill out the form again.".PHP_EOL);
- 	    }
-     else{
- 	    $from="From: $name<$email>\r\nReturn-path: $email";
-         $subject="Message sent using your contact form";
- 		mail("curtischristophermiller@gmail.com", $subject, $message, $from);
-    file_put_contents("php://stderr", "Email sent!".PHP_EOL);
- 	    }
+    $results = $sparky->transmissions->post([
+      'options' => [
+        'sandbox' => true
+    ],
+      'content' => [
+        'from' => $email,
+        'subject' => $name,
+        'html' => $message
+    ],
+      'recipients' => [
+        ['address' => ['email'=>'curtischristophermiller@gmail.com']]
+    ]
+    ]);
+    //  $name=$_REQUEST['name'];
+    //  $email=$_REQUEST['email'];
+    //  $message=$_REQUEST['message'];
+    //  if (($name=="")||($email=="")||($message==""))
+    //      {
+    //        file_put_contents("php://stderr", "All fields are required, please fill out the form again.".PHP_EOL);
+ 	 //    }
+    //  else{
+ 	 //    $from="From: $name<$email>\r\nReturn-path: $email";
+    //      $subject="Message sent using your contact form";
+ 	// 	mail("curtischristophermiller@gmail.com", $subject, $message, $from);
+    // file_put_contents("php://stderr", "Email sent!".PHP_EOL);
+ 	 //    }
    }
-
 ?>
 <!DOCTYPE html>
 <html>
