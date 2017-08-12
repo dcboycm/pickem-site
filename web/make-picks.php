@@ -56,8 +56,17 @@
 
     <table>
     <?php
+      <thead>
+        <tr>
+          <th>Select</th>
+          <th>Favorite</th>
+          <th>Spread</th>
+          <th>Underdog</th>
+          <th>Select</th>
+        </tr>
+      </thead>
       foreach ($rows as $row) {
-        # code...
+        echo $row;
       }
     ?>
     </table>
