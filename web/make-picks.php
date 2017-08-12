@@ -56,12 +56,8 @@
 
     <table>
     <?php
-      foreach($rows as $row) {
-        echo('<tr>')
-        echo('<td>')
-        echo(implode('</td><td>', $row)
-        echo('</td>')
-        echo('</tr>')
+      foreach ($rows as $row) {
+        # code...
       }
     ?>
     </table>
