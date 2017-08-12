@@ -78,7 +78,7 @@
         // echo "<td>{$row['week_number']}</td>";
         // echo "<td>{$row['week_year']}</td>";
         // echo "<td>{$row['match_date']}</td>";
-        i++;
+        $i++;
       }
     ?>
     </table>
