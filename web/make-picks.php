@@ -66,12 +66,12 @@
       </thead>
     <?php
       foreach ($rows as $row) {
-        echo "<td><input type="radio" name="picked1" value="Select"><br></td>",
+        echo "<td><input type='radio' name='picked1' value='Select'><br></td>";
         echo "<td>{$row['team_home']}</td>";
         // echo "<td>{$row['team_fav']}</td>";
         echo "<td>{$row['spread']}</td>";
         echo "<td>{$row['team_away']}</td>";
-        echo "<td><input type="radio" name="picked1" value="Select"><br></td>";
+        echo "<td><input type='radio' name='picked1' value='Select'><br></td>";
         // echo "<td>{$row['week_number']}</td>";
         // echo "<td>{$row['week_year']}</td>";
         // echo "<td>{$row['match_date']}</td>";
