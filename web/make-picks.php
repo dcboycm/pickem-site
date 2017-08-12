@@ -1,9 +1,15 @@
 <?php
    include('session.php');
+   include('./include/config.php');
 
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
+
+   $result = pg_query($conn, "select * from weekly_matches order by match_date;");
+   $rows = pg_fetch_all($result);
+
+   print_r($rows);
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,6 +53,16 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
+    <table>
+    <?php foreach($rows as $row) {
+      echo('<tr>');
+      echo('<td>');
+      echo(implode('</td><td>', $row);
+      echo('</td>');
+      echo('</tr>');
+    } ?>
+    </table>
 
     <div class="center" id="make-picks">
   		<h1>Football Pool 2017-2018</h1>

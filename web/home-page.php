@@ -6,10 +6,6 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
-   $result = pg_query($conn, "select * from weekly_matches order by match_date;");
-   $rows = pg_fetch_all($result);
-
-   print_r($rows);
 ?>
 <!DOCTYPE html>
 <html>
