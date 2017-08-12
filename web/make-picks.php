@@ -57,11 +57,11 @@
     <table>
     <?php
       foreach($rows as $row) {
-        echo('<tr>');
-        echo('<td>');
-        echo(implode('</td><td>', $row);
-        echo('</td>');
-        echo('</tr>');
+        echo('<tr>')
+        echo('<td>')
+        echo(implode('</td><td>', $row)
+        echo('</td>')
+        echo('</tr>')
       }
     ?>
     </table>
