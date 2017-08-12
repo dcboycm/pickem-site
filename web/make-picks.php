@@ -68,17 +68,23 @@
           <th>Select</th>
         </tr>
       </thead>
+    var limit = 5;
+    $('input.picked').on('change', function(evt) {
+      if($(this).siblings(':checked').length >= limit) {
+        this.checked = false;
+      }
+    });
     <?php
     $i = 0;
       foreach ($rows as $row) {
         echo "<tbody>";
           echo "<tr>";
-            echo "<td><input type='radio' name='picked$i' value='Select'><br></td>";
+            echo "<td><input type='checkbox' class='picked' value='Select'><br></td>";
             echo "<td>{$row['team_home']}</td>";
             // echo "<td>{$row['team_fav']}</td>";
             echo "<td>{$row['spread']}</td>";
             echo "<td>{$row['team_away']}</td>";
-            echo "<td><input type='radio' name='picked$i' value='Select'><br></td>";
+            echo "<td><input type='checkbox' class='picked' value='Select'><br></td>";
           echo "</tr>";
         echo "</tbody>";
         // echo "<td>{$row['week_number']}</td>";
