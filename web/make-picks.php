@@ -81,12 +81,12 @@
       foreach ($rows as $row) {
         echo "<tbody>";
           echo "<tr>";
-            echo "<td><input type='checkbox' class='picked' value='Select'><br></td>";
+            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
             echo "<td>{$row['team_home']}</td>";
             // echo "<td>{$row['team_fav']}</td>";
             echo "<td>{$row['spread']}</td>";
             echo "<td>{$row['team_away']}</td>";
-            echo "<td><input type='checkbox' class='picked' value='Select'><br></td>";
+            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
           echo "</tr>";
         echo "</tbody>";
         // echo "<td>{$row['week_number']}</td>";
