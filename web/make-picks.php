@@ -55,7 +55,6 @@
     </nav>
 
     <table>
-    <?php
       <thead>
         <tr>
           <th>Select</th>
@@ -65,6 +64,7 @@
           <th>Select</th>
         </tr>
       </thead>
+    <?php
       foreach ($rows as $row) {
         echo $row;
       }
