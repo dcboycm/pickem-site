@@ -55,13 +55,15 @@
     </nav>
 
     <table>
-    <?php foreach($rows as $row) {
-      echo('<tr>');
-      echo('<td>');
-      echo(implode('</td><td>', $row);
-      echo('</td>');
-      echo('</tr>');
-    } ?>
+    <?php
+      foreach($rows as $row) {
+        echo('<tr>');
+        echo('<td>');
+        echo(implode('</td><td>', $row);
+        echo('</td>');
+        echo('</tr>');
+      }
+    ?>
     </table>
 
     <div class="center" id="make-picks">
