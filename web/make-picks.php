@@ -22,12 +22,15 @@
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     <script>
-      var limit = 5;
-      $('input.picked').on('change', function(evt) {
-        if($(this).siblings(':checked').length >= limit) {
-          this.checked = false;
+      $("input[name=picked]").change(function(){
+        var max= 3;
+        if( $("input[name=picked]:checked").length == max ){
+            $("input[name=picked]").attr('disabled', 'disabled');
+            $("input[name=picked]:checked").removeAttr('disabled');
+        }else{
+          $("input[name=picked]").removeAttr('disabled');
         }
-      });
+      })
     </script>
   </head>
   <body>
