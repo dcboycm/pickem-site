@@ -68,12 +68,14 @@
           <th>Select</th>
         </tr>
       </thead>
-    var limit = 5;
-    $('input.picked').on('change', function(evt) {
-      if($(this).siblings(':checked').length >= limit) {
-        this.checked = false;
-      }
-    });
+    <script>
+      var limit = 5;
+      $('input.picked').on('change', function(evt) {
+        if($(this).siblings(':checked').length >= limit) {
+          this.checked = false;
+        }
+      });
+    </script>
     <?php
     $i = 0;
       foreach ($rows as $row) {
