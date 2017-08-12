@@ -9,7 +9,7 @@
    $result = pg_query($conn, "select * from weekly_matches order by match_date;");
    $rows = pg_fetch_all($result);
 
-   print_r($rows);
+  //  print_r($rows);
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,8 +54,12 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <table>
+  <div class="center" id="make-picks">
+		<h1>Football Pool 2017-2018</h1>
+    <h2>Week 1 - September 7th - September 11th</h2>
+    <table class="table center">
       <thead>
+        <h2>Thursday</h2>
         <tr>
           <th>Select</th>
           <th>Favorite</th>
@@ -67,14 +71,16 @@
     <?php
     $i = 0;
       foreach ($rows as $row) {
-        echo "<tr>";
-          echo "<td><input type='radio' name='picked$i' value='Select'><br></td>";
-          echo "<td>{$row['team_home']}</td>";
-          // echo "<td>{$row['team_fav']}</td>";
-          echo "<td>{$row['spread']}</td>";
-          echo "<td>{$row['team_away']}</td>";
-          echo "<td><input type='radio' name='picked$i' value='Select'><br></td>";
-        echo "</tr>";
+        echo "<tbody>";
+          echo "<tr>";
+            echo "<td><input type='radio' name='picked$i' value='Select'><br></td>";
+            echo "<td>{$row['team_home']}</td>";
+            // echo "<td>{$row['team_fav']}</td>";
+            echo "<td>{$row['spread']}</td>";
+            echo "<td>{$row['team_away']}</td>";
+            echo "<td><input type='radio' name='picked$i' value='Select'><br></td>";
+          echo "</tr>";
+        echo "</tbody>";
         // echo "<td>{$row['week_number']}</td>";
         // echo "<td>{$row['week_year']}</td>";
         // echo "<td>{$row['match_date']}</td>";
@@ -83,127 +89,6 @@
     ?>
     </table>
 
-    <div class="center" id="make-picks">
-  		<h1>Football Pool 2017-2018</h1>
-      <h2>Week 1 - September 7th - September 11th</h2>
-  		<table class="table center">
-  			<thead>
-          <h2>Thursday</h2>
-  				<tr>
-            <th>Select</th>
-  					<th>Favorite</th>
-  					<th>Spread</th>
-  					<th>Underdog</th>
-            <th>Select</th>
-  				</tr>
-  			</thead>
-  			<tbody>
-  				<tr>
-            <td><input type="radio" name="picked1" value="Select"><br></td>
-  					<td>@NE</td>
-  					<td>5.5</td>
-  					<td>KC</td>
-            <td><input type="radio" name="picked1" value="Select"><br></td>
-  				</tr>
-  			</tbody>
-        <table class="table center">
-          <thead>
-            <h2>Sunday</h2>
-            <tr>
-              <th>Favorite</th>
-              <th>Spread</th>
-              <th>Underdog</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>@BUF</td>
-              <td>5.5</td>
-              <td>NYJ</td>
-            </tr>
-            <tr>
-              <td>@CHI</td>
-              <td>5.5</td>
-              <td>ATL</td>
-            </tr>
-            <tr>
-              <td>@CIN</td>
-              <td>5.5</td>
-              <td>BAL</td>
-            </tr>
-            <tr>
-              <td>@CLE</td>
-              <td>5.5</td>
-              <td>PIT</td>
-            </tr>
-            <tr>
-              <td>@DET</td>
-              <td>5.5</td>
-              <td>ARI</td>
-            </tr>
-            <tr>
-              <td>@HOU</td>
-              <td>5.5</td>
-              <td>JAX</td>
-            </tr>
-            <tr>
-              <td>@MIA</td>
-              <td>5.5</td>
-              <td>TB</td>
-            </tr>
-            <tr>
-              <td>@TEN</td>
-              <td>5.5</td>
-              <td>OAK</td>
-            </tr>
-            <tr>
-              <td>@WAS</td>
-              <td>5.5</td>
-              <td>PHI</td>
-            </tr>
-            <tr>
-              <td>@LAR</td>
-              <td>5.5</td>
-              <td>IND</td>
-            </tr>
-            <tr>
-              <td>@GB</td>
-              <td>5.5</td>
-              <td>SEA</td>
-            </tr>
-            <tr>
-              <td>@SF</td>
-              <td>5.5</td>
-              <td>CAR</td>
-            </tr>
-            <tr>
-              <td>@DAL</td>
-              <td>5.5</td>
-              <td>NYG</td>
-            </tr>
-          </tbody>
-          <table class="table center">
-            <thead>
-              <h2>Monday</h2>
-              <tr>
-                <th>Favorite</th>
-                <th>Spread</th>
-                <th>Underdog</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@MIN</td>
-                <td>3</td>
-                <td>NO</td>
-              </tr>
-              <tr>
-                <td>@DEN</td>
-                <td>5</td>
-                <td>LAC</td>
-              </tr>
-            </tbody>
-  		</table>
       <div class="tiebreaker">
         <h2>Tie-Breaker Points: <?php echo "DEN/LAC" ?></h2>
       </div>
