@@ -32,12 +32,11 @@
     </script>
     <script>
       function submitSheet() {
-        var sheetArray = [];
-        var cboxes = document.getElementsByClassName('single-checkbox');
-        var len = cboxes.length;
-        for (var i=0; i<len; i++) {
-          alert(i + (cboxes[i].checked?' checked ':' unchecked ') + cboxes[i].value);
-        }
+        var selected = [];
+        $('.single-checkbox:checked').each(function() {
+          selected.push($(this).attr('value'));
+        });
+        alert(selected);
       }
     </script>
   </head>
