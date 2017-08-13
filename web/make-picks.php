@@ -90,7 +90,7 @@
             $home_fav = pg_fetch_row($result);
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
             $away_fav = pg_fetch_row($result);
-            if ({$row[team_home]} == {$row[team_fav]}) {
+            if ($row[team_home] == $row[team_fav]) {
               echo "<td>{$home_fav[0]}</td>";
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$away_fav[0]}</td>";
