@@ -36,7 +36,9 @@
         $('.single-checkbox:checked').each(function() {
           selected.push($(this).attr('value'));
         });
-        alert(selected);
+        var username = <?php echo(json_encode($username)); ?>;
+        var tiebreaker = $('#tiebreaker').val();
+        alert(username\n selected[0]\n selected[1]\n selected[2]\n selected[3]\n selected[4]\n tiebreaker);
       }
     </script>
   </head>
@@ -206,7 +208,7 @@
         <h2>Tie-Breaker Points: <?php echo "DEN/LAC" ?></h2>
       </div>
       <div style="text-align: center;" class="tiebreaker-points center">
-        <input style="text-align: center;" type="text" name="tiebreaker" placeholder="50">  pts.</input>
+        <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>
       </div>
   	</div>
 
