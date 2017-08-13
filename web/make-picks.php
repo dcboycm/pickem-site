@@ -78,17 +78,17 @@
     $countdays = pg_num_rows($result);
     $i = 0;
     foreach ($countdays as $day) {
-      echo "<table class='table center'>
-        <thead>
-          <h2>{$days[0]}</h2>
-          <tr>
-            <th>Select</th>
-            <th>Favorite</th>
-            <th>Spread</th>
-            <th>Underdog</th>
-            <th>Select</th>
-          </tr>
-        </thead>";
+      echo "<table class='table center'>";
+      echo "<thead>";
+      echo "<h2>{$days[0]}</h2>";
+      echo "<tr>";
+      echo "<th>Select</th>";
+      echo "<th>Favorite</th>";
+      echo "<th>Spread</th>";
+      echo "<th>Underdog</th>";
+      echo "<th>Select</th>";
+      echo "</tr>";
+      echo "</thead>";
       foreach ($rows as $row) {
         echo "<tbody>";
           echo "<tr>";
