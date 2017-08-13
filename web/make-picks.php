@@ -191,11 +191,11 @@
       <div style="text-align: center;" class="tiebreaker-points center">
         <input style="text-align: center;" type="text" name="tiebreaker" placeholder="50">  pts.</input>
       </div>
+      <div class="button-submit">
+        <input type="submit" name="<?php echo "Submitted"; ?>" value="submit" id="submit"/>
+      </div>
   	</div>
 
-    <div class="button-submit">
-      <input type="submit" name="<?php echo "Submitted"; ?>" value="submit" id="submit"/>
-    </div>
   </body>
 
   <footer class="center">
