@@ -66,6 +66,17 @@
         </div>
         <div class="content">
           <h2>League Rules:</h2>
+          <p>
+            The rules are the same:
+            <ol>
+              <li>Gotta pick 5 games each week</li>
+              <li>Gotta win all 5 games to have a shot at the money</li>
+              <li>Sheets are $5 each unless it rolls over</li>
+            </ol>
+            This year the Football Pool will be completely digital, all picks
+            need to be emailed directly to me and I will also manage payments
+            via PayPal.
+          </p>
         </div>
       </div>
       <div class="col-1-2">
