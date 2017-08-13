@@ -192,7 +192,7 @@
         <input style="text-align: center;" type="text" name="tiebreaker" placeholder="50">  pts.</input>
       </div>
       <div class="button-submit">
-        <button type="button" name="<?php echo "Submitted"; ?>" value="submit" id="submit"/>
+        <button type="button" value="submit" id="submit"/>
       </div>
   	</div>
 
