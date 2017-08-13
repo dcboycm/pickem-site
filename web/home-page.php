@@ -51,7 +51,20 @@
     </nav>
 
     <div class="center" id="profile">
-      <h1>Welcome "<?php echo $firstname.' '.$lastname; ?>" !</h1>
+      <h1>Welcome <?php echo $firstname.' '.$lastname; ?> !</h1>
+    </div>
+
+    <div class="grid">
+      <div class="col-1-2">
+        <div class="content">
+          <p>...insert content left side...</p>
+        </div>
+      </div>
+      <div class="col-1-2">
+        <div class="content">
+          <p>...insert content right side...</p>
+        </div>
+      </div>
     </div>
 
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsModal" aria-hidden="true">

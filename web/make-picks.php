@@ -30,6 +30,22 @@
           });
         });
     </script>
+    <script>
+      function submitSheet() {
+        var sheetArray = [];
+        var cboxes = document.getElementsByClassName('single-checkbox');
+        var len = cboxes.length;
+        for (var i=0; i<len; i++) {
+          alert(i + (cboxes[i].checked?' checked ':' unchecked ') + cboxes[i].value);
+        }
+      }
+      for(var i=0; inputElements[i]; ++i){
+      if(inputElements[i].checked){
+         checkedValue = inputElements[i].value;
+         break;
+      }
+      }
+    </script>
   </head>
   <body>
     <nav class="navbar navbar-default center">
