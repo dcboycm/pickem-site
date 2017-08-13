@@ -64,6 +64,9 @@
             at the top of the page to see who is playing this week!
           </p>
         </div>
+        <div class="content">
+          <h2>League Rules:</h2>
+        </div>
       </div>
       <div class="col-1-2">
         <div class="content">
