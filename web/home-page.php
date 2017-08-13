@@ -54,7 +54,7 @@
       <h1>Welcome <?php echo $firstname.' '.$lastname; ?> !</h1>
     </div>
 
-    <div class="grid">
+    <div class="grid center">
       <div class="col-1-2">
         <div class="content">
           <p>...insert content left side...</p>
