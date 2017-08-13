@@ -191,7 +191,6 @@
       <div style="text-align: center;" class="tiebreaker-points center">
         <input style="text-align: center;" type="text" name="tiebreaker" placeholder="50">  pts.</input>
       </div>
-      <button type="button" value="submit" id="submit"/>
   	</div>
 
     <div class="center">
