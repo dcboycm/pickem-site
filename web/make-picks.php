@@ -193,7 +193,7 @@
       </div>
   	</div>
 
-    <div class="center">
+    <div style="padding-top: 20px;" class="center">
       <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
     </div>
   </body>
