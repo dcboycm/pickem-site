@@ -57,12 +57,19 @@
     <div style="text-align: center;" class="grid center">
       <div class="col-1-2">
         <div class="content">
-          <p>...insert content left side...</p>
+          <h2>News:</h2>
+          <p>
+            It's the start of the 2017-2018 season. It's a new year and a new
+            way to select your picks. Please click on the Make Picks tab located
+            at the top of the page to see who is playing this week!
+          </p>
         </div>
       </div>
       <div class="col-1-2">
         <div class="content">
-          <p>...insert content right side...</p>
+          <h2>Updates:</h2>
+          <p>Last weeks winner: Alex Ramos.</p>
+          <p>Pot size: $55.00.</p>
         </div>
       </div>
     </div>
