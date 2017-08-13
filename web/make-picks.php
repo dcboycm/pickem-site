@@ -88,7 +88,7 @@
             <th>Underdog</th>
             <th>Select</th>
           </tr>
-        </thead>"
+        </thead>";
       foreach ($rows as $row) {
         echo "<tbody>";
           echo "<tr>";
