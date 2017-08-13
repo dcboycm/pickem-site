@@ -39,12 +39,6 @@
           alert(i + (cboxes[i].checked?' checked ':' unchecked ') + cboxes[i].value);
         }
       }
-      for(var i=0; inputElements[i]; ++i){
-      if(inputElements[i].checked){
-         checkedValue = inputElements[i].value;
-         break;
-      }
-      }
     </script>
   </head>
   <body>
@@ -218,7 +212,7 @@
   	</div>
 
     <div style="padding-top: 20px;" class="center">
-      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
+      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" onclick="submitSheet()" value="Submit">
     </div>
   </body>
 
