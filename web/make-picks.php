@@ -86,22 +86,22 @@
           echo "<tr>";
             echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
             // Need an if check for who is the FAVORITE, this will determine who goes first in the list
-            // Need to query using the team_home id to get the fav_name from team table and fill it
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
             $home_fav = pg_fetch_row($result);
-            echo "<td>{$home_fav[0]}</td>";
-            // echo "<td>{$row['team_fav']}</td>";
-            echo "<td>{$row['spread']}</td>";
-            // Need to query using the team_away id to get the fav_name from team table and fill it
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
             $away_fav = pg_fetch_row($result);
-            echo "<td>{$away_fav[0]}</td>";
+            if ({$row[team_home]} == {$row[team_fav]}) {
+              echo "<td>{$home_fav[0]}</td>";
+              echo "<td>{$row['spread']}</td>";
+              echo "<td>{$away_fav[0]}</td>";
+            } else {
+              echo "<td>{$away_fav[0]}</td>";
+              echo "<td>{$row['spread']}</td>";
+              echo "<td>{$home_fav[0]}</td>";
+            }
             echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
           echo "</tr>";
         echo "</tbody>";
-        // echo "<td>{$row['week_number']}</td>";
-        // echo "<td>{$row['week_year']}</td>";
-        // echo "<td>{$row['match_date']}</td>";
         $i++;
       }
     ?>
@@ -131,7 +131,6 @@
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
             $home_fav = pg_fetch_row($result);
             echo "<td>{$home_fav[0]}</td>";
-            // echo "<td>{$row['team_fav']}</td>";
             echo "<td>{$row['spread']}</td>";
             // Need to query using the team_away id to get the fav_name from team table and fill it
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
@@ -140,9 +139,6 @@
             echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
           echo "</tr>";
         echo "</tbody>";
-        // echo "<td>{$row['week_number']}</td>";
-        // echo "<td>{$row['week_year']}</td>";
-        // echo "<td>{$row['match_date']}</td>";
         $i++;
       }
     ?>
@@ -172,7 +168,6 @@
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
             $home_fav = pg_fetch_row($result);
             echo "<td>{$home_fav[0]}</td>";
-            // echo "<td>{$row['team_fav']}</td>";
             echo "<td>{$row['spread']}</td>";
             // Need to query using the team_away id to get the fav_name from team table and fill it
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
@@ -181,9 +176,6 @@
             echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
           echo "</tr>";
         echo "</tbody>";
-        // echo "<td>{$row['week_number']}</td>";
-        // echo "<td>{$row['week_year']}</td>";
-        // echo "<td>{$row['match_date']}</td>";
         $i++;
       }
     ?>
