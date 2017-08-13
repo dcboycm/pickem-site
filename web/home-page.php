@@ -55,7 +55,7 @@
     </div>
 
     <div style="text-align: center;" class="grid center">
-      <div class="col-1-2">
+      <div style="text-align: left;" class="col-1-2">
         <div class="content">
           <h2>News:</h2>
           <p>
@@ -64,7 +64,7 @@
             at the top of the page to see who is playing this week!
           </p>
         </div>
-        <div class="content">
+        <div style="text-align: left;" class="content">
           <h2>League Rules:</h2>
           <p>
             The rules are the same:
