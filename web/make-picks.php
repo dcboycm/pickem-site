@@ -70,25 +70,19 @@
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
     <h2>Week 1 - September 7th - September 11th</h2>
-
+    <table class="table center">
+      <thead>
+        <h2>Thursday</h2>
+        <tr>
+          <th>Select</th>
+          <th>Favorite</th>
+          <th>Spread</th>
+          <th>Underdog</th>
+          <th>Select</th>
+        </tr>
+      </thead>
     <?php
-
-    $days = array("Thursday", "Sunday", "Monday");
-    $result = pg_query($conn, "SELECT distinct match_date FROM weekly_matches where week_number = 1;");
-    $countdays = pg_num_rows($result);
     $i = 0;
-    foreach ($countdays as $day) {
-      echo "<table class='table center'>";
-      echo "<thead>";
-      echo "<h2>{$days[0]}</h2>";
-      echo "<tr>";
-      echo "<th>Select</th>";
-      echo "<th>Favorite</th>";
-      echo "<th>Spread</th>";
-      echo "<th>Underdog</th>";
-      echo "<th>Select</th>";
-      echo "</tr>";
-      echo "</thead>";
       foreach ($rows as $row) {
         echo "<tbody>";
           echo "<tr>";
@@ -112,7 +106,6 @@
         // echo "<td>{$row['match_date']}</td>";
         $i++;
       }
-    }
     ?>
     </table>
 
