@@ -36,7 +36,7 @@
         $('.single-checkbox:checked').each(function() {
           selected.push($(this).attr('value'));
         });
-        var username = <?php echo(json_encode($username)); ?>;
+        var username = <?php echo(json_encode($username)) ?>;
         var tiebreaker = $('#tiebreaker').val();
         alert(username'\n' selected[0]'\n' selected[1]'\n' selected[2]'\n' selected[3]'\n' selected[4]'\n' tiebreaker);
       }
