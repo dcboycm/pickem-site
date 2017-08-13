@@ -6,10 +6,6 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
-   $result = pg_query($conn, "select * from weekly_matches order by match_date;");
-   $rows = pg_fetch_all($result);
-
-  //  print_r($rows);
 ?>
 <!DOCTYPE html>
 <html>
@@ -82,6 +78,90 @@
         </tr>
       </thead>
     <?php
+    $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-07' order by match_date;");
+    $rows = pg_fetch_all($result);
+    $i = 0;
+      foreach ($rows as $row) {
+        echo "<tbody>";
+          echo "<tr>";
+            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
+            // Need an if check for who is the FAVORITE, this will determine who goes first in the list
+            // Need to query using the team_home id to get the fav_name from team table and fill it
+            $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
+            $home_fav = pg_fetch_row($result);
+            echo "<td>{$home_fav[0]}</td>";
+            // echo "<td>{$row['team_fav']}</td>";
+            echo "<td>{$row['spread']}</td>";
+            // Need to query using the team_away id to get the fav_name from team table and fill it
+            $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
+            $away_fav = pg_fetch_row($result);
+            echo "<td>{$away_fav[0]}</td>";
+            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
+          echo "</tr>";
+        echo "</tbody>";
+        // echo "<td>{$row['week_number']}</td>";
+        // echo "<td>{$row['week_year']}</td>";
+        // echo "<td>{$row['match_date']}</td>";
+        $i++;
+      }
+    ?>
+    </table>
+
+    <table class="table center">
+      <thead>
+        <h2>Sunday</h2>
+        <tr>
+          <th>Select</th>
+          <th>Favorite</th>
+          <th>Spread</th>
+          <th>Underdog</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+    <?php
+    $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-10' order by match_date;");
+    $rows = pg_fetch_all($result);
+    $i = 0;
+      foreach ($rows as $row) {
+        echo "<tbody>";
+          echo "<tr>";
+            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
+            // Need an if check for who is the FAVORITE, this will determine who goes first in the list
+            // Need to query using the team_home id to get the fav_name from team table and fill it
+            $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
+            $home_fav = pg_fetch_row($result);
+            echo "<td>{$home_fav[0]}</td>";
+            // echo "<td>{$row['team_fav']}</td>";
+            echo "<td>{$row['spread']}</td>";
+            // Need to query using the team_away id to get the fav_name from team table and fill it
+            $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
+            $away_fav = pg_fetch_row($result);
+            echo "<td>{$away_fav[0]}</td>";
+            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='Selected'><br></td>";
+          echo "</tr>";
+        echo "</tbody>";
+        // echo "<td>{$row['week_number']}</td>";
+        // echo "<td>{$row['week_year']}</td>";
+        // echo "<td>{$row['match_date']}</td>";
+        $i++;
+      }
+    ?>
+    </table>
+
+    <table class="table center">
+      <thead>
+        <h2>Monday</h2>
+        <tr>
+          <th>Select</th>
+          <th>Favorite</th>
+          <th>Spread</th>
+          <th>Underdog</th>
+          <th>Select</th>
+        </tr>
+      </thead>
+    <?php
+    $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-11' order by match_date;");
+    $rows = pg_fetch_all($result);
     $i = 0;
       foreach ($rows as $row) {
         echo "<tbody>";
