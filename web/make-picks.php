@@ -195,7 +195,7 @@
   	</div>
 
     <div class="center">
-      <button type="button" name="button" class="btn btn-primary"></button>
+      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
     </div>
   </body>
 
