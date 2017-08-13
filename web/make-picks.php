@@ -194,6 +194,9 @@
       <button type="button" value="submit" id="submit"/>
   	</div>
 
+    <div class="center">
+      <button type="button" name="button" class="btn btn-primary"></button>
+    </div>
   </body>
 
   <footer class="center">
