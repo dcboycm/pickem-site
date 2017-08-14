@@ -38,14 +38,11 @@
         });
         var username = <?php echo(json_encode($myusername)) ?>;
         var tiebreaker = $('#tiebreaker').val();
-        alert(username);
-        alert(selected[0]);
-        alert(selected[1]);
-        alert(selected[2]);
-        alert(selected[3]);
-        alert(selected[4]);
-        alert(tiebreaker);
-
+        if(selected == 5 && tiebreaker != null){
+          return true;
+        } else {
+          return false;
+        }
       }
     </script>
   </head>
@@ -220,7 +217,7 @@
   	</div>
 
     <div style="padding-top: 20px;" class="center">
-      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" onclick="submitSheet()" value="Submit">
+      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" action="submit-picks.php" onclick="return submitSheet()" value="Submit">
     </div>
   </body>
 
