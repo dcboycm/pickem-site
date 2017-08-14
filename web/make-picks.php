@@ -81,66 +81,25 @@
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
     <h2>Week 1 - September 7th - September 11th</h2>
-    <table class="table center">
-      <thead>
-        <h2>Thursday</h2>
-        <tr>
-          <th>Select</th>
-          <th>Favorite</th>
-          <th>Spread</th>
-          <th>Underdog</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-    <?php
-    $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-07' order by match_date;");
-    $rows = pg_fetch_all($result);
-    $i = 0;
-      foreach ($rows as $row) {
-        echo "<tbody>";
-          echo "<tr>";
-          // Need an if check for who is the FAVORITE, this will determine who goes first in the list
-          $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
-          $home_fav = pg_fetch_row($result);
-          $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
-          $away_fav = pg_fetch_row($result);
-          if ($row[team_home] == $row[team_fav]) {
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-            echo "<td>{$home_fav[0]}</td>";
-            echo "<td>{$row['spread']}</td>";
-            echo "<td>{$away_fav[0]}</td>";
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
-          } else {
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
-            echo "<td>{$away_fav[0]}</td>";
-            echo "<td>{$row['spread']}</td>";
-            echo "<td>{$home_fav[0]}</td>";
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-          }          echo "</tr>";
-        echo "</tbody>";
-        $i++;
-      }
-    ?>
-    </table>
-
-    <table class="table center">
-      <thead>
-        <h2>Sunday</h2>
-        <tr>
-          <th>Select</th>
-          <th>Favorite</th>
-          <th>Spread</th>
-          <th>Underdog</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-    <?php
-    $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-10' order by match_date;");
-    $rows = pg_fetch_all($result);
-    $i = 0;
-      foreach ($rows as $row) {
-        echo "<tbody>";
-          echo "<tr>";
+    <form action="make-picks.php" method="post" onsubmit="submitSheet()">
+      <table class="table center">
+        <thead>
+          <h2>Thursday</h2>
+          <tr>
+            <th>Select</th>
+            <th>Favorite</th>
+            <th>Spread</th>
+            <th>Underdog</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+      <?php
+      $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-07' order by match_date;");
+      $rows = pg_fetch_all($result);
+      $i = 0;
+        foreach ($rows as $row) {
+          echo "<tbody>";
+            echo "<tr>";
             // Need an if check for who is the FAVORITE, this will determine who goes first in the list
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
             $home_fav = pg_fetch_row($result);
@@ -158,67 +117,110 @@
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$home_fav[0]}</td>";
               echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-            }
-          echo "</tr>";
-        echo "</tbody>";
-        $i++;
-      }
-    ?>
-    </table>
+            }          echo "</tr>";
+          echo "</tbody>";
+          $i++;
+        }
+      ?>
+      </table>
 
-    <table class="table center">
-      <thead>
-        <h2>Monday</h2>
-        <tr>
-          <th>Select</th>
-          <th>Favorite</th>
-          <th>Spread</th>
-          <th>Underdog</th>
-          <th>Select</th>
-        </tr>
-      </thead>
-    <?php
-    $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-11' order by match_date;");
-    $rows = pg_fetch_all($result);
-    $i = 0;
-      foreach ($rows as $row) {
-        echo "<tbody>";
-          echo "<tr>";
-          // Need an if check for who is the FAVORITE, this will determine who goes first in the list
-          $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
-          $home_fav = pg_fetch_row($result);
-          $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
-          $away_fav = pg_fetch_row($result);
-          if ($row[team_home] == $row[team_fav]) {
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-            echo "<td>{$home_fav[0]}</td>";
-            echo "<td>{$row['spread']}</td>";
-            echo "<td>{$away_fav[0]}</td>";
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
-          } else {
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
-            echo "<td>{$away_fav[0]}</td>";
-            echo "<td>{$row['spread']}</td>";
-            echo "<td>{$home_fav[0]}</td>";
-            echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-          }          echo "</tr>";
-        echo "</tbody>";
-        $i++;
-      }
-    ?>
-    </table>
+      <table class="table center">
+        <thead>
+          <h2>Sunday</h2>
+          <tr>
+            <th>Select</th>
+            <th>Favorite</th>
+            <th>Spread</th>
+            <th>Underdog</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+      <?php
+      $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-10' order by match_date;");
+      $rows = pg_fetch_all($result);
+      $i = 0;
+        foreach ($rows as $row) {
+          echo "<tbody>";
+            echo "<tr>";
+              // Need an if check for who is the FAVORITE, this will determine who goes first in the list
+              $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
+              $home_fav = pg_fetch_row($result);
+              $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
+              $away_fav = pg_fetch_row($result);
+              if ($row[team_home] == $row[team_fav]) {
+                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+                echo "<td>{$home_fav[0]}</td>";
+                echo "<td>{$row['spread']}</td>";
+                echo "<td>{$away_fav[0]}</td>";
+                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+              } else {
+                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+                echo "<td>{$away_fav[0]}</td>";
+                echo "<td>{$row['spread']}</td>";
+                echo "<td>{$home_fav[0]}</td>";
+                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+              }
+            echo "</tr>";
+          echo "</tbody>";
+          $i++;
+        }
+      ?>
+      </table>
 
-      <div class="tiebreaker">
-        <h2>Tie-Breaker Points: <?php echo "DEN/LAC" ?></h2>
+      <table class="table center">
+        <thead>
+          <h2>Monday</h2>
+          <tr>
+            <th>Select</th>
+            <th>Favorite</th>
+            <th>Spread</th>
+            <th>Underdog</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+      <?php
+      $result = pg_query($conn, "select * from weekly_matches where week_number = 1 and match_date = '2017-09-11' order by match_date;");
+      $rows = pg_fetch_all($result);
+      $i = 0;
+        foreach ($rows as $row) {
+          echo "<tbody>";
+            echo "<tr>";
+            // Need an if check for who is the FAVORITE, this will determine who goes first in the list
+            $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
+            $home_fav = pg_fetch_row($result);
+            $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
+            $away_fav = pg_fetch_row($result);
+            if ($row[team_home] == $row[team_fav]) {
+              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+              echo "<td>{$home_fav[0]}</td>";
+              echo "<td>{$row['spread']}</td>";
+              echo "<td>{$away_fav[0]}</td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+            } else {
+              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+              echo "<td>{$away_fav[0]}</td>";
+              echo "<td>{$row['spread']}</td>";
+              echo "<td>{$home_fav[0]}</td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+            }          echo "</tr>";
+          echo "</tbody>";
+          $i++;
+        }
+      ?>
+      </table>
+
+        <div class="tiebreaker">
+          <h2>Tie-Breaker Points: <?php echo "DEN/LAC" ?></h2>
+        </div>
+        <div style="text-align: center;" class="tiebreaker-points center">
+          <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>
+        </div>
+    	</div>
+
+      <div style="padding-top: 20px;" class="center">
+        <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
       </div>
-      <div style="text-align: center;" class="tiebreaker-points center">
-        <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>
-      </div>
-  	</div>
-
-    <div style="padding-top: 20px;" class="center">
-      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" href="submit-picks.php" onclick="return submitSheet()" value="Submit">
-    </div>
+  </form>
   </body>
 
   <footer class="center">
