@@ -81,7 +81,7 @@
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
     <h2>Week 1 - September 7th - September 11th</h2>
-    <form action="make-picks.php" method="post" onsubmit="submitSheet()">
+    <form action="submit-picks.php" method="post" onsubmit="submitSheet()">
       <table class="table center">
         <thead>
           <h2>Thursday</h2>
