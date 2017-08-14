@@ -217,7 +217,7 @@
   	</div>
 
     <div style="padding-top: 20px;" class="center">
-      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" action="submit-picks.php" onclick="return submitSheet()" value="Submit">
+      <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" href="submit-picks.php" onclick="return submitSheet()" value="Submit">
     </div>
   </body>
 
