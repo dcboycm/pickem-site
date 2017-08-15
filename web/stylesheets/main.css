@@ -110,6 +110,36 @@
      margin: auto;
 }
 
+/*    --------------------------------------------------
+	:: Submission Success
+	-------------------------------------------------- */
+#submitted {
+    padding-top: 50px
+}
+
+#submitted h1 {
+    color: #1fa67b;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+#submitted .container {
+    border: 2px solid #1fa67b;
+    border-radius: 25px;
+    padding: 20px;
+    width: 500px;
+    height: 140px;
+}
+
+#submitted .btn.btn-custom {
+    font-size: 14px;
+	   margin-bottom: 20px;
+     width: 20%;
+     margin: auto;
+}
+
 .navbar-brand {
     float: left;
     height: 50px;
