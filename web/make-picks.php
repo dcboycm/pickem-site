@@ -38,7 +38,7 @@
         });
         var username = <?php echo(json_encode($myusername)) ?>;
         var tiebreaker = $('#tiebreaker').val();
-        if(selected == 5 && tiebreaker != ""){
+        if(selected.length == 5 && tiebreaker != ""){
           return true;
         } else {
           alert("You must select 5 teams and/or set the tiebreaker.");
