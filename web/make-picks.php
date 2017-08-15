@@ -40,6 +40,13 @@
         var tiebreaker = $('#tiebreaker').val();
         if(selected.length == 5 && tiebreaker != ""){
           return true;
+          $.ajax({
+            type: 'POST',
+            url: 'submit-picks.php',
+            data: {'selected': selected},
+            data: {'username': username},
+            data: {'tiebreaker': tiebreaker},
+          });
         } else {
           alert("You must select 5 teams and/or set the tiebreaker.");
           document.getElementById("tiebreaker").style.borderColor = "#E34234";
