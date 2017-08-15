@@ -36,15 +36,14 @@
         $('.single-checkbox:checked').each(function() {
           selected.push($(this).attr('value'));
         });
-        var username = <?php echo(json_encode($myusername)) ?>;
         var tiebreaker = $('#tiebreaker').val();
         if(selected.length == 5 && tiebreaker != ""){
-          var submittedSheet = [selected, username, tiebreaker];
-          $.ajax({
-            type: 'POST',
-            url: 'submit-picks.php',
-            data: {submittedSheet : submittedSheet},
-          });
+          // var submittedSheet = [selected, username, tiebreaker];
+          // $.ajax({
+          //   type: 'POST',
+          //   url: 'submit-picks.php',
+          //   data: {submittedSheet : submittedSheet},
+          // });
           return true;
         } else {
           alert("You must select 5 teams and/or set the tiebreaker.");
@@ -114,18 +113,19 @@
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
             $away_fav = pg_fetch_row($result);
             if ($row[team_home] == $row[team_fav]) {
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
               echo "<td>{$home_fav[0]}</td>";
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$away_fav[0]}</td>";
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_away]}' value='{$row[team_away]}'><br></td>";
             } else {
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_away]}' value='{$row[team_away]}'><br></td>";
               echo "<td>{$away_fav[0]}</td>";
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$home_fav[0]}</td>";
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-            }          echo "</tr>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
+            }         
+            echo "</tr>";
           echo "</tbody>";
           $i++;
         }
@@ -156,17 +156,17 @@
               $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
               $away_fav = pg_fetch_row($result);
               if ($row[team_home] == $row[team_fav]) {
-                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+                echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
                 echo "<td>{$home_fav[0]}</td>";
                 echo "<td>{$row['spread']}</td>";
                 echo "<td>{$away_fav[0]}</td>";
-                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+                echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_away]}' value='{$row[team_away]}'><br></td>";
               } else {
-                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+                echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_away]}' value='{$row[team_away]}'><br></td>";
                 echo "<td>{$away_fav[0]}</td>";
                 echo "<td>{$row['spread']}</td>";
                 echo "<td>{$home_fav[0]}</td>";
-                echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+                echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
               }
             echo "</tr>";
           echo "</tbody>";
@@ -199,18 +199,19 @@
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
             $away_fav = pg_fetch_row($result);
             if ($row[team_home] == $row[team_fav]) {
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
               echo "<td>{$home_fav[0]}</td>";
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$away_fav[0]}</td>";
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_away]}' value='{$row[team_away]}'><br></td>";
             } else {
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_away]}'><br></td>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_away]}' value='{$row[team_away]}'><br></td>";
               echo "<td>{$away_fav[0]}</td>";
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$home_fav[0]}</td>";
-              echo "<td><input class='single-checkbox'type='checkbox' name='picked' value='{$row[team_home]}'><br></td>";
-            }          echo "</tr>";
+              echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
+            }
+            echo "</tr>";
           echo "</tbody>";
           $i++;
         }
