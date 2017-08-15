@@ -19,13 +19,13 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
     <script>
       $(document).ready(function() {
-        $("input[name=picked]").change(function(){
+        $(".single-checkbox").change(function(){
           var max= 5;
-          if( $("input[name=picked]:checked").length == max ){
-              $("input[name=picked]").attr('disabled', 'disabled');
-              $("input[name=picked]:checked").removeAttr('disabled');
+          if( $(".single-checkbox:checked").length == max ){
+              $(".single-checkbox").attr('disabled', 'disabled');
+              $(".single-checkbox:checked").removeAttr('disabled');
             }else{
-              $("input[name=picked]").removeAttr('disabled');
+              $(".single-checkbox").removeAttr('disabled');
             }
           });
         });
@@ -124,7 +124,7 @@
               echo "<td>{$row['spread']}</td>";
               echo "<td>{$home_fav[0]}</td>";
               echo "<td><input class='single-checkbox'type='checkbox' name='{$row[team_home]}' value='{$row[team_home]}'><br></td>";
-            }         
+            }
             echo "</tr>";
           echo "</tbody>";
           $i++;
