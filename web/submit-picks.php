@@ -3,9 +3,10 @@
   include("./include/config.php");
 
   // get the variables from the make-picks page
-  $selected = $_POST['selected'];
-  $username = $_POST['username'];
-  $tiebreaker = $_POST['tiebreaker'];
+  $submittedSheet = $_POST['submittedSheet'];
+  // $selected = $_POST['selected'];
+  // $username = $_POST['username'];
+  // $tiebreaker = $_POST['tiebreaker'];
   // submit them into a new table to hold the sheets
 ?>
 
@@ -62,13 +63,7 @@
                   <a href="home-page.php" class="btn btn-custom btn-lg btn-block">Home</a>
                 </div>
                 <div class="center">
-                  <?php echo $selected; ?>
-                </div>
-                <div class="center">
-                  <?php echo $username; ?>
-                </div>
-                <div class="center">
-                  <?php echo $tiebreaker; ?>
+                  <?php echo $submittedSheet; ?>
                 </div>
             </div>
         </div>
