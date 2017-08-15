@@ -64,7 +64,7 @@
                 </div>
                 <div class="center">
                   <script>
-                    var submittedSheet = <?php echo json_encode($submittedSheet); ?>;
+                    var submittedSheet = <?php echo(json_encode($submittedSheet)) ?>;
                     console.log(submittedSheet);
                   </script>
                 </div>
