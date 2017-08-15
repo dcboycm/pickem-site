@@ -43,9 +43,7 @@
           $.ajax({
             type: 'POST',
             url: 'submit-picks.php',
-            data: {'selected': selected},
-            data: {'username': username},
-            data: {'tiebreaker': tiebreaker},
+            data: {'selected': selected, 'username': username, 'tiebreaker': tiebreaker},
           });
         } else {
           alert("You must select 5 teams and/or set the tiebreaker.");
