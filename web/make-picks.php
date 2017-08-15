@@ -40,12 +40,12 @@
         var tiebreaker = $('#tiebreaker').val();
         if(selected.length == 5 && tiebreaker != ""){
           var submittedSheet = [selected, username, tiebreaker];
-          return true;
           $.ajax({
             type: 'POST',
             url: 'submit-picks.php',
             data: {submittedSheet : submittedSheet},
           });
+          return true;
         } else {
           alert("You must select 5 teams and/or set the tiebreaker.");
           document.getElementById("tiebreaker").style.borderColor = "#E34234";
