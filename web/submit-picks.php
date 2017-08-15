@@ -63,7 +63,11 @@
                 </div>
                 <div class="center">
                   <?php echo $selected; ?>
+                </div>
+                <div class="center">
                   <?php echo $username; ?>
+                </div>
+                <div class="center">
                   <?php echo $tiebreaker; ?>
                 </div>
             </div>
