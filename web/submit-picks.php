@@ -20,6 +20,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+  <script>
+    var submittedSheet = <?=json_encode($submittedSheet) ?>;
+  </script>
 </head>
 <body>
   <nav class="navbar navbar-default center">
@@ -63,7 +66,7 @@
                   <a href="home-page.php" class="btn btn-custom btn-lg btn-block">Home</a>
                 </div>
                 <div class="center">
-                  <?php echo $submittedSheet; ?>
+                  console.log(submittedSheet);
                 </div>
             </div>
         </div>
