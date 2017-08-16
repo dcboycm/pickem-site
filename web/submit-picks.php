@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-wrap">
-                  <h1>Thanks for submitting! <?php echo $firstname.' '.$lastname; ?> !</h1>
+                  <h1>Thanks for submitting <?php echo $firstname.' '.$lastname; ?> !</h1>
                   <table>
                     <?php print_r ($selectedTeams); ?>
                     <thead>
