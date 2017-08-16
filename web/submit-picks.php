@@ -61,7 +61,7 @@
                 <div class="form-wrap">
                   <h1>Thanks for submitting! <?php echo $firstname.' '.$lastname; ?> !</h1>
                   <table>
-                    <?php echo $selectedTeams; ?>
+                    <?php print_r ($selectedTeams); ?>
                     <thead>
                       <?php echo $username; ?>
                     </thead>
