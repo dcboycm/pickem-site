@@ -3,11 +3,11 @@
   include("./include/config.php");
 
   // get the variables from the make-picks page
-  $submittedSheet = $_POST['submittedSheet'];
-  // $selected = $_POST['selected'];
-  // $username = $_POST['username'];
-  // $tiebreaker = $_POST['tiebreaker'];
-  // submit them into a new table to hold the sheets
+  $result = pg_query($conn, "SELECT first_name, last_name FROM users WHERE email = '$myusername' and password = '$hashedpassword' and active = true");
+
+  $myusername = $_SESSION['login_user'];
+  $selectedTeams = $_POST['selectedTeamId'];
+  $tiebreakerPoints = $_POST['tiebreaker'];
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +59,28 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-wrap">
-                  <h1>Thanks for submitting!</h1>
+                  <h1>Thanks for submitting! <?php echo $firstname.' '.$lastname; ?> !</h1>
+                  <table>
+                    <thead>
+                      <?php echo $username; ?>
+                    </thead>
+                    <tbody>
+                      <?php
+                        foreach ($selectedTeams as $selectedTeam) {
+                          echo "<tr>";
+                          echo "<td>{$selectedTeam}</td>";
+                          echo "</tr>";
+                        }
+                       ?>
+                      <tr>
+                        <td><?php echo $tiebreakerPoints; ?></td>
+                      </tr>
+                    </tbody>
+                  </table>
                   <a href="home-page.php" class="btn btn-custom btn-lg btn-block">Home</a>
                 </div>
                 <div class="center">
-                  <script>
-                    var submittedSheet = <?php echo json_encode($submittedSheet) ?>;
-                    console.log(submittedSheet);
-                  </script>
+
                 </div>
             </div>
         </div>
