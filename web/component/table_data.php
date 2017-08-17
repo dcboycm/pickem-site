@@ -1,8 +1,8 @@
 <?php
 $rows = pg_fetch_all($result);
 $i = 0;
+echo "<tbody>";
   foreach ($rows as $row) {
-    echo "<tbody>";
       echo "<tr>";
       // Need an if check for who is the FAVORITE, this will determine who goes first in the list
       $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
@@ -23,7 +23,7 @@ $i = 0;
         echo "<td><input class='single-checkbox'type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
       }
       echo "</tr>";
-    echo "</tbody>";
     $i++;
   }
+echo "</tbody>";
 ?>
