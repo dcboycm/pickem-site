@@ -60,7 +60,7 @@
             <div class="col-xs-12">
                 <div class="form-wrap">
                   <h1>Thanks for submitting <?php echo $firstname.' '.$lastname; ?> !</h1>
-                  <table>
+                  <table class="table center">
                     <thead>
                       <tr>
                         <th><?php echo $myusername; ?></th>
