@@ -62,7 +62,9 @@
                   <h1>Thanks for submitting <?php echo $firstname.' '.$lastname; ?> !</h1>
                   <table>
                     <thead>
-                      <?php echo $myusername; ?>
+                      <tr>
+                        <th><?php echo $myusername; ?></th>
+                      </tr>
                     </thead>
                     <tbody>
                       <?php
