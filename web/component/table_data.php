@@ -1,4 +1,3 @@
-<h1>i'm included</h1>
 <?php
 $rows = pg_fetch_all($result);
 $i = 0;
