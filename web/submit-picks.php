@@ -8,6 +8,11 @@
   $myusername = $_SESSION['login_user'];
   $selectedTeams = $_POST['selectedTeamId'];
   $tiebreakerPoints = $_POST['tiebreaker'];
+
+  $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
+  $userid = pg_fetch_row($result);
+  $result = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($userid, 1, 10, 20, 30, 11, 80, false);");
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +64,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="form-wrap">
-                  <h1>Thanks for submitting <?php echo $firstname.' '.$lastname; ?> !</h1>
+                  <h1>Thanks for submitting a sheet!</h1>
                   <table class="table">
                     <thead>
                       <tr>
@@ -75,7 +80,7 @@
                         }
                        ?>
                       <tr>
-                        <td><?php echo $tiebreakerPoints; ?></td>
+                        <td><?php echo $tiebreakerPoints; ?> pts.</td>
                       </tr>
                     </tbody>
                   </table>
