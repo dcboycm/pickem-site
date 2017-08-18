@@ -12,7 +12,7 @@
   $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
   $userid = pg_fetch_row($result);
   $result = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($userid, $selectedTeams[0], $selectedTeams[1], $selectedTeams[2], $selectedTeams[3], $selectedTeams[4], $tiebreakerPoints, false);");
-
+  $sheetId = pg_fetch_row($result);
 ?>
 
 <!DOCTYPE html>
@@ -94,6 +94,6 @@
         </div>
       </div>
     </section>
-    <?php print_r($selectedTeams); ?>
+    <?php print_r($selectedTeams); echo $sheetId; ?>
   </body>
 </html>
