@@ -94,5 +94,6 @@
         </div>
       </div>
     </section>
+    <?php print_r($selectedTeams); ?>
   </body>
 </html>
