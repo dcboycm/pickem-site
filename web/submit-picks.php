@@ -11,7 +11,7 @@
 
   $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
   $userid = pg_fetch_row($result);
-  $result = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($userid, 1, 10, 20, 30, 11, 80, false);");
+  $result = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($userid, $selectedTeams[0], $selectedTeams[1], $selectedTeams[2], $selectedTeams[3], $selectedTeams[4], $tiebreakerPoints, false);");
 
 ?>
 
@@ -73,10 +73,14 @@
                     </thead>
                     <tbody>
                       <?php
+                        $i = 0;
                         foreach ($selectedTeams as $selectedTeam) {
+                          $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $selectedTeam;");
+                          $team_fav_name = pg_fetch_row($result);
                           echo "<tr>";
-                          echo "<td>{$selectedTeam}</td>";
+                          echo "<td>{$team_fav_name}</td>";
                           echo "</tr>";
+                          $i++;
                         }
                        ?>
                       <tr>
@@ -85,9 +89,6 @@
                     </tbody>
                   </table>
                   <a href="home-page.php" class="btn btn-custom btn-lg btn-block">Home</a>
-                </div>
-                <div class="center">
-
                 </div>
             </div>
         </div>
