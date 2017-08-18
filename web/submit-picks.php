@@ -10,8 +10,9 @@
   $tiebreakerPoints = $_POST['tiebreaker'];
 
   $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
-  $userid = pg_fetch_row($result);
-  $insertResult = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ((int)$userid, (int)$selectedTeams[0], (int)$selectedTeams[1], (int)$selectedTeams[2], (int)$selectedTeams[3], (int)$selectedTeams[4], (int)$tiebreakerPoints, false);");
+  $id = pg_fetch_row($result);
+  $userId = intval($id);
+  $insertResult = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES (intval($userid), 1, 2, 3, 4, 5, 35, false);");
 ?>
 
 <!DOCTYPE html>
