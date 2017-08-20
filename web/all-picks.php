@@ -61,38 +61,38 @@
 
     <div class="center" id="all-picks">
       <?php
-      if ($today != "Sunday") {
-        <h1>Everyone''s Picks - $today</h1>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>curtischristophermiller@gamil.com</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>MIN</td>
-            </tr>
-            <tr>
-              <td>WAS</td>
-            </tr>
-            <tr>
-              <td>BUF</td>
-            </tr>
-            <tr>
-              <td>TEN</td>
-            </tr>
-            <tr>
-              <td>NE</td>
-            </tr>
-            <tr>
-              <td>45 pts.</td>
-            </tr>
-          </tbody>
-        </table>
+      if ($today != "Sunday")
+        echo "<h1>Everyone's Picks - $today</h1>";
+        echo "<table class='table'>";
+          echo "<thead>";
+            echo "<tr>";
+              echo "<th>curtischristophermiller@gamil.com</th>";
+            echo "</tr>";
+          echo "</thead>";
+          echo "<tbody>";
+            echo "<tr>";
+              echo "<td>MIN</td>";
+            echo "</tr>";
+            echo "<tr>";
+              echo "<td>WAS</td>";
+            echo "</tr>";
+            echo "<tr>";
+              echo "<td>BUF</td>";
+            echo "</tr>";
+            echo "<tr>";
+              echo "<td>TEN</td>";
+            echo "</tr>";
+            echo "<tr>";
+              echo "<td>NE</td>";
+            echo "</tr>";
+            echo "<tr>";
+              echo "<td>45 pts.</td>";
+            echo "</tr>";
+          echo "</tbody>";
+        echo "</table>";
       } else {
-        <h1>Everyone''s Picks - $today</h1>
-        <h2>Total sheets submitted - {Need to get the number.}</h2>
+        echo "<h1>Everyones Picks - $today</h1>";
+        echo "<h2>Total sheets submitted - {Need to get the number.}</h2>";
       }
       ?>
     </div>
