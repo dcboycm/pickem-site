@@ -3,16 +3,19 @@
   include("./include/config.php");
 
   // get the variables from the make-picks page
-  $result = pg_query($conn, "SELECT first_name, last_name FROM users WHERE email = '$myusername' and password = '$hashedpassword' and active = true");
-
   $myusername = $_SESSION['login_user'];
   $selectedTeams = $_POST['selectedTeamId'];
   $tiebreakerPoints = $_POST['tiebreaker'];
 
   $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
   $id = pg_fetch_row($result);
-  $result = pg_prepare($dbconn, "my_query", 'INSERT INTO public.test_matches(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($1, $2, $3, $4, $5, $6, $7, false);');
-  $result = pg_execute($dbconn, "my_query", array($id, $selectedTeams[0], $selectedTeams[1], $selectedTeams[2], $selectedTeams[3], $selectedTeams[4], $tiebreakerPoints));
+
+  $insertedPick = pg_query($conn, "INSERT INTO test_matches (user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ('$id', '$selectedTeams[0]', '$selectedTeams[1]', '$selectedTeams[2]', '$selectedTeams[3]', '$selectedTeams[4]', '$tiebreakerPoints', false);")
+  if (!$insertedPick) {
+      $errormessage = pg_last_error();
+      echo "Error with insert: " . $errormessage;
+      exit();
+  }
 ?>
 
 <!DOCTYPE html>
