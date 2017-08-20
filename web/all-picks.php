@@ -8,6 +8,11 @@
    $hour = date("H:i:s");
    $today = date("l");
 
+   $tz = 'America/Phoenix';
+   $timestamp = time();
+   $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+   $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+
    $result = pg_query($conn, "select * from test_matches where paid = true;");
    $paidMatches = pg_fetch_row($result);
 
@@ -56,7 +61,7 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <h1>Everyone's Picks - <?php echo $today; ?> - <?php echo $hour; ?></h1>
+      <h1>Everyone's Picks - <?php echo $today; ?> - <?php echo $dt->format('d.m.Y, H:i:s'); ?></h1>
     </div>
   </body>
 
