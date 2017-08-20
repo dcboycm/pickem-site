@@ -60,7 +60,7 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <h1>Everyone's Picks - <?php echo $today; ?> - <?php echo $hour; ?></h1>
+      <h1>Everyone's Picks - <?php echo $today; ?></h1>
     </div>
   </body>
 
