@@ -60,34 +60,41 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <h1>Everyone's Picks - <?php echo $today; ?></h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>curtischristophermiller@gamil.com</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>MIN</td>
-          </tr>
-          <tr>
-            <td>WAS</td>
-          </tr>
-          <tr>
-            <td>BUF</td>
-          </tr>
-          <tr>
-            <td>TEN</td>
-          </tr>
-          <tr>
-            <td>NE</td>
-          </tr>
-          <tr>
-            <td>45 pts.</td>
-          </tr>
-        </tbody>
-      </table>
+      <?php
+      if ($today != "Sunday") {
+        <h1>Everyone''s Picks - <?php echo $today; ?></h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>curtischristophermiller@gamil.com</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MIN</td>
+            </tr>
+            <tr>
+              <td>WAS</td>
+            </tr>
+            <tr>
+              <td>BUF</td>
+            </tr>
+            <tr>
+              <td>TEN</td>
+            </tr>
+            <tr>
+              <td>NE</td>
+            </tr>
+            <tr>
+              <td>45 pts.</td>
+            </tr>
+          </tbody>
+        </table>
+      } else {
+        <h1>Everyone's Picks - <?php echo $today; ?></h1>
+        <h2>Total sheets submitted - <?php echo "Need to get the number."; ?></h2>
+      }
+      ?>
     </div>
   </body>
 
