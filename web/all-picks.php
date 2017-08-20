@@ -91,8 +91,8 @@
           </tbody>
         </table>
       } else {
-        <h1>Everyone's Picks - <?php echo $today; ?></h1>
-        <h2>Total sheets submitted - <?php echo "Need to get the number."; ?></h2>
+        <h1>Everyone''s Picks - $today</h1>
+        <h2>Total sheets submitted - {Need to get the number.}</h2>
       }
       ?>
     </div>
