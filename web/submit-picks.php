@@ -12,7 +12,7 @@
   $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
   $id = pg_fetch_row($result);
   $userId = intval($id);
-  $insertResult = pg_query($conn, "INSERT INTO submitted_sheets(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($userid, 1, 2, 3, 4, 5, 35, false);");
+  pg_query($conn, "INSERT INTO public.test_matches(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES (1, 1, 1, 1, 1, 1, 1, false);") or die("Couldn't insert into database.");
 ?>
 
 <!DOCTYPE html>
