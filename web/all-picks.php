@@ -5,6 +5,7 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
+   $hour = date("H:i:s");
    $today = date("l");
 
    $result = pg_query($conn, "select * from test_matches where paid = true;");
@@ -55,7 +56,7 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <h1>Everyone's Picks - <?php echo $today; ?></h1>
+      <h1>Everyone's Picks - <?php echo $today; ?> - <?php echo $hour; ?></h1>
     </div>
   </body>
 
