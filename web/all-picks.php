@@ -61,23 +61,33 @@
 
     <div class="center" id="all-picks">
       <h1>Everyone's Picks - <?php echo $today; ?></h1>
-      <?php
-      $i = 0;
-        foreach ($paidMatches as $paidMatch) {
-            echo "<table class='table center'>";
-            echo "<tbody>";
-            echo "<thead> $paid[0] </thead>";
-            echo "<tr> $paid[1] </tr>";
-            echo "<tr> $paid[2] </tr>";
-            echo "<tr> $paid[3] </tr>";
-            echo "<tr> $paid[4] </tr>";
-            echo "<tr> $paid[5] </tr>";
-            echo "<tr> $paid[6] </tr>";
-            echo "</tbody>";
-            echo "</table>";
-          $i++;
-        }
-      ?>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>curtischristophermiller@gamil.com</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>MIN</td>
+          </tr>
+          <tr>
+            <td>WAS</td>
+          </tr>
+          <tr>
+            <td>BUF</td>
+          </tr>
+          <tr>
+            <td>TEN</td>
+          </tr>
+          <tr>
+            <td>NE</td>
+          </tr>
+          <tr>
+            <td>45 pts.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </body>
 
