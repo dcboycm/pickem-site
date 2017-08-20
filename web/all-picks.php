@@ -4,6 +4,12 @@
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
+
+   $today = date("l");
+
+   $result = pg_query($conn, "select * from test_matches where paid = true;");
+   $paidMatches = pg_fetch_row($result);
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,7 +55,7 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <h1>Everyone's Picks</h1>
+      <h1>Everyone's Picks - <?php echo $today; ?></h1>
     </div>
   </body>
 
