@@ -12,7 +12,7 @@
    $today = $dt->format('l');
    $hour = $dt->format('H:i:s');
 
-   $result = pg_query($conn, "select * from test_matches where paid = true;");
+   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM public.test_matches where paid = true;");
    $paidMatches = pg_fetch_row($result);
 
 ?>
@@ -61,6 +61,23 @@
 
     <div class="center" id="all-picks">
       <h1>Everyone's Picks - <?php echo $today; ?></h1>
+      <?php
+      $i = 0;
+        foreach ($paidMatches as $paidMatch) {
+            echo "<table class='table center'>";
+            echo "<tbody>";
+            echo "<thead> $paid[0] </thead>";
+            echo "<tr> $paid[1] </tr>";
+            echo "<tr> $paid[2] </tr>";
+            echo "<tr> $paid[3] </tr>";
+            echo "<tr> $paid[4] </tr>";
+            echo "<tr> $paid[5] </tr>";
+            echo "<tr> $paid[6] </tr>";
+            echo "</tbody>";
+            echo "</table>";
+          $i++;
+        }
+      ?>
     </div>
   </body>
 
