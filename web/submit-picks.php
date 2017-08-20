@@ -11,8 +11,8 @@
 
   $result = pg_query($conn, "SELECT id FROM users WHERE email = $myusername;");
   $id = pg_fetch_row($result);
-  $userId = intval($id);
-  pg_query($conn, "INSERT INTO public.test_matches(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($id, 1, 1, 1, 1, 1, 1, false);") or die("Couldn't insert into database.");
+  $result = pg_prepare($dbconn, "my_query", 'INSERT INTO public.test_matches(user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ($1, $2, $3, $4, $5, $6, $7, false);');
+  $result = pg_execute($dbconn, "my_query", array($id, $selectedTeams[0], $selectedTeams[1], $selectedTeams[2], $selectedTeams[3], $selectedTeams[4], $tiebreakerPoints));
 ?>
 
 <!DOCTYPE html>
