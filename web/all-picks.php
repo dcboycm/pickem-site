@@ -61,7 +61,7 @@
 
     <div class="center" id="all-picks">
       <?php
-      if ($today != "Sunday")
+      if ($today != "Sunday") {
         echo "<h1>Everyone's Picks - $today</h1>";
         echo "<table class='table'>";
           echo "<thead>";
