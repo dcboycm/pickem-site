@@ -68,7 +68,7 @@
         echo "<h1>Everyone's Picks - $today - $pickCount.</h1>";
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
-          echo "<table class='table'>";
+          echo "<table class='table col-1-3'>";
             echo "<thead>";
               echo "<tr>";
                 echo "<th>$paidMatch[user_id]</th>";
