@@ -61,7 +61,7 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <?php echo "$paidMatches"; ?>
+      <?php print_r($paidMatches); ?>
       <?php
       if ($today == "Sunday") {
         echo "<h1>Everyone's Picks - $today</h1>";
