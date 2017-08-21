@@ -74,9 +74,9 @@
             echo "</thead>";
             echo "<tbody>";
               echo "<tr>";
-                $result = pg_query($conn, "select fav_name from team where id = {$paidMatch['pick_1']};");
-                $fav_name = pg_fetch_row($result);
-                echo "<td>$fav_name</td>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_1];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name</td>";
               echo "</tr>";
               echo "<tr>";
                 echo "<td>$paidMatch[pick_2]</td>";
