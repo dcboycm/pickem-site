@@ -12,8 +12,8 @@
    $today = $dt->format('l');
    $hour = $dt->format('H:i:s');
 
-   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM public.test_matches where paid = true;");
-   $paidMatches = pg_fetch_row($result);
+   $result = pg_query($conn, "SELECT id, email, password, active, first_name, last_name FROM public.users;");
+   $paidMatches = pg_fetch_all($result);
 
 ?>
 <!DOCTYPE html>
@@ -60,13 +60,14 @@
     </nav>
 
     <div class="center" id="all-picks">
+      <?php echo "$paidMatches"; ?>
       <?php
       if ($today == "Sunday") {
         echo "<h1>Everyone's Picks - $today</h1>";
         echo "<table class='table'>";
           echo "<thead>";
             echo "<tr>";
-              echo "<th>curtischristophermiller@gamil.com</th>";
+              echo "<th>curtischristophermiller@gmail.com</th>";
             echo "</tr>";
           echo "</thead>";
           echo "<tbody>";
