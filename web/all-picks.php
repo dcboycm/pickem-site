@@ -62,7 +62,7 @@
 
     <div class="center" id="all-picks">
       <?php
-      if ($today == "Sunday") {
+      if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
         echo "<h1>Everyone's Picks - $today - {Need to get the number.}</h1>";
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
@@ -74,7 +74,9 @@
             echo "</thead>";
             echo "<tbody>";
               echo "<tr>";
-                echo "<td>$paidMatch[pick_1]</td>";
+                $result = pg_query($conn, "select fav_name from team where id = {$paidMatch['pick_1']};");
+                $fav_name = pg_fetch_row($result);
+                echo "<td>$fav_name</td>";
               echo "</tr>";
               echo "<tr>";
                 echo "<td>$paidMatch[pick_2]</td>";
