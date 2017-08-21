@@ -64,7 +64,7 @@
       <?php print_r($paidMatches); ?>
       <?php
       if ($today == "Sunday") {
-        echo "<h1>Everyone's Picks - $today</h1>";
+        echo "<h1>Everyone's Picks - $today - {Need to get the number.}</h1>";
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
           echo "<table class='table'>";
@@ -94,7 +94,7 @@
               echo "</tr>";
             echo "</tbody>";
           echo "</table>";
-          i++;
+          $i++;
         }
       } else {
         echo "<h1>Everyones Picks - $today</h1>";
