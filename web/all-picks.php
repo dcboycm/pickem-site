@@ -62,7 +62,8 @@
 
     <div class="center" id="all-picks">
       <?php
-      $pickCount = pg_query($conn, "SELECT COUNT(*) FROM test_matches WHERE week = 1;");
+      $result = pg_query($conn, "SELECT COUNT(*) FROM test_matches WHERE week = 1;");
+      $pickCount = pg_num_rows($result);
       if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
         echo "<h1>Everyone's Picks - $today - $pickCount.</h1>";
         $i = 0;
