@@ -62,8 +62,9 @@
 
     <div class="center" id="all-picks">
       <?php
+      $pickCount = pg_query($conn, "SELECT COUNT(*) FROM test_matches WHERE week = 1;");
       if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
-        echo "<h1>Everyone's Picks - $today - {Need to get the number.}</h1>";
+        echo "<h1>Everyone's Picks - $today - $pickCount.</h1>";
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
           echo "<table class='table'>";
@@ -107,7 +108,7 @@
         }
       } else {
         echo "<h1>Everyones Picks - $today</h1>";
-        echo "<h2>Total sheets submitted - {Need to get the number.}</h2>";
+        echo "<h2>Total sheets submitted so far - $pickCount.</h2>";
       }
       ?>
     </div>
