@@ -65,33 +65,37 @@
       <?php
       if ($today == "Sunday") {
         echo "<h1>Everyone's Picks - $today</h1>";
-        echo "<table class='table'>";
-          echo "<thead>";
-            echo "<tr>";
-              echo "<th>curtischristophermiller@gmail.com</th>";
-            echo "</tr>";
-          echo "</thead>";
-          echo "<tbody>";
-            echo "<tr>";
-              echo "<td>MIN</td>";
-            echo "</tr>";
-            echo "<tr>";
-              echo "<td>WAS</td>";
-            echo "</tr>";
-            echo "<tr>";
-              echo "<td>BUF</td>";
-            echo "</tr>";
-            echo "<tr>";
-              echo "<td>TEN</td>";
-            echo "</tr>";
-            echo "<tr>";
-              echo "<td>NE</td>";
-            echo "</tr>";
-            echo "<tr>";
-              echo "<td>45 pts.</td>";
-            echo "</tr>";
-          echo "</tbody>";
-        echo "</table>";
+        $i = 0;
+        foreach ($paidMatches as $paidMatch) {
+          echo "<table class='table'>";
+            echo "<thead>";
+              echo "<tr>";
+                echo "<th>$paidMatch[0]</th>";
+              echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+              echo "<tr>";
+                echo "<td>$paidMatch[1]</td>";
+              echo "</tr>";
+              echo "<tr>";
+                echo "<td>$paidMatch[2]</td>";
+              echo "</tr>";
+              echo "<tr>";
+                echo "<td>$paidMatch[3]</td>";
+              echo "</tr>";
+              echo "<tr>";
+                echo "<td>$paidMatch[4]</td>";
+              echo "</tr>";
+              echo "<tr>";
+                echo "<td>$paidMatch[5]</td>";
+              echo "</tr>";
+              echo "<tr>";
+                echo "<td>$paidMatch[6] pts.</td>";
+              echo "</tr>";
+            echo "</tbody>";
+          echo "</table>";
+          i++;
+        }
       } else {
         echo "<h1>Everyones Picks - $today</h1>";
         echo "<h2>Total sheets submitted - {Need to get the number.}</h2>";
