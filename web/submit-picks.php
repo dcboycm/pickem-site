@@ -10,12 +10,7 @@
   $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername';");
   $userId = pg_fetch_row($result);
 
-  $insertedPick = pg_query($conn, "INSERT INTO test_matches (user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid) VALUES ('$myusername', '$selectedTeams[0]', '$selectedTeams[1]', '$selectedTeams[2]', '$selectedTeams[3]', '$selectedTeams[4]', '$tiebreakerPoints', false);")
-  // if (!$insertedPick) {
-  //     $errormessage = pg_last_error();
-  //     echo "Error with insert: " . $errormessage;
-  //     exit();
-  // }
+  $insertedPick = pg_query($conn, "INSERT INTO test_matches (user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week) VALUES ('$myusername', '$selectedTeams[0]', '$selectedTeams[1]', '$selectedTeams[2]', '$selectedTeams[3]', '$selectedTeams[4]', '$tiebreakerPoints', false, 1);");
 ?>
 
 <!DOCTYPE html>

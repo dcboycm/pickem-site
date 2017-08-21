@@ -13,7 +13,7 @@
    $today = $dt->format('l');
    $hour = $dt->format('H:i:s');
 
-   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where paid = true;");
+   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = 1 AND paid = true;");
    $paidMatches = pg_fetch_all($result);
 
 ?>
@@ -76,20 +76,27 @@
               echo "<tr>";
               $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_1];");
               $fav_name = pg_fetch_row($result);
-              print_r($fav_name);
               echo "<td>$fav_name[0]</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[pick_2]</td>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_2];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[pick_3]</td>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_3];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[pick_4]</td>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_4];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[pick_5]</td>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_5];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
               echo "</tr>";
               echo "<tr>";
                 echo "<td>$paidMatch[tiebreaker] pts.</td>";
