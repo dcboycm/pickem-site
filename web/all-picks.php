@@ -61,7 +61,6 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <?php print_r($paidMatches); ?>
       <?php
       if ($today == "Sunday") {
         echo "<h1>Everyone's Picks - $today - {Need to get the number.}</h1>";
@@ -70,27 +69,27 @@
           echo "<table class='table'>";
             echo "<thead>";
               echo "<tr>";
-                echo "<th>$paidMatch[0]</th>";
+                echo "<th>$paidMatch['user_id']</th>";
               echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
               echo "<tr>";
-                echo "<td>$paidMatch[1]</td>";
+                echo "<td>$paidMatch['pick_1']</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[2]</td>";
+                echo "<td>$paidMatch['pick_2']</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[3]</td>";
+                echo "<td>$paidMatch['pick_3']</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[4]</td>";
+                echo "<td>$paidMatch['pick_4']</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[5]</td>";
+                echo "<td>$paidMatch[pick_5]</td>";
               echo "</tr>";
               echo "<tr>";
-                echo "<td>$paidMatch[6] pts.</td>";
+                echo "<td>$paidMatch['tiebreaker'] pts.</td>";
               echo "</tr>";
             echo "</tbody>";
           echo "</table>";
