@@ -12,7 +12,7 @@
    $today = $dt->format('l');
    $hour = $dt->format('H:i:s');
 
-   $result = pg_query($conn, "SELECT id, email, password, active, first_name, last_name FROM public.users;");
+   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where paid = true;");
    $paidMatches = pg_fetch_all($result);
 
 ?>
