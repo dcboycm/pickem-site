@@ -188,6 +188,7 @@ i {
 
 #all-picks .table {
   width: 10%;
+  margin: 5px;
 }
 
 .tiebreaker-points {
