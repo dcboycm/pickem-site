@@ -51,7 +51,7 @@
     </nav>
 
     <div class="center" id="profile">
-      <h1>Welcome <?php echo $firstname.' '.$lastname; ?> !</h1>
+      <h1>Welcome <?php echo $firstname.' '.$lastname; ?>!</h1>
     </div>
 
     <div style="text-align: center;" class="grid center">
