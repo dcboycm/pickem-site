@@ -1,8 +1,14 @@
 <?php
 $rows = pg_fetch_all($result);
 $i = 0;
+$j = 0;
 echo "<tbody>";
   foreach ($rows as $row) {
+    $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = 1;");
+    $totalDays = pg_fetch_row($result);
+      foreach ($totalDays as $day) {
+        $j++;
+      }
       echo "<tr>";
       // Need an if check for who is the FAVORITE, this will determine who goes first in the list
       $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
