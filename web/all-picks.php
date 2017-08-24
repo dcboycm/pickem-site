@@ -62,12 +62,13 @@
 
     <div class="center" id="all-picks">
       <?php
-      $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = 1;");
+      $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = 1 and paid = true;");
       $pickCount = pg_num_rows($result);
       $sheet = 5;
       $totalPot = $sheet * $pickCount;
       if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
-        echo "<h1>Everyone's Picks - $today - .</h1>";
+        echo "<h1>Everyone's Picks - $today.</h1>";
+        echo "<h2>Total sheets submitted so far - $totalPot.</h2>";
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
           echo "<table class='table col-1-5'>";
@@ -110,8 +111,8 @@
           $i++;
         }
       } else {
-        echo "<h1>Everyones Picks - $today</h1>";
-        echo "<h2>Total sheets submitted so far - $pickCount.</h2>";
+        echo "<h1>Everyone's Picks - $today.</h1>";
+        echo "<h2>Total sheets submitted so far - $totalPot.</h2>";
       }
       ?>
     </div>
