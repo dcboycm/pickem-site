@@ -64,11 +64,12 @@
       <?php
       $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = 1;");
       $pickCount = pg_num_rows($result);
+      $totalPot = $pickCount * 5;
       if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
-        echo "<h1>Everyone's Picks - $today - $pickCount.</h1>";
+        echo "<h1>Everyone's Picks - $today - $totalPot.</h1>";
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
-          echo "<table class='table col-1-3'>";
+          echo "<table class='table col-1-5'>";
             echo "<thead>";
               echo "<tr>";
                 echo "<th>$paidMatch[user_id]</th>";
