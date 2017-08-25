@@ -549,6 +549,8 @@ div .tiebreaker-points {
   background-color: #ccc;
   -webkit-transition: .4s;
   transition: .4s;
+  height: 5px;
+  width: 5px;
 }
 
 .slider:before {
