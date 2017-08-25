@@ -6,9 +6,6 @@ echo "<tbody>";
   foreach ($rows as $row) {
     $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = 1;");
     $totalDays = pg_fetch_row($result);
-      foreach ($totalDays as $day) {
-        $j++;
-      }
       echo "<tr>";
       // Need an if check for who is the FAVORITE, this will determine who goes first in the list
       $result = pg_query($conn, "select fav_name from team where id = {$row['team_home']};");
@@ -16,18 +13,29 @@ echo "<tbody>";
       $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
       $away_fav = pg_fetch_row($result);
       if ($row[team_home] == $row[team_fav]) {
-        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[$i-$j]' value='{$row[team_home]}'><br></td>";
+        echo "<label class='switch'>";
+        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
+        echo "<span class='slider round'></span>";
+        echo "</label>";
         echo "<td>{$home_fav[0]}</td>";
         echo "<td>{$row['spread']}</td>";
         echo "<td>{$away_fav[0]}</td>";
-        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[$i-$j]' value='{$row[team_away]}'><br></td>";
+        echo "<label class='switch'>";
+        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
+        echo "<span class='slider round'></span>";
+        echo "</label>";
       } else {
-        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[$i-$j]' value='{$row[team_away]}'><br></td>";
+        echo "<label class='switch'>";
+        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
+        echo "<span class='slider round'></span>";
+        echo "</label>";
         echo "<td>{$away_fav[0]}</td>";
         echo "<td>{$row['spread']}</td>";
         echo "<td>{$home_fav[0]}</td>";
-        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[$i-$j]' value='{$row[team_home]}'><br></td>";
-      }
+        echo "<label class='switch'>";
+        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
+        echo "<span class='slider round'></span>";
+        echo "</label>";      }
       echo "</tr>";
     $i++;
   }
