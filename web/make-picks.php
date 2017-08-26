@@ -153,7 +153,7 @@
       </div>
   </form>
 
-  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+  <!-- <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
     <table class="table">
       <thead>
         <tr>
@@ -191,7 +191,7 @@
       classie.toggle( menuRight, 'cbp-spmenu-open' );
       disableOther( 'showRight' );
     };
-  </script>
+  </script> -->
 
   </body>
 
