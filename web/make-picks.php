@@ -101,7 +101,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = $week_number and match_date = '2017-09-07' order by match_date;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-07' order by match_date;");
       include('./component/table_data.php');
       ?>
       </table>
@@ -118,7 +118,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = $week_number and match_date = '2017-09-10' order by match_date;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-10' order by match_date;");
       include('./component/table_data.php');
       ?>
       </table>
@@ -135,7 +135,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = $week_number and match_date = '2017-09-11' order by match_date;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-11' order by match_date;");
       include('./component/table_data.php');
       ?>
       </table>

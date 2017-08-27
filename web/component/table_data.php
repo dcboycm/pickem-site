@@ -4,7 +4,7 @@ $i = 0;
 $j = 0;
 echo "<tbody>";
   foreach ($rows as $row) {
-    $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = $week_number;");
+    $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = '$week_number';");
     $totalDays = pg_fetch_row($result);
       echo "<tr>";
       // Need an if check for who is the FAVORITE, this will determine who goes first in the list
