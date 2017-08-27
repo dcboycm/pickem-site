@@ -6,7 +6,7 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
-   $week_number = 1;
+  //  $week_number = 1;
 
 ?>
 <!DOCTYPE html>
