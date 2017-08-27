@@ -6,6 +6,8 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
+   $week_number = $GLOBALS['week_number'];
+
 ?>
 <!DOCTYPE html>
 <html>
