@@ -1,5 +1,5 @@
 <?php
-$result = pg_query($conn, "SELECT * FROM test_matches WHERE week = 1 and paid = true;");
+$result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
 $pickCount = pg_num_rows($result);
 $sheet = 5;
 $totalPot = $sheet * $pickCount;

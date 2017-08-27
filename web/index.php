@@ -1,6 +1,9 @@
 <?php
 include("./include/config.php");
 session_start();
+
+$GLOBALS['week_number'] = 1;
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // escapes the strings entered by the user

@@ -13,7 +13,7 @@
    $today = $dt->format('l');
    $hour = $dt->format('H:i:s');
 
-   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = 1 AND paid = true;");
+   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = $week_number AND paid = true;");
    $paidMatches = pg_fetch_all($result);
 
 ?>
