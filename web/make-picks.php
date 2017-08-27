@@ -1,6 +1,7 @@
 <?php
    include('session.php');
    include('./include/config.php');
+   include('./index.php');
 
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
