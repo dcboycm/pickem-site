@@ -1,22 +1,17 @@
 <?php
    include('session.php');
    include('./include/config.php');
-
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
-   $week_number = $_SESSION["week_number"];
-
    $tz = 'America/Phoenix';
    $timestamp = time();
    $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
    $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
    $today = $dt->format('l');
    $hour = $dt->format('H:i:s');
-
-   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = '$week_number' AND paid = true;");
+   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = 1 AND paid = true;");
    $paidMatches = pg_fetch_all($result);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,7 +57,60 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <?php include('./component/all_pciks.php'); ?>
+      <?php
+      $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = 1 and paid = true;");
+      $pickCount = pg_num_rows($result);
+      $sheet = 5;
+      $totalPot = $sheet * $pickCount;
+      if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
+        echo "<h1>Everyone's Picks - $today.</h1>";
+        echo "<h2>Total Pot Size - $$totalPot.</h2>";
+        $i = 0;
+        foreach ($paidMatches as $paidMatch) {
+          echo "<table class='table col-1-5'>";
+            echo "<thead>";
+              echo "<tr>";
+                echo "<th>$paidMatch[user_id]</th>";
+              echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+              echo "<tr>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_1];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
+              echo "</tr>";
+              echo "<tr>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_2];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
+              echo "</tr>";
+              echo "<tr>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_3];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
+              echo "</tr>";
+              echo "<tr>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_4];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
+              echo "</tr>";
+              echo "<tr>";
+              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_5];");
+              $fav_name = pg_fetch_row($result);
+              echo "<td>$fav_name[0]</td>";
+              echo "</tr>";
+              echo "<tr>";
+                echo "<td>$paidMatch[tiebreaker] pts.</td>";
+              echo "</tr>";
+            echo "</tbody>";
+          echo "</table>";
+          $i++;
+        }
+      } else {
+        echo "<h1>Everyone's Picks - $today.</h1>";
+        echo "<h2>Total sheets submitted so far - $$totalPot.</h2>";
+      }
+      ?>
     </div>
   </body>
 
