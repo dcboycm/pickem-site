@@ -62,7 +62,7 @@
     </nav>
 
     <div class="center" id="all-picks">
-      <?php include('./component/table_data.php'); ?>
+      <?php include('./component/all_pciks.php'); ?>
     </div>
   </body>
 
