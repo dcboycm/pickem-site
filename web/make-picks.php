@@ -1,13 +1,12 @@
 <?php
    include('session.php');
    include('./include/config.php');
-   include('./index.php');
 
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
-  //  $week_number = 1;
+   $week_number = $GLOBALS["week_number"];
 
 ?>
 <!DOCTYPE html>
@@ -89,6 +88,7 @@
     </nav>
 
   <div class="center" id="make-picks">
+    <?php echo $week_number; ?>
 		<h1>Football Pool 2017-2018</h1>
     <h2>Week 1 - September 7th - September 11th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
