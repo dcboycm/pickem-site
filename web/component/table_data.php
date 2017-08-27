@@ -1,4 +1,5 @@
 <?php
+$week_number = $_SESSION["week_number"];
 $rows = pg_fetch_all($result);
 $i = 0;
 $j = 0;
