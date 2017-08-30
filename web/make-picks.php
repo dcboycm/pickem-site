@@ -6,6 +6,11 @@
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
 
+   $tz = 'America/Phoenix';
+   $timestamp = time();
+   $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+   $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+   $today = $dt->format('l');
    $week_number = $_SESSION["week_number"];
 
 ?>
@@ -154,46 +159,6 @@
         <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
       </div>
   </form>
-
-  <!-- <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-    <table class="table">
-      <thead>
-        <tr>
-          <th><?php echo $myusername; ?></th>
-        </tr>
-        <tbody>
-          <tr>
-            <td>asdf1</td>
-          </tr>
-          <tr>
-            <td>asdf2</td>
-          </tr>
-          <tr>
-            <td>asdf3</td>
-          </tr>
-          <tr>
-            <td>asdf4</td>
-          </tr>
-          <tr>
-            <td>asdf5</td>
-          </tr>
-          <tr>
-            <td>tiebreakerPoints</td>
-          </tr>
-        </tbody>
-  </nav>
-
-  <button id="showRight">Show/Hide Right Slide Menu</button>
-
-  <script type="text/javascript">
-    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-    body = document.body;
-    showRight.onclick = function() {
-      classie.toggle( this, 'active' );
-      classie.toggle( menuRight, 'cbp-spmenu-open' );
-      disableOther( 'showRight' );
-    };
-  </script> -->
 
   </body>
 
