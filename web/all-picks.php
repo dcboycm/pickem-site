@@ -108,7 +108,7 @@
         }
       } else {
         echo "<h1>Everyone's Picks - $today.</h1>";
-        echo "<h2>Total sheets submitted so far - $$totalPot.</h2>";
+        echo "<h2>Total pot size so far - $$totalPot.</h2>";
       }
       ?>
     </div>
