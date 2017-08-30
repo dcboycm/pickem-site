@@ -111,7 +111,7 @@
     		</div> <!-- /.modal-content -->
     	</div> <!-- /.modal-dialog -->
     </div> <!-- /.modal -->
-
+    <script type="text/javascript" src="https://nm373.infusionsoft.com/app/webTracking/getTrackingCode"></script>
   </body>
 
   <footer class="center">

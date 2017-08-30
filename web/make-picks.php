@@ -45,12 +45,6 @@
         });
         var tiebreaker = $('#tiebreaker').val();
         if(selected.length == 5 && tiebreaker != ""){
-          // var submittedSheet = [selected, username, tiebreaker];
-          // $.ajax({
-          //   type: 'POST',
-          //   url: 'submit-picks.php',
-          //   data: {submittedSheet : submittedSheet},
-          // });
           return true;
         } else {
           alert("You must select 5 teams and/or set the tiebreaker.");
@@ -156,10 +150,10 @@
     	</div>
 
       <div style="padding-top: 20px;" class="center">
-        <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
+        <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" disabled="disabled" value="Submit">
       </div>
   </form>
-
+  <script type="text/javascript" src="https://nm373.infusionsoft.com/app/webTracking/getTrackingCode"></script>
   </body>
 
   <footer class="center">
