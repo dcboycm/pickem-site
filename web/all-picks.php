@@ -4,6 +4,8 @@
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
+   $result = pg_query($conn, "select nickname from users where email = '$myusername';");
+   $nickname = pg_fetch_row($result);
    $tz = 'America/Phoenix';
    $timestamp = time();
    $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
@@ -49,7 +51,7 @@
             <!-- <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
           </ul>
           <ul class="nav navbar-nav pull-right ">
-            <li style="padding-top: 15px; padding-right: 15px; color: #777;">Welcome, <?php echo $firstname ?></li>
+            <li style="padding-top: 15px; padding-right: 15px; color: #777;">Welcome, <?php echo $nickname ?></li>
             <li style="padding-top: 15px; color: #777;">  |</li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
