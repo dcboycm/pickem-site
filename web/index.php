@@ -109,6 +109,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" name="lastName" id="lastName" class="form-control" autocomplete="off">
             <p>Email Address</p>
             <input type="email" name="email" id="email" class="form-control" autocomplete="off">
+            <p>Nickname</p>
+            <input type="text" name="nickname" id="nickname" class="form-control" autocomplete="off">
             <p>Password</p>
             <input type="password" name="password" id="password" class="form-control" autocomplete="off">
             <p>Retype Password</p>

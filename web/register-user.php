@@ -5,6 +5,7 @@
     $firstname = pg_escape_string($_POST['firstName']);
     $lastname = pg_escape_string($_POST['lastName']);
     $emailaddress = pg_escape_string($_POST['email']);
+    $nickname = pg_escape_string($_POST['nickname']);
     if ($_POST['password']!= $_POST['re-password'])
     {
          echo("Oops! Password did not match! Try again.");
@@ -12,7 +13,7 @@
       $password = pg_escape_string($_POST['password']);
       $hashedpassword = md5($password);
 
-      $result = pg_query($conn, "INSERT INTO users (first_name, last_name, email, password, active) VALUES ('$firstname', '$lastname', '$emailaddress', '$hashedpassword', true);");
+      $result = pg_query($conn, "INSERT INTO users (first_name, last_name, email, password, active, nickname) VALUES ('$firstname', '$lastname', '$emailaddress', '$hashedpassword', true, '$nickname');");
       if (!$result) {
           $errormessage = pg_last_error();
           echo "Error with query: " . $errormessage;
