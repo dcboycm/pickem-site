@@ -43,8 +43,9 @@
             <!-- <li class=""><a href="#" class="contact" data-toggle="modal" data-target=".contact-modal"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
           </ul>
           <ul class="nav navbar-nav pull-right ">
-            <li>Welcome, <?php echo $firstname ?></li>
-            <li>|</li>
+            <li style="padding-top: 15px; color: #777;">Welcome, <?php echo $firstname ?></li>
+            <div style="border-left:medium #CC0000 solid; height:300px;" />
+            <!-- <li style="padding-top: 15px; color: #777;">|</li> -->
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 
@@ -53,7 +54,7 @@
     </nav>
 
     <div class="center" id="profile">
-      <h1>Welcome <?php echo $firstname.' '.$lastname; ?>!</h1>
+      <!-- <h1>Welcome <?php echo $firstname.' '.$lastname; ?>!</h1> -->
     </div>
 
     <div style="text-align: center;" class="grid center">
