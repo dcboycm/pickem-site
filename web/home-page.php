@@ -5,7 +5,9 @@
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
-   $nickname = $_SESSION['nickname'];
+
+   $result = pg_query($conn, "select nickname from users where email = '$myusername';");
+   $nickname = pg_fetch_row($result);
 
 ?>
 <!DOCTYPE html>
