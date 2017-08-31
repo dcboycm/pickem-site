@@ -44,8 +44,7 @@
           </ul>
           <ul class="nav navbar-nav pull-right ">
             <li style="padding-top: 15px; color: #777;">Welcome, <?php echo $firstname ?></li>
-            <div style="border-left:medium #CC0000 solid; height:300px;" />
-            <!-- <li style="padding-top: 15px; color: #777;">|</li> -->
+            <li style="padding-top: 15px; color: #777;">  |</li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
 
