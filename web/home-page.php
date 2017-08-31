@@ -43,7 +43,7 @@
             <!-- <li class=""><a href="#" class="contact" data-toggle="modal" data-target=".contact-modal"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
           </ul>
           <ul class="nav navbar-nav pull-right ">
-            <li style="padding-top: 15px; color: #777;">Welcome, <?php echo $firstname ?></li>
+            <li style="padding-top: 15px; padding-right: 15px; color: #777;">Welcome, <?php echo $firstname ?></li>
             <li style="padding-top: 15px; color: #777;">  |</li>
             <li><a href="logout.php">Log Out</a></li>
           </ul>
