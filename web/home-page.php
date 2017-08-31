@@ -69,21 +69,32 @@
           <p>
             The rules are the same:
             <ol>
-              <li>Gotta pick 5 games each week</li>
-              <li>Gotta win all 5 games to have a shot at the money</li>
-              <li>Sheets are $5 each unless it rolls over</li>
+              <li>You have to pick 5 games.</li>
+              <li>You have to win all 5 games.</li>
+              <li>Ties are decided by tiebreaker, closest to total score of Monday night game regardless of overage.</li>
+              <li>Sheets are $5 each unless it rolls over.</li>
             </ol>
             This year the Football Pool will be completely digital, all picks
-            need to be emailed directly to me and I will also manage payments
-            via PayPal.
+            need to be submitted via the website. Monies and fees will be
+            managed through PayPal and Venmo. With this being a website there
+            will also be a small, <strong>(5%)</strong> , of the total pot that goes towards
+            hosting.
           </p>
         </div>
       </div>
       <div class="col-1-2">
         <div class="content">
           <h2>Updates:</h2>
-          <p>Last weeks winner: Alex Ramos.</p>
-          <p>Pot size: $55.00.</p>
+          <p>
+            <h3>Conference Championship Weekend</h3>
+            <p>Last weeks winner: Alex Ramos.</p>
+            <p>Pot size: $55.00.</p>
+          </p>
+          <p>
+            <h3>Divisional Weekend Weekend</h3>
+            <p>Last weeks winner: REYES.</p>
+            <p>Pot size: $90.00.</p>
+          </p>
         </div>
       </div>
     </div>
