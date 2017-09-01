@@ -298,12 +298,20 @@ div .tiebreaker-points {
   padding-right: 20px; /* column-space */
 }
 
+.news:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 .updates {
   box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   float: left;
   min-height: 1px;
   padding-right: 20px; /* column-space */
+}
+
+.updates:hover {
+  box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .grid:after {
