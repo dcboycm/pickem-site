@@ -272,10 +272,6 @@ div .tiebreaker-points {
 	box-sizing: border-box;
 }
 
-[class*='col-']:hover {
-  box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.2);
-}
-
 [class*='col-'] [class*='col-']:last-child {
 	padding-right: 0;
 }
