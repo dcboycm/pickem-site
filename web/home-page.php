@@ -59,7 +59,7 @@
     </div>
 
     <div style="text-align: center;" class="grid center">
-      <div style="text-align: left;" class="col-1-2">
+      <div style="text-align: left;" class="col-1-2 news">
         <div class="content">
           <h2>News:</h2>
           <p>
@@ -70,7 +70,7 @@
         </div>
 
         <hr>
-        
+
         <div style="text-align: left;" class="content">
           <h2>League Rules:</h2>
           <p>
@@ -89,7 +89,7 @@
           </p>
         </div>
       </div>
-      <div class="col-1-2">
+      <div class="col-1-2 updates">
         <div class="content">
           <h2>Updates:</h2>
           <p>

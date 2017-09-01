@@ -272,14 +272,6 @@ div .tiebreaker-points {
 	box-sizing: border-box;
 }
 
-[class*='col-'] {
-  box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-	float: left;
-  min-height: 1px;
-	padding-right: 20px; /* column-space */
-}
-
 [class*='col-']:hover {
   box-shadow: 8px 8px 16px 0 rgba(0,0,0,0.2);
 }
@@ -293,9 +285,25 @@ div .tiebreaker-points {
 	max-width: 1140px;
 	min-width: 748px; /* when using padded grid on ipad in portrait mode, width should be viewport-width - padding = (768 - 20) = 748. actually, it should be even smaller to allow for padding of grid containing element */
 	margin: 0 auto;
-	overflow: hidden;
+	overflow: visible;
   padding-left: 20px;
   padding: 2px 16px;
+}
+
+.news {
+  box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  float: left;
+  min-height: 1px;
+  padding-right: 20px; /* column-space */
+}
+
+.updates {
+  box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  float: left;
+  min-height: 1px;
+  padding-right: 20px; /* column-space */
 }
 
 .grid:after {
