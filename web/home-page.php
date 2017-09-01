@@ -68,6 +68,9 @@
             at the top of the page to see who is playing this week!
           </p>
         </div>
+
+        <hr>
+        
         <div style="text-align: left;" class="content">
           <h2>League Rules:</h2>
           <p>
