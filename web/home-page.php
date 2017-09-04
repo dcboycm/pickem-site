@@ -91,7 +91,7 @@
 
         <hr>
 
-        <div style="text-align: left;" class="content">
+        <div style="text-align: center;" class="content">
           <h2>Payment Methods:</h2>
           <h3>PayPal</h3>
           <p>
