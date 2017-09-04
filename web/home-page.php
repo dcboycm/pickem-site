@@ -93,12 +93,12 @@
 
         <div style="text-align: left;" class="content">
           <h2>Payment Methods:</h2>
+          <h3>PayPal</h3>
           <p>
-            PayPal
             <a href="https://www.paypal.me/CurtisMiller" target="_blank">PayPal Me</a>
           </p>
+          <h3>Venmo</h3>
           <p>
-            Venmo
             <a href="https://venmo.com/Curtis-Miller-6" target="_blank">Venmo Me</a>
           </p>
         </div>
