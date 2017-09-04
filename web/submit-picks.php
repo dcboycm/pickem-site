@@ -86,7 +86,9 @@
                       </tr>
                     </tbody>
                   </table>
-                  <a href="home-page.php" class="btn btn-custom btn-lg btn-block">Home</a>
+    	             <a href="https://www.paypal.me/CurtisMiller"><img src=".\images\paypal.png" style="width:25px;height:25px;"/></a>
+                   <a href="home-page.php" class="btn btn-custom btn-lg btn-block">Home</a>
+                   <a href="https://venmo.com/Curtis-Miller-6"><img src=".\images\venmo.png" style="width:25px;height:25px;"/></a>
                 </div>
             </div>
         </div>
