@@ -154,9 +154,17 @@
         </div>
     	</div>
 
-      <div style="padding-top: 20px;" class="center">
-        <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" disabled="disabled" value="Submit">
-      </div>
+      <?php
+        if ($today == "Tuesday" || $today == "Wednesday" || $today == "Thursday" || $today == "Friday" || $today == "Saturday") {
+          <div style="padding-top: 20px;" class="center">
+            <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" value="Submit">
+          </div>
+        } else {
+          <div style="padding-top: 20px;" class="center">
+            <input type="submit" id="btn-submit" class="btn btn-custom btn-lg btn-block" disabled="disabled" value="Submit">
+          </div>
+        }
+      ?>
   </form>
   <script type="text/javascript" src="https://nm373.infusionsoft.com/app/webTracking/getTrackingCode"></script>
   </body>
