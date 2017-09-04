@@ -93,8 +93,8 @@
 
         <div style="text-align: center;" class="content">
           <h2>Payment Methods:</h2>
-          <a href="https://www.paypal.me/CurtisMiller"><img src=".\images\paypal.png" style="width:25px;height:25px;"/></a>
-          <a href="https://venmo.com/Curtis-Miller-6"><img src=".\images\venmo.png" style="width:25px;height:25px;"/></a>
+          <a href="https://www.paypal.me/CurtisMiller"><img src=".\images\paypal.png" style="width:50px;height:50px;"/></a>
+          <a href="https://venmo.com/Curtis-Miller-6"><img src=".\images\venmo.png" style="width:50px;height:50px;"/></a>
         </div>
       </div>
       <div class="col-1-2 updates">
