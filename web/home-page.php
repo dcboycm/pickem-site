@@ -88,6 +88,20 @@
             hosting.
           </p>
         </div>
+
+        <hr>
+
+        <div style="text-align: left;" class="content">
+          <h2>Payment Methods:</h2>
+          <p>
+            PayPal
+            <a href="https://www.paypal.me/CurtisMiller" target="_blank">PayPal Me</a>
+          </p>
+          <p>
+            Venmo
+            <a href="https://venmo.com/Curtis-Miller-6" target="_blank">Venmo Me</a>
+          </p>
+        </div>
       </div>
       <div class="col-1-2 updates">
         <div class="content">
