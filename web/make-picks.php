@@ -95,33 +95,7 @@
 		<h1>Football Pool 2017-2018</h1>
     <h2>Week 1 - September 7th - September 11th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
-      <?php
-        if ($today == "Thursday") {
-          if ($time > "17:00:00") {
-            // do not render the Thursday game.
-          }
-        } elseif ($today == "Friday" || $today == "Saturday") {
-            // do not render the Thursday game.
-        } else {
-            // render the Thursday game.
-            echo "<table class="table center">";
-            echo "<thead>";
-            echo "<h2>Thursday</h2>";
-            echo "<tr>";
-            echo "<th>Select</th>";
-            echo "<th>Favorite</th>";
-            echo "<th>Spread</th>";
-            echo "<th>Underdog</th>";
-            echo "<th>Select</th>";
-            echo "</tr>";
-            echo "</thead>";
-            echo "</table>";
-            $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-07' order by match_date;");
-            include('./component/table_data.php');
-        }
-
-      ?>
-      <!-- <table class="table center">
+      <table class="table center">
         <thead>
           <h2>Thursday</h2>
           <tr>
@@ -132,7 +106,11 @@
             <th>Select</th>
           </tr>
         </thead>
-      </table> -->
+      <?php
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-07' order by match_date;");
+      include('./component/table_data.php');
+      ?>
+      </table>
 
       <table class="table center">
         <thead>
