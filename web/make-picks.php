@@ -100,7 +100,7 @@
           if ($time > "17:00:00") {
             // do not render the Thursday game.
           }
-        } elseif ($today == "Friday" ||) {
+        } elseif ($today == "Friday" || $today == "Saturday") {
             // do not render the Thursday game.
         } else {
             // render the Thursday game.
