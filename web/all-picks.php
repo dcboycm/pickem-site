@@ -14,6 +14,8 @@
    $hour = $dt->format('H:i:s');
    $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = 1 AND paid = true;");
    $paidMatches = pg_fetch_all($result);
+
+   $week_number = $_SESSION["week_number"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -62,11 +64,11 @@
 
     <div class="center" id="all-picks">
       <?php
-      $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = 1 and paid = true;");
+      $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
       $pickCount = pg_num_rows($result);
       $sheet = 5;
       $totalPot = $sheet * $pickCount;
-      if ($today == "Sunday" || $today == "Monday" || $today == "Tuesday") {
+      if ($today == "Sunday" || $today == "Monday") {
         echo "<h1>Everyone's Picks - $today.</h1>";
         echo "<h2>Total Pot Size - $$totalPot.</h2>";
         $i = 0;
