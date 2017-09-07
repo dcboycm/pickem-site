@@ -14,6 +14,7 @@
    $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
    $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
    $today = $dt->format('l');
+   $time = $dt->format('H:i:s');
    $week_number = $_SESSION["week_number"];
 
 ?>

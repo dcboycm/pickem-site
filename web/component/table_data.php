@@ -14,11 +14,20 @@ echo "<tbody>";
       $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
       $away_fav = pg_fetch_row($result);
       if ($row[team_home] == $row[team_fav]) {
-        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
-        echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
-        echo "<td>{$row['spread']}</td>";
-        echo "<td><img src='./images/team_icons/{$away_fav[0]}.png'></img>{$away_fav[0]}</td>";
-        echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
+        if ($i == 0 && $today == "Wednesday") {
+          echo "$time";
+          echo "<td></td>";
+          echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
+          echo "<td>{$row['spread']}</td>";
+          echo "<td><img src='./images/team_icons/{$away_fav[0]}.png'></img>{$away_fav[0]}</td>";
+          echo "<td></td>";
+        } else {
+          echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
+          echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
+          echo "<td>{$row['spread']}</td>";
+          echo "<td><img src='./images/team_icons/{$away_fav[0]}.png'></img>{$away_fav[0]}</td>";
+          echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
+        }
       } else {
         echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
         echo "<td><img src='./images/team_icons/{$away_fav[0]}.png'></img>{$away_fav[0]}</td>";
