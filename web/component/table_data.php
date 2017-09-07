@@ -14,8 +14,7 @@ echo "<tbody>";
       $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
       $away_fav = pg_fetch_row($result);
       if ($row[team_home] == $row[team_fav]) {
-        if ($i == 0 && $today == "Wednesday") {
-          echo "$time";
+        if ($i == 0 && $today == "Wednesday" && $time >= "17:25:00") {
           echo "<td></td>";
           echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
           echo "<td>{$row['spread']}</td>";
