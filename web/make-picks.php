@@ -97,7 +97,18 @@
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
       <?php
         if ($today == "Wednesday") {
-          echo "It's Wednesday";
+          echo "<table class='table center'>
+                  <thead>
+                    <h2>Thursday</h2>
+                    <tr>
+                      <th>Select</th>
+                      <th>Favorite</th>
+                      <th>Spread</th>
+                      <th>Underdog</th>
+                      <th>Select</th>
+                    </tr>
+                  </thead>
+                </table>";
         } else {
           echo "It's is not Wednesday";
         }
