@@ -95,6 +95,13 @@
 		<h1>Football Pool 2017-2018</h1>
     <h2>Week 1 - September 7th - September 11th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
+      <?php
+        if ($today == "Wednesday") {
+          echo "It's Wednesday";
+        } else {
+          echo "It's is not Wednesday";
+        }
+       ?>
       <table class="table center">
         <thead>
           <h2>Thursday</h2>
