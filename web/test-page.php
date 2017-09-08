@@ -35,7 +35,7 @@
       echo "$time";
       $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-07' order by match_date;");
       echo "
-      <table class="table center">
+      <table class='table center'>
         <thead>
           <h2>$days[$dayofweek]</h2>
           <tr>
