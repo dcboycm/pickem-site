@@ -127,7 +127,11 @@
         </thead>
       <?php
       $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-07' order by match_date;");
-      include('./component/table_data.php');
+        if ($today == "Thursday" && $time >= "17:25:00" || $today == "Sunday" || $today == "Monday") {
+          // don't show the Thursday games
+        } else {
+          include('./component/table_data.php');
+        }
       ?>
       </table>
 
