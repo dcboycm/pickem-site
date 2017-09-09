@@ -29,6 +29,7 @@
     <h1>Test Page for testing things.</h1>
 
     <?php
+      echo "$myusername";
       foreach ($picks as $pick) {
         echo "$pick";
       }
