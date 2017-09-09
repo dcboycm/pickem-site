@@ -8,7 +8,7 @@
 
   // $result = pg_query($conn, "select * from test_matches where user_id = '$myusername';");
   $result = pg_query($conn, "select * from test_matches where user_id = 'andresleyva20@yahoo.com';");
-  $picks = pg_fetch_row($result);
+  $picks = pg_fetch_result($result);
 
   $tz = 'America/Phoenix';
   $timestamp = time();
