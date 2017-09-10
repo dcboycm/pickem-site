@@ -31,10 +31,7 @@
 
     <?php
       echo "$myusername";
-      echo "$picks";
-      foreach ($picks as $pick) {
-        echo "$pick";
-      }
+      print_r($picks);
     ?>
 
   </body>
