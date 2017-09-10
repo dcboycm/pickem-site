@@ -31,6 +31,7 @@
 
     <?php
       echo "$myusername";
+      echo "$picks";
       foreach ($picks as $pick) {
         echo "$pick";
       }
