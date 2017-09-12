@@ -94,26 +94,8 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
-    <h2>Week 1 - September 7th - September 11th</h2>
+    <h2>Week 2 - September 14th - September 18th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
-      <!-- <?php
-        if ($today == "Wednesday") {
-          echo "<table class='table center'>
-                  <thead>
-                    <h2>Thursday</h2>
-                    <tr>
-                      <th>Select</th>
-                      <th>Favorite</th>
-                      <th>Spread</th>
-                      <th>Underdog</th>
-                      <th>Select</th>
-                    </tr>
-                  </thead>
-                </table>";
-        } else {
-          echo "It's is not Wednesday";
-        }
-       ?> -->
       <table class="table center">
         <thead>
           <h2>Thursday</h2>
@@ -126,7 +108,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-07' order by match_date;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-14' order by match_date;");
         if ($today == "Thursday" && $time >= "17:25:00") {
           // don't show the Thursday games
         } else if ($today == "Friday" || $today == "Saturday") {
@@ -149,7 +131,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-10' order by match_date;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-17' order by match_date;");
       include('./component/table_data.php');
       ?>
       </table>
@@ -166,7 +148,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-11' order by match_date;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-18' order by match_date;");
       include('./component/table_data.php');
       ?>
       </table>
