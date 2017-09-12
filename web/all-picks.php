@@ -70,7 +70,11 @@
       $totalPot = ($sheet * $pickCount) - 5;
       if ($today == "Sunday" || $today == "Monday") {
         echo "<h1>Everyone's Picks - $today.</h1>";
-        echo "<h2>Total Pot Size - $$totalPot.</h2>";
+        if ($totalPot < 1) {
+          echo "<h2>Total Pot Size - $0.</h2>";
+        } else {
+          echo "<h2>Total Pot Size - $$totalPot.</h2>";
+        }
         $i = 0;
         foreach ($paidMatches as $paidMatch) {
           echo "<table class='table col-1-5'>";
