@@ -6,11 +6,12 @@
   $myusername = $_SESSION['login_user'];
   $selectedTeams = $_POST['selectedTeamId'];
   $tiebreakerPoints = $_POST['tiebreaker'];
+  $week_number = $_SESSION["week_number"];
 
   $result = pg_query($conn, "SELECT id FROM users WHERE email = '$myusername';");
   $userId = pg_fetch_row($result);
 
-  $insertedPick = pg_query($conn, "INSERT INTO test_matches (user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week) VALUES ('$myusername', '$selectedTeams[0]', '$selectedTeams[1]', '$selectedTeams[2]', '$selectedTeams[3]', '$selectedTeams[4]', '$tiebreakerPoints', false, 1);");
+  $insertedPick = pg_query($conn, "INSERT INTO test_matches (user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week) VALUES ('$myusername', '$selectedTeams[0]', '$selectedTeams[1]', '$selectedTeams[2]', '$selectedTeams[3]', '$selectedTeams[4]', '$tiebreakerPoints', false, '$week_number');");
 ?>
 
 <!DOCTYPE html>
