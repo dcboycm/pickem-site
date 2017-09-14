@@ -67,7 +67,8 @@
       $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
       $pickCount = pg_num_rows($result);
       $sheet = 5;
-      $totalPot = ($sheet * $pickCount) - 5;
+      $rollover = 133;
+      $totalPot = (($sheet * $pickCount) + $rollover) - 5;
       if ($today == "Sunday" || $today == "Monday") {
         echo "<h1>Everyone's Picks - $today.</h1>";
         if ($totalPot < 1) {
