@@ -36,19 +36,6 @@
 
     <table class="table">
       <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-    </table>
-
-    <table class="table">
-      <tr>
         <th>Username</th>
         <th>Pick 1</th>
         <th>Pick 2</th>
@@ -59,14 +46,14 @@
         <th>Paid</th>
       </tr>
       <tr>
-        <tr><?php echo "$myusername"; ?></tr>
-        <tr>WAS</tr>
-        <tr>NE</tr>
-        <tr>KC</tr>
-        <tr>CAR</tr>
-        <tr>MIN</tr>
-        <tr>45 pts.</tr>
-        <tr>True</tr>
+        <td><?php echo "$myusername"; ?></td>
+        <td>WAS</td>
+        <td>NE</td>
+        <td>KC</td>
+        <td>CAR</td>
+        <td>MIN</td>
+        <td>45 pts.</td>
+        <td>True</td>
       </tr>
     </table>
 
