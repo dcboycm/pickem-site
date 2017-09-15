@@ -67,8 +67,9 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="">
-      <table class="table">
+    <div class="center" id="my-picks">
+      <h1>My Picks</h1>
+      <table class="table center">
         <tr>
           <th>Username</th>
           <th>Pick 1</th>
