@@ -34,7 +34,7 @@
 
     <h1>Test Page for testing things.</h1>
 
-    <table>
+    <table class="table">
       <tr>
         <th>Company</th>
         <th>Contact</th>
@@ -72,7 +72,7 @@
       </tr>
     </table>
 
-    <table>
+    <table class="table">
       <tr>
         <th>Username</th>
         <td>Pick 1</td>
