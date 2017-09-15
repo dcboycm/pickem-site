@@ -35,18 +35,56 @@
     <h1>Test Page for testing things.</h1>
 
     <table>
-      <thead>
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+      </tr>
+      <tr>
+        <td>Island Trading</td>
+        <td>Helen Bennett</td>
+        <td>UK</td>
+      </tr>
+      <tr>
+        <td>Laughing Bacchus Winecellars</td>
+        <td>Yoshi Tannamuri</td>
+        <td>Canada</td>
+      </tr>
+      <tr>
+        <td>Magazzini Alimentari Riuniti</td>
+        <td>Giovanni Rovelli</td>
+        <td>Italy</td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
         <th>Username</th>
-        <th>Pick 1</th>
-        <th>Pick 2</th>
-        <th>Pick 3</th>
-        <th>Pick 4</th>
-        <th>Pick 5</th>
-        <th>Tiebreaker</th>
-        <th>Paid</th>
-      </thead>
-      <tbody>
-        <tr><?php echo "$myusername"; ?></tr>
+        <td>Pick 1</td>
+        <td>Pick 2</td>
+        <td>Pick 3</td>
+        <td>Pick 4</td>
+        <td>Pick 5</td>
+        <td>Tiebreaker</td>
+        <td>Paid</td>
+      </tr>
+      <tr>
+        <td><?php echo "$myusername"; ?></td>
         <tr>WAS</tr>
         <tr>NE</tr>
         <tr>KC</tr>
@@ -54,7 +92,7 @@
         <tr>MIN</tr>
         <tr>45 pts.</tr>
         <tr>True</tr>
-      </tbody>
+      </tr>
     </table>
 
   </body>
