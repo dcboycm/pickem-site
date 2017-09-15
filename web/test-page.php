@@ -31,6 +31,7 @@
 
     <?php
       echo "$myusername";
+      print($picks);
       print_r($picks);
     ?>
 
