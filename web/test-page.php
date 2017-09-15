@@ -49,7 +49,9 @@
         <?php
           foreach ($picks as $pick) {
             echo "<td>$pick[user_id]</td>";
-            echo "<td>$pick[pick_1]</td>";
+            $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
+            $team_fav_name = pg_fetch_row($favNameResult);
+            echo "<td>{$team_fav_name[0]}</td>";
             echo "<td>$pick[pick_2]</td>";
             echo "<td>$pick[pick_3]</td>";
             echo "<td>$pick[pick_4]</td>";
