@@ -52,14 +52,14 @@
           </tr>
         </thead>";
         echo "<tbody>";
-            echo "<tr>$pick[0]['user_id']</tr>";
-            echo "<tr>$pick[0]['pick_1']</tr>";
-            echo "<tr>$pick[0]['pick_2']</tr>";
-            echo "<tr>$pick[0]['pick_3']</tr>";
-            echo "<tr>$pick[0]['pick_4']</tr>";
-            echo "<tr>$pick[0]['pick_5']</tr>";
-            echo "<tr>$pick[0]['tiebreaker']</tr>";
-            echo "<tr>$pick[0]['paid']</tr>";
+            echo "<tr>$myusername</tr>";
+            echo "<tr>WAS</tr>";
+            echo "<tr>NE</tr>";
+            echo "<tr>KC</tr>";
+            echo "<tr>CAR</tr>";
+            echo "<tr>MIN</tr>";
+            echo "<tr>45 pts.</tr>";
+            echo "<tr>True</tr>";
         echo "</tbody>";
       echo "</table>";
 
