@@ -5,9 +5,10 @@
   $myusername = $_SESSION['login_user'];
   $firstname = $_SESSION['first_name'];
   $lastname = $_SESSION['last_name'];
+  $week_number = $_SESSION["week_number"];
 
   // $result = pg_query($conn, "select * from test_matches where user_id = '$myusername';");
-  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where user_id = '$myusername' and week = 2;");
+  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where user_id = '$myusername' and week = '$week_number';");
   $picks = pg_fetch_all($result);
 
   $tz = 'America/Phoenix';
@@ -16,7 +17,6 @@
   $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
   $today = $dt->format('l');
   $time = $dt->format('H:i:s');
-  $week_number = $_SESSION["week_number"];
 ?>
 
 <!DOCTYPE html>
