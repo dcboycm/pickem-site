@@ -83,9 +83,9 @@
         <tr>
           <?php
             foreach ($picks as $pick) {
-              $favNameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = $$pick[user_id];");
+              $favNameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = $pick[user_id];");
               $team_fav_name = pg_fetch_row($favNameResult);
-              echo "<td>$favNameResult</td>";
+              echo "<td>{$team_fav_name[0]}</td>";
               $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
               $team_fav_name = pg_fetch_row($favNameResult);
               echo "<td>{$team_fav_name[0]}</td>";
