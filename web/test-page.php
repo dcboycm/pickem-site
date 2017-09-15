@@ -34,36 +34,28 @@
 
     <h1>Test Page for testing things.</h1>
 
-    <?php
-      echo "$myusername";
-      print_r($picks);
-
-      echo "<table class='table'>";
-        echo "<thead>
-          <tr>
-            <th>Username</th>
-            <th>Pick 1</th>
-            <th>Pick 2</th>
-            <th>Pick 3</th>
-            <th>Pick 4</th>
-            <th>Pick 5</th>
-            <th>Tiebreaker</th>
-            <th>Paid</th>
-          </tr>
-        </thead>";
-        echo "<tbody>";
-            echo "<tr>$myusername</tr>";
-            echo "<tr>WAS</tr>";
-            echo "<tr>NE</tr>";
-            echo "<tr>KC</tr>";
-            echo "<tr>CAR</tr>";
-            echo "<tr>MIN</tr>";
-            echo "<tr>45 pts.</tr>";
-            echo "<tr>True</tr>";
-        echo "</tbody>";
-      echo "</table>";
-
-    ?>
+    <table>
+      <thead>
+        <th>Username</th>
+        <th>Pick 1</th>
+        <th>Pick 2</th>
+        <th>Pick 3</th>
+        <th>Pick 4</th>
+        <th>Pick 5</th>
+        <th>Tiebreaker</th>
+        <th>Paid</th>
+      </thead>
+      <tbody>
+        <tr><?php echo "$myusername"; ?></tr>
+        <tr>WAS</tr>
+        <tr>NE</tr>
+        <tr>KC</tr>
+        <tr>CAR</tr>
+        <tr>MIN</tr>
+        <tr>45 pts.</tr>
+        <tr>True</tr>
+      </tbody>
+    </table>
 
   </body>
 </html>
