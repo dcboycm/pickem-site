@@ -7,7 +7,7 @@
   $lastname = $_SESSION['last_name'];
 
   // $result = pg_query($conn, "select * from test_matches where user_id = '$myusername';");
-  $result = pg_query($conn, "select * from test_matches where user_id = '$myusername' and week = $week_number;");
+  $result = pg_query($conn, "select * from test_matches where user_id = '$myusername' and week = '$week_number';");
   $picks = pg_fetch_all($result);
 
   $tz = 'America/Phoenix';
