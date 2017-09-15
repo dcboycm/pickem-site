@@ -37,33 +37,26 @@
         echo "<thead>
           <tr>
             <th>Username</th>
-          </tr>
-          <tr>
             <th>Pick 1</th>
-          </tr>
-          <tr>
             <th>Pick 2</th>
-          </tr>
-          <tr>
             <th>Pick 3</th>
-          </tr>
-          <tr>
             <th>Pick 4</th>
-          </tr>
-          <tr>
             <th>Pick 5</th>
-          </tr>
-          <tr>
             <th>Tiebreaker</th>
-          </tr>
-          <tr>
             <th>Paid</th>
           </tr>
         </thead>";
         echo "<tbody>";
             $i = 0;
             foreach ($picks as $pick) {
-              echo "<tr>$pick[$i]</tr>";
+              echo "<tr>$pick[user_id]</tr>";
+              echo "<tr>$pick[pick_1]</tr>";
+              echo "<tr>$pick[pick_1]</tr>";
+              echo "<tr>$pick[pick_1]</tr>";
+              echo "<tr>$pick[pick_1]</tr>";
+              echo "<tr>$pick[pick_1]</tr>";
+              echo "<tr>$pick[tiebreaker]</tr>";
+              echo "<tr>$pick[paid]</tr>";
               $i++;
             }
         echo "</tbody>";
