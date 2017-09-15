@@ -49,15 +49,15 @@
         <?php
           foreach ($picks as $pick) {
             echo "<td>$pick[user_id]</td>";
+            echo "<td>$pick[pick_1]</td>";
+            echo "<td>$pick[pick_2]</td>";
+            echo "<td>$pick[pick_3]</td>";
+            echo "<td>$pick[pick_4]</td>";
+            echo "<td>$pick[pick_5]</td>";
+            echo "<td>$pick[tiebreaker]</td>";
+            echo "<td>$pick[paid]</td>";
           }
         ?>
-        <td>WAS</td>
-        <td>NE</td>
-        <td>KC</td>
-        <td>CAR</td>
-        <td>MIN</td>
-        <td>45 pts.</td>
-        <td>True</td>
       </tr>
     </table>
 
