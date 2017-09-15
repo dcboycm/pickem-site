@@ -46,7 +46,11 @@
         <th>Paid</th>
       </tr>
       <tr>
-        <td><?php echo "$myusername"; ?></td>
+        <?php
+          foreach ($picks as $pick) {
+            echo "<td>$pick[0]</td>";
+          }
+        ?>
         <td>WAS</td>
         <td>NE</td>
         <td>KC</td>
