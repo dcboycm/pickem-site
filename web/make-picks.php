@@ -79,7 +79,7 @@
           <ul class="nav navbar-nav">
             <li class=""><a href="home-page.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
             <li class=""><a href="make-picks.php"><i class="glyphicon glyphicon-file"></i>Make Picks</a></li>
-            <li class=""><a href="my-picks.php"><i class="glyphicon glyphicon-user"></i></a>My Picks</li>
+            <li class="active"><a href="my-picks.php"><i class="glyphicon glyphicon-user"></i>My Picks</a></li>
             <li class=""><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
             <!-- <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
           </ul>
