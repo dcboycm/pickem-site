@@ -52,12 +52,24 @@
             $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
             $team_fav_name = pg_fetch_row($favNameResult);
             echo "<td>{$team_fav_name[0]}</td>";
-            echo "<td>$pick[pick_2]</td>";
-            echo "<td>$pick[pick_3]</td>";
-            echo "<td>$pick[pick_4]</td>";
-            echo "<td>$pick[pick_5]</td>";
-            echo "<td>$pick[tiebreaker]</td>";
-            echo "<td>$pick[paid]</td>";
+            $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
+            $team_fav_name = pg_fetch_row($favNameResult);
+            echo "<td>{$team_fav_name[0]}</td>";
+            $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
+            $team_fav_name = pg_fetch_row($favNameResult);
+            echo "<td>{$team_fav_name[0]}</td>";
+            $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
+            $team_fav_name = pg_fetch_row($favNameResult);
+            echo "<td>{$team_fav_name[0]}</td>";
+            $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
+            $team_fav_name = pg_fetch_row($favNameResult);
+            echo "<td>{$team_fav_name[0]}</td>";
+            echo "<td>$pick[tiebreaker] pts.</td>";
+            if ($pick[paid] == 't') {
+              echo "<td>Paid</td>";
+            } else {
+              echo "<td>NOT Paid</td>";
+            }
           }
         ?>
       </tr>
