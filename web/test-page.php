@@ -48,7 +48,7 @@
       <tr>
         <?php
           foreach ($picks as $pick) {
-            echo "<td>$pick[0]</td>";
+            echo "<td>$pick[0]['user_id']</td>";
           }
         ?>
         <td>WAS</td>
