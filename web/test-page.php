@@ -8,7 +8,7 @@
   $week_number = $_SESSION["week_number"];
 
   // $result = pg_query($conn, "select * from test_matches where user_id = '$myusername';");
-  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = '$week_number' and paid = true;");
+  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = 1 and paid = true;");
   $picks = pg_fetch_all($result);
 
   $tz = 'America/Phoenix';
