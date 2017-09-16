@@ -14,6 +14,12 @@
   $result = pg_query($conn, "select winner from weekly_matches where week_number = 1;");
   $winners = pg_fetch_all($result);
 
+  $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
+  $pickCount = pg_num_rows($result);
+  $sheet = 5;
+  $rollover = 133;
+  $totalPot = (($sheet * $pickCount) + $rollover) - 5;
+
   $tz = 'America/Phoenix';
   $timestamp = time();
   $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
