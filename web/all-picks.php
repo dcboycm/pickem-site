@@ -73,65 +73,54 @@
     </nav>
 
     <div class="center" id="all-picks">
-
       <?php
-      if ($today == "Sunday" || $today == "Monday") {
         echo "<h1>Everyone's Picks - $today.</h1>";
         if ($totalPot < 1) {
-          echo "<h2>Total Pot Size - $0.</h2>";
+          echo "<h2>Total Pot Size - $$rollover.</h2>";
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
         }
-        $i = 0;
-        foreach ($paidMatches as $paidMatch) {
-          echo "<table class='table col-1-5'>";
-            echo "<thead>";
-              echo "<tr>";
-                echo "<th>$paidMatch[user_id]</th>";
-              echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-              echo "<tr>";
-              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_1];");
-              $fav_name = pg_fetch_row($result);
-              echo "<td>$fav_name[0]</td>";
-              echo "</tr>";
-              echo "<tr>";
-              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_2];");
-              $fav_name = pg_fetch_row($result);
-              echo "<td>$fav_name[0]</td>";
-              echo "</tr>";
-              echo "<tr>";
-              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_3];");
-              $fav_name = pg_fetch_row($result);
-              echo "<td>$fav_name[0]</td>";
-              echo "</tr>";
-              echo "<tr>";
-              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_4];");
-              $fav_name = pg_fetch_row($result);
-              echo "<td>$fav_name[0]</td>";
-              echo "</tr>";
-              echo "<tr>";
-              $result = pg_query($conn, "SELECT fav_name FROM team WHERE id = $paidMatch[pick_5];");
-              $fav_name = pg_fetch_row($result);
-              echo "<td>$fav_name[0]</td>";
-              echo "</tr>";
-              echo "<tr>";
-                echo "<td>$paidMatch[tiebreaker] pts.</td>";
-              echo "</tr>";
-            echo "</tbody>";
-          echo "</table>";
-          $i++;
-        }
-      } else {
-        echo "<h1>Everyone's Picks - $today.</h1>";
-        if ($totalPot < 1) {
-          echo "<h2>Total Pot Size - $0.</h2>";
-        } else {
-          echo "<h2>Total Pot Size - $$totalPot.</h2>";
-        }
-      }
       ?>
+      <table class="table center">
+        <tr>
+          <th>Username</th>
+          <th>Pick 1</th>
+          <th>Pick 2</th>
+          <th>Pick 3</th>
+          <th>Pick 4</th>
+          <th>Pick 5</th>
+          <th>Tiebreaker</th>
+        </tr>
+          <?php
+            if ($today == "Sunday" || $today == "Monday") {
+              foreach ($picks as $pick) {
+                echo "<tr>";
+                $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
+                $nicknameFetched = pg_fetch_row($nicknameResult);
+                echo "<td>{$nicknameFetched[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                echo "<td>$pick[tiebreaker] pts.</td>";
+              }
+              echo "</tr>";
+            } else {
+
+            }
+          ?>
+      </table>
     </div>
     <script type="text/javascript" src="https://nm373.infusionsoft.com/app/webTracking/getTrackingCode"></script>
   </body>
