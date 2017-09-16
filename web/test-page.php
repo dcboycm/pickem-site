@@ -11,6 +11,9 @@
   $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = 1 and paid = true;");
   $picks = pg_fetch_all($result);
 
+  $result = pg_query($conn, "select winner from weekly_matches where week_number = 1;");
+  $winners = pg_fetch_all($result);
+
   $tz = 'America/Phoenix';
   $timestamp = time();
   $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
@@ -54,6 +57,15 @@
               echo "<td>{$nicknameFetched[0]}</td>";
               $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
               $team_fav_name = pg_fetch_row($favNameResult);
+              foreach ($winners as $winner) {
+                if ($winner == null) {
+                  echo "<td>{$team_fav_name[0]}</td>";
+                } elseif ($pick[pick_1] == $winner) {
+                  echo "<td style='background-color: rgba(0, 171, 0, 0.51);'>{$team_fav_name[0]}</td>";
+                } {
+                  echo "<td style='background-color: rgba(255, 0, 0, 0.35);'>{$team_fav_name[0]}</td>";
+                }
+              }
               echo "<td>{$team_fav_name[0]}</td>";
               $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
               $team_fav_name = pg_fetch_row($favNameResult);
