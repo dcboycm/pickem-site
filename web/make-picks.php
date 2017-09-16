@@ -113,7 +113,7 @@
         if ($today == "Thursday" && $time >= "17:25:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday") {
-          // don't show the Thursday games
+          include('./component/thursday_data.php');
         } else {
           include('./component/table_data.php');
         }
