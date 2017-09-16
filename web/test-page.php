@@ -45,23 +45,13 @@
 
     <div class="center" id="my-picks">
       <?php
-      if ($today == "Sunday" || $today == "Monday") {
         echo "<h1>Everyone's Picks - $today.</h1>";
         if ($totalPot < 1) {
-          echo "<h2>Total Pot Size - $0.</h2>";
+          echo "<h2>Total Pot Size - $$rollover.</h2>";
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
         }
-      } else {
-          echo "<h1>Everyone's Picks - $today.</h1>";
-          if ($totalPot < 1) {
-            echo "<h2>Total Pot Size - $0.</h2>";
-          } else {
-            echo "<h2>Total Pot Size - $$totalPot.</h2>";
-          }
-        }
       ?>
-      <h1>All Picks</h1>
       <table class="table center">
         <tr>
           <th>Username</th>
@@ -73,29 +63,33 @@
           <th>Tiebreaker</th>
         </tr>
           <?php
-            foreach ($picks as $pick) {
-              echo "<tr>";
-              $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
-              $nicknameFetched = pg_fetch_row($nicknameResult);
-              echo "<td>{$nicknameFetched[0]}</td>";
-              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
-              $team_fav_name = pg_fetch_row($favNameResult);
-              echo "<td>{$team_fav_name[0]}</td>";
-              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
-              $team_fav_name = pg_fetch_row($favNameResult);
-              echo "<td>{$team_fav_name[0]}</td>";
-              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
-              $team_fav_name = pg_fetch_row($favNameResult);
-              echo "<td>{$team_fav_name[0]}</td>";
-              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
-              $team_fav_name = pg_fetch_row($favNameResult);
-              echo "<td>{$team_fav_name[0]}</td>";
-              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
-              $team_fav_name = pg_fetch_row($favNameResult);
-              echo "<td>{$team_fav_name[0]}</td>";
-              echo "<td>$pick[tiebreaker] pts.</td>";
+            if ($today == "Sunday" || $today == "Monday") {
+              foreach ($picks as $pick) {
+                echo "<tr>";
+                $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
+                $nicknameFetched = pg_fetch_row($nicknameResult);
+                echo "<td>{$nicknameFetched[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
+                $team_fav_name = pg_fetch_row($favNameResult);
+                echo "<td>{$team_fav_name[0]}</td>";
+                echo "<td>$pick[tiebreaker] pts.</td>";
+              }
+              echo "</tr>";
+            } else {
+              
             }
-            echo "</tr>";
           ?>
       </table>
     </div>
