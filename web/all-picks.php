@@ -16,6 +16,15 @@
    $paidMatches = pg_fetch_all($result);
 
    $week_number = $_SESSION["week_number"];
+
+   $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = 1 and paid = true;");
+   $picks = pg_fetch_all($result);
+
+   $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
+   $pickCount = pg_num_rows($result);
+   $sheet = 5;
+   $rollover = 133;
+   $totalPot = (($sheet * $pickCount) + $rollover) - 5;
 ?>
 <!DOCTYPE html>
 <html>
@@ -64,12 +73,8 @@
     </nav>
 
     <div class="center" id="all-picks">
+
       <?php
-      $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
-      $pickCount = pg_num_rows($result);
-      $sheet = 5;
-      $rollover = 133;
-      $totalPot = (($sheet * $pickCount) + $rollover) - 5;
       if ($today == "Sunday" || $today == "Monday") {
         echo "<h1>Everyone's Picks - $today.</h1>";
         if ($totalPot < 1) {

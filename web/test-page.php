@@ -38,7 +38,24 @@
     <h1>Test Page for testing things.</h1>
 
     <div class="center" id="my-picks">
-      <h1>My Picks</h1>
+      <?php
+      if ($today == "Sunday" || $today == "Monday") {
+        echo "<h1>Everyone's Picks - $today.</h1>";
+        if ($totalPot < 1) {
+          echo "<h2>Total Pot Size - $0.</h2>";
+        } else {
+          echo "<h2>Total Pot Size - $$totalPot.</h2>";
+        }
+      } else {
+          echo "<h1>Everyone's Picks - $today.</h1>";
+          if ($totalPot < 1) {
+            echo "<h2>Total Pot Size - $0.</h2>";
+          } else {
+            echo "<h2>Total Pot Size - $$totalPot.</h2>";
+          }
+        }
+      ?>
+      <h1>All Picks</h1>
       <table class="table center">
         <tr>
           <th>Username</th>
