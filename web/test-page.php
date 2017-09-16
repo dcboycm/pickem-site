@@ -63,7 +63,7 @@
           <th>Tiebreaker</th>
         </tr>
           <?php
-            if ($today == "Sunday" || $today == "Monday") {
+            if ($today == "Saturday" || $today == "Monday") {
               foreach ($picks as $pick) {
                 echo "<tr>";
                 $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
@@ -88,7 +88,7 @@
               }
               echo "</tr>";
             } else {
-              
+
             }
           ?>
       </table>
