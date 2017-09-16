@@ -57,15 +57,6 @@
               echo "<td>{$nicknameFetched[0]}</td>";
               $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
               $team_fav_name = pg_fetch_row($favNameResult);
-              foreach ($winners as $winner) {
-                if ($winner == null) {
-                  echo "<td>{$team_fav_name[0]}</td>";
-                } elseif ($pick[pick_1] == $winner) {
-                  echo "<td style='background-color: rgba(0, 171, 0, 0.51);'>{$team_fav_name[0]}</td>";
-                } {
-                  echo "<td style='background-color: rgba(255, 0, 0, 0.35);'>{$team_fav_name[0]}</td>";
-                }
-              }
               echo "<td>{$team_fav_name[0]}</td>";
               $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
               $team_fav_name = pg_fetch_row($favNameResult);
