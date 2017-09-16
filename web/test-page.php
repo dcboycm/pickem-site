@@ -47,10 +47,10 @@
           <th>Tiebreaker</th>
           <th>Paid</th>
         </tr>
-        <tr>
           <?php
             foreach ($picks as $pick) {
-              $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = $pick[user_id];");
+              echo "<tr>";
+              $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
               $nicknameFetched = pg_fetch_row($nicknameResult);
               echo "<td>{$nicknameFetched[0]}</td>";
               $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
@@ -75,8 +75,8 @@
                 echo "<td>NOT Paid</td>";
               }
             }
+            echo "</tr>";
           ?>
-        </tr>
       </table>
     </div>
 
