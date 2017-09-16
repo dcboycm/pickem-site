@@ -8,7 +8,7 @@
   $week_number = $_SESSION["week_number"];
 
   // $result = pg_query($conn, "select * from test_matches where user_id = '$myusername';");
-  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where week = '$week_number' and paid = true;");
+  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = '$week_number' and paid = true;");
   $picks = pg_fetch_all($result);
 
   $tz = 'America/Phoenix';
@@ -45,7 +45,6 @@
           <th>Pick 4</th>
           <th>Pick 5</th>
           <th>Tiebreaker</th>
-          <th>Paid</th>
         </tr>
           <?php
             foreach ($picks as $pick) {
@@ -69,11 +68,6 @@
               $team_fav_name = pg_fetch_row($favNameResult);
               echo "<td>{$team_fav_name[0]}</td>";
               echo "<td>$pick[tiebreaker] pts.</td>";
-              if ($pick[paid] == 't') {
-                echo "<td>Paid</td>";
-              } else {
-                echo "<td>NOT Paid</td>";
-              }
             }
             echo "</tr>";
           ?>
