@@ -80,26 +80,82 @@
                     $pickWin = false;
                   }
                 }
-                if ($pickWin == null) {
-                  echo "<td>{$team_fav_name[0]}</td>";
-                } else if ($pickWin = true) {
+                if ($pickWin == true) {
                   echo "<td style='background-color: rgba(0, 167, 0, 0.5)'>{$team_fav_name[0]}</td>";
-                } else {
+                } else if ($pickWin = false) {
                   echo "<td style='background-color: rgba(167, 0, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else {
+                  echo "<td>{$team_fav_name[0]}</td>";
                 }
                 $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
                 $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
+                $pickWin = null;
+                foreach ($winners as $winner) {
+                  if ($pick[pick_1] == $winner['winner']) {
+                    $pickWin = true;
+                    break;
+                  } else {
+                    $pickWin = false;
+                  }
+                }
+                if ($pickWin == true) {
+                  echo "<td style='background-color: rgba(0, 167, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else if ($pickWin = false) {
+                  echo "<td style='background-color: rgba(167, 0, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else {
+                  echo "<td>{$team_fav_name[0]}</td>";
+                }                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
                 $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
+                $pickWin = null;
+                foreach ($winners as $winner) {
+                  if ($pick[pick_1] == $winner['winner']) {
+                    $pickWin = true;
+                    break;
+                  } else {
+                    $pickWin = false;
+                  }
+                }
+                if ($pickWin == true) {
+                  echo "<td style='background-color: rgba(0, 167, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else if ($pickWin = false) {
+                  echo "<td style='background-color: rgba(167, 0, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else {
+                  echo "<td>{$team_fav_name[0]}</td>";
+                }                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
                 $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
+                $pickWin = null;
+                foreach ($winners as $winner) {
+                  if ($pick[pick_1] == $winner['winner']) {
+                    $pickWin = true;
+                    break;
+                  } else {
+                    $pickWin = false;
+                  }
+                }
+                if ($pickWin == true) {
+                  echo "<td style='background-color: rgba(0, 167, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else if ($pickWin = false) {
+                  echo "<td style='background-color: rgba(167, 0, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else {
+                  echo "<td>{$team_fav_name[0]}</td>";
+                }                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
                 $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                echo "<td>$pick[tiebreaker] pts.</td>";
+                $pickWin = null;
+                foreach ($winners as $winner) {
+                  if ($pick[pick_1] == $winner['winner']) {
+                    $pickWin = true;
+                    break;
+                  } else {
+                    $pickWin = false;
+                  }
+                }
+                if ($pickWin == true) {
+                  echo "<td style='background-color: rgba(0, 167, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else if ($pickWin = false) {
+                  echo "<td style='background-color: rgba(167, 0, 0, 0.5)'>{$team_fav_name[0]}</td>";
+                } else {
+                  echo "<td>{$team_fav_name[0]}</td>";
+                }                echo "<td>$pick[tiebreaker] pts.</td>";
               }
               echo "</tr>";
             } else {
