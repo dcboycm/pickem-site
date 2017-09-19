@@ -52,7 +52,7 @@
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
         }
         foreach ($winners as $winner) {
-          print($winner[0]);
+          print($winner);
         }
       ?>
       <table class="table center">
