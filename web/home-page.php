@@ -111,6 +111,16 @@
             <p>Last weeks winner: REYES.</p>
             <p>Pot size: $90.00.</p>
           </p>
+          <p>
+            <h3>Week 1 - 2017</h3>
+            <p>Last weeks winner: Rollover!</p>
+            <p>Pot size: $140.00.</p>
+          </p>
+          <p>
+            <h3>Week 2 - 2017</h3>
+            <p>Last weeks winner: Rollover!</p>
+            <p>Pot size: $268.00.</p>
+          </p>
         </div>
       </div>
     </div>
