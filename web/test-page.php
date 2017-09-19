@@ -51,7 +51,9 @@
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
         }
-        print_r($winners);
+        foreach ($winners as $winner) {
+          print $winner;
+        }
       ?>
       <table class="table center">
         <tr>
