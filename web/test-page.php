@@ -51,9 +51,6 @@
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
         }
-        foreach ($winners as $winner) {
-          print_r($winner);
-        }
       ?>
       <table class="table center">
         <tr>
@@ -76,7 +73,7 @@
                 $team_fav_name = pg_fetch_row($favNameResult);
                 foreach ($winners as $winner) {
                   $pickWin = null;
-                  if ($pick[pick_1] == $winner) {
+                  if ($pick[pick_1] == $winner[0]) {
                     $pickWin = true;
                     break;
                   } else {
