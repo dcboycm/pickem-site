@@ -8,10 +8,10 @@
   $week_number = $_SESSION["week_number"];
 
   // $result = pg_query($conn, "select * from test_matches where user_id = '$myusername';");
-  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = 1 and paid = true;");
+  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = $week_number and paid = true;");
   $picks = pg_fetch_all($result);
 
-  $result = pg_query($conn, "select winner from weekly_matches where week_number = 1;");
+  $result = pg_query($conn, "select winner from weekly_matches where week_number = $week_number;");
   $winners = pg_fetch_all($result);
 
   $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
@@ -51,6 +51,7 @@
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
         }
+        print_r($winners);
       ?>
       <table class="table center">
         <tr>
