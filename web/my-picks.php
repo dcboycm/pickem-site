@@ -4,6 +4,7 @@
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
+   $week_number = $_SESSION["week_number"];
    $result = pg_query($conn, "select nickname from users where email = '$myusername';");
    $nickname = pg_fetch_row($result);
    $tz = 'America/Phoenix';
@@ -14,8 +15,6 @@
    $hour = $dt->format('H:i:s');
    $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = '$week_number' AND paid = true;");
    $paidMatches = pg_fetch_all($result);
-
-   $week_number = $_SESSION["week_number"];
 
    $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where user_id = '$myusername' and week = '$week_number';");
    $picks = pg_fetch_all($result);
