@@ -95,7 +95,7 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
-    <h2>Week 2 - September 14th - September 18th</h2>
+    <h2>Week 3 - September 21st - September 25th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
       <table class="table center">
         <thead>
