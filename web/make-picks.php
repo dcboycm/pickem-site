@@ -133,7 +133,11 @@
         </thead>
       <?php
       $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-24' order by match_date;");
-      include('./component/table_data.php');
+        if ($today == "Sunday" && $time >= "06:00:00") {
+          include('./component/thursday_data.php');
+        } else {
+          include('./component/table_data.php');
+        }
       ?>
       </table>
 
