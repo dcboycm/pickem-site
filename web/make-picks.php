@@ -163,8 +163,6 @@
     	</div>
 
       <?php
-      if ($today == "Thursday" && $time >= "17:25:00") {
-
         if ($today == "Wednesday" || $today == "Thursday" || $today == "Friday" || $today == "Saturday") {
           echo "<div style='padding-top: 20px;'' class='center'>";
             echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
