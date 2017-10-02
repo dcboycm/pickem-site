@@ -130,6 +130,7 @@
             $away_fav = pg_fetch_row($result);
             if ($row[team_home] == $row[team_fav]) {
               print_r($winners);
+              echo "/n";
               echo "$winners[0]";
               if ($row[team_home] == $winners[0]) {
                 # code...
