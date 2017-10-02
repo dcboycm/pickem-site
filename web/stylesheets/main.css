@@ -188,9 +188,17 @@ i {
   text-align: center;
 }
 
+#my-picks h1, h2 {
+  text-align: center;
+}
+
 /*    --------------------------------------------------
     :: Table
 	-------------------------------------------------- */
+#all-picks table {
+  margin-bottom: 100px;
+}
+
 .grid hr {
   margin-left: 20px;
 }

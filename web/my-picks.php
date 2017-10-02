@@ -4,6 +4,7 @@
    $myusername = $_SESSION['login_user'];
    $firstname = $_SESSION['first_name'];
    $lastname = $_SESSION['last_name'];
+   $week_number = $_SESSION["week_number"];
    $result = pg_query($conn, "select nickname from users where email = '$myusername';");
    $nickname = pg_fetch_row($result);
    $tz = 'America/Phoenix';
@@ -15,16 +16,9 @@
    $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = '$week_number' AND paid = true;");
    $paidMatches = pg_fetch_all($result);
 
-   $week_number = $_SESSION["week_number"];
-
-   $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = '$week_number' and paid = true;");
+   $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where user_id = '$myusername' and week = '$week_number';");
    $picks = pg_fetch_all($result);
 
-   $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
-   $pickCount = pg_num_rows($result);
-   $sheet = 5;
-   $rollover = 386;
-   $totalPot = (($sheet * $pickCount) + $rollover) - 5;
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,8 +52,8 @@
           <ul class="nav navbar-nav">
             <li class=""><a href="home-page.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
             <li class=""><a href="make-picks.php"><i class="glyphicon glyphicon-file"></i>Make Picks</a></li>
-            <li class=""><a href="my-picks.php"><i class="glyphicon glyphicon-user"></i>My Picks</a></li>
-            <li class="active"><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
+            <li class="active"><a href="my-picks.php"><i class="glyphicon glyphicon-user"></i>My Picks</a></li>
+            <li class=""><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
             <!-- <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
           </ul>
           <ul class="nav navbar-nav pull-right ">
@@ -72,15 +66,8 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="center" id="all-picks">
-      <?php
-        echo "<h1>Everyone's Picks - $today.</h1>";
-        if ($totalPot < 1) {
-          echo "<h2>Total Pot Size - $$rollover.</h2>";
-        } else {
-          echo "<h2>Total Pot Size - $$totalPot.</h2>";
-        }
-      ?>
+    <div class="center" id="my-picks">
+      <h1>My Picks</h1>
       <table class="table center">
         <tr>
           <th>Username</th>
@@ -90,38 +77,39 @@
           <th>Pick 4</th>
           <th>Pick 5</th>
           <th>Tiebreaker</th>
+          <th>Paid</th>
         </tr>
+        <tr>
           <?php
-            if ($today == "Sunday" || $today == "Monday") {
-              foreach ($picks as $pick) {
-                echo "<tr>";
-                $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
-                $nicknameFetched = pg_fetch_row($nicknameResult);
-                echo "<td>{$nicknameFetched[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                echo "<td>$pick[tiebreaker] pts.</td>";
+            foreach ($picks as $pick) {
+              echo "<td>$nickname[0]</td>";
+              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
+              $team_fav_name = pg_fetch_row($favNameResult);
+              echo "<td>{$team_fav_name[0]}</td>";
+              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
+              $team_fav_name = pg_fetch_row($favNameResult);
+              echo "<td>{$team_fav_name[0]}</td>";
+              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
+              $team_fav_name = pg_fetch_row($favNameResult);
+              echo "<td>{$team_fav_name[0]}</td>";
+              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
+              $team_fav_name = pg_fetch_row($favNameResult);
+              echo "<td>{$team_fav_name[0]}</td>";
+              $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
+              $team_fav_name = pg_fetch_row($favNameResult);
+              echo "<td>{$team_fav_name[0]}</td>";
+              echo "<td>$pick[tiebreaker] pts.</td>";
+              if ($pick[paid] == 't') {
+                echo "<td>Paid</td>";
+              } else {
+                echo "<td>NOT Paid</td>";
               }
-              echo "</tr>";
-            } else {
-
             }
           ?>
+        </tr>
       </table>
     </div>
+
     <script type="text/javascript" src="https://nm373.infusionsoft.com/app/webTracking/getTrackingCode"></script>
   </body>
 

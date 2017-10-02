@@ -42,6 +42,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="home-page.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
             <li class=""><a href="make-picks.php"><i class="glyphicon glyphicon-file"></i>Make Picks</a></li>
+            <li class=""><a href="my-picks.php"><i class="glyphicon glyphicon-user"></i>My Picks</a></li>
             <li class=""><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
             <!-- <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
           </ul>
@@ -109,6 +110,21 @@
             <h3>Divisional Weekend Weekend</h3>
             <p>Last weeks winner: REYES.</p>
             <p>Pot size: $90.00.</p>
+          </p>
+          <p>
+            <h3>Week 1 - 2017</h3>
+            <p>Last weeks winner: Rollover!</p>
+            <p>Pot size: $140.00.</p>
+          </p>
+          <p>
+            <h3>Week 2 - 2017</h3>
+            <p>Last weeks winner: Rollover!</p>
+            <p>Pot size: $268.00.</p>
+          </p>
+          <p>
+            <h3>Week 3 - 2017</h3>
+            <p>Last weeks winner: Rollover!</p>
+            <p>Pot size: $386.00.</p>
           </p>
         </div>
       </div>
