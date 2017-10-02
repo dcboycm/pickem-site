@@ -41,73 +41,125 @@
   </head>
   <body>
 
-    <h1>Test Page for testing things.</h1>
+    <nav class="navbar navbar-default center">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img alt="Brand" src="images/brand_logo.png">
+          </a>
+        </div>
 
-    <div class="center" id="my-picks">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="home-page.php"><i class="glyphicon glyphicon-home"></i>Home</a></li>
+            <li class="active"><a href="make-picks.php"><i class="glyphicon glyphicon-file"></i>Make Picks</a></li>
+            <li class=""><a href="my-picks.php"><i class="glyphicon glyphicon-user"></i>My Picks</a></li>
+            <li class=""><a href="all-picks.php"><i class="glyphicon glyphicon-th"></i>Everyone's Picks</a></li>
+            <!-- <li class=""><a href="#"><i class="glyphicon glyphicon-envelope"></i>Contact Us</a></li> -->
+          </ul>
+          <ul class="nav navbar-nav pull-right ">
+            <li style="padding-top: 15px; padding-right: 15px; color: #777;">Welcome, <?php echo $nickname[0] ?></li>
+            <li style="padding-top: 15px; color: #777;">  |</li>
+            <li><a href="logout.php">Log Out</a></li>
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+  <div class="center" id="make-picks">
+    <h1>Football Pool 2017-2018</h1>
+    <h2>Week 4 - September 28th - October 2nd</h2>
+    <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
+      <table class="table center">
+        <thead>
+          <h2>Thursday</h2>
+          <tr>
+            <th>Select</th>
+            <th>Favorite</th>
+            <th>Spread</th>
+            <th>Underdog</th>
+            <th>Select</th>
+          </tr>
+        </thead>
       <?php
-        echo "<h1>Everyone's Picks - $today.</h1>";
-        if ($totalPot < 1) {
-          echo "<h2>Total Pot Size - $$rollover.</h2>";
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-09-28' order by match_date;");
+        if ($today == "Thursday" && $time >= "17:25:00") {
+          include('./component/thursday_data.php');
+        } else if ($today == "Friday" || $today == "Saturday") {
+          include('./component/thursday_data.php');
         } else {
-          echo "<h2>Total Pot Size - $$totalPot.</h2>";
+          include('./component/table_data.php');
         }
       ?>
-      <table class="table center">
-        <tr>
-          <th>Username</th>
-          <th>Pick 1</th>
-          <th>Pick 2</th>
-          <th>Pick 3</th>
-          <th>Pick 4</th>
-          <th>Pick 5</th>
-          <th>Tiebreaker</th>
-        </tr>
-          <?php
-            if ($today == "Saturday" || $today == "Monday") {
-              foreach ($picks as $pick) {
-                echo "<tr>";
-                $nicknameResult = pg_query($conn, "SELECT nickname FROM users WHERE email = '$pick[user_id]';");
-                $nicknameFetched = pg_fetch_row($nicknameResult);
-                echo "<td>{$nicknameFetched[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_1];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                $pickWin = null;
-                foreach ($winners as $winner) {
-                  if ($pick[pick_1] == $winner['winner']) {
-                    $pickWin = true;
-                    break;
-                  } else {
-                    $pickWin = false;
-                  }
-                }
-                if ($pickWin == true) {
-                  echo "<td style='background-color: rgba(0, 167, 0, 0.5)'>{$team_fav_name[0]}</td>";
-                } else if ($pickWin = false) {
-                  echo "<td style='background-color: rgba(167, 0, 0, 0.5)'>{$team_fav_name[0]}</td>";
-                } else {
-                  echo "<td>{$team_fav_name[0]}</td>";
-                }
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_2];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_3];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_4];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                $favNameResult = pg_query($conn, "SELECT fav_name FROM team WHERE id = $pick[pick_5];");
-                $team_fav_name = pg_fetch_row($favNameResult);
-                echo "<td>{$team_fav_name[0]}</td>";
-                echo "<td>$pick[tiebreaker] pts.</td>";
-              }
-              echo "</tr>";
-            } else {
-
-            }
-          ?>
       </table>
-    </div>
+
+      <table class="table center">
+        <thead>
+          <h2>Sunday</h2>
+          <tr>
+            <th>Select</th>
+            <th>Favorite</th>
+            <th>Spread</th>
+            <th>Underdog</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+      <?php
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-01' order by match_date;");
+        include('./component/table_data.php');
+      ?>
+      </table>
+
+      <table class="table center">
+        <thead>
+          <h2>Monday</h2>
+          <tr>
+            <th>Select</th>
+            <th>Favorite</th>
+            <th>Spread</th>
+            <th>Underdog</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+      <?php
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-02' order by match_date;");
+      include('./component/table_data.php');
+      ?>
+      </table>
+
+        <div class="tiebreaker">
+          <h2>Tie-Breaker Points: <?php echo "WAS/KC" ?></h2>
+        </div>
+        <div style="text-align: center;" class="tiebreaker-points center">
+          <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>
+        </div>
+      </div>
+
+      <?php
+        if ($today == "Tuesday" || $today == "Wednesday" || $today == "Thursday" || $today == "Friday" || $today == "Saturday") {
+          echo "<div style='padding-top: 20px;'' class='center'>";
+            echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
+          echo "</div>";
+        } else if ($today == "Sunday" && $time <= "06:30:00") {
+          echo "<div style='padding-top: 20px;'' class='center'>";
+            echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
+          echo "</div>";
+        } else {
+          echo "<div style='padding-top: 20px;'' class='center'>";
+            echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' disabled='disabled' value='Submit'>";
+          echo "</div>";
+        }
+      ?>
+  </form>
 
   </body>
 </html>
