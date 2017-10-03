@@ -129,12 +129,6 @@
             $result = pg_query($conn, "select fav_name from team where id = {$row['team_away']};");
             $away_fav = pg_fetch_row($result);
             if ($row[team_home] == $row[team_fav]) {
-              print_r($winners);
-              echo "/n";
-              echo "$winners[0]";
-              if ($row[team_home] == $winners[0]) {
-                # code...
-              }
               echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
               echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
               echo "<td>{$row['spread']}</td>";
