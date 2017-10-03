@@ -23,7 +23,7 @@
    $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
    $pickCount = pg_num_rows($result);
    $sheet = 5;
-   $rollover = 386;
+   $rollover = 0;
    $totalPot = (($sheet * $pickCount) + $rollover) - 5;
 ?>
 <!DOCTYPE html>
