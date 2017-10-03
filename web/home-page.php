@@ -126,6 +126,11 @@
             <p>Last weeks winner: Rollover!</p>
             <p>Pot size: $386.00.</p>
           </p>
+          <p>
+            <h3>Week 4 - 2017</h3>
+            <p>Last weeks winner: GOAT!</p>
+            <p>Pot size: $531.00.</p>
+          </p>
         </div>
       </div>
     </div>
