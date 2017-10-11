@@ -102,16 +102,6 @@
         <div class="content">
           <h2>Updates:</h2>
           <p>
-            <h3>Conference Championship Weekend</h3>
-            <p>Last weeks winner: Alex Ramos.</p>
-            <p>Pot size: $55.00.</p>
-          </p>
-          <p>
-            <h3>Divisional Weekend Weekend</h3>
-            <p>Last weeks winner: REYES.</p>
-            <p>Pot size: $90.00.</p>
-          </p>
-          <p>
             <h3>Week 1 - 2017</h3>
             <p>Last weeks winner: Rollover!</p>
             <p>Pot size: $140.00.</p>
@@ -130,6 +120,11 @@
             <h3>Week 4 - 2017</h3>
             <p>Last weeks winner: GOAT!</p>
             <p>Pot size: $531.00.</p>
+          </p>
+          <p>
+            <h3>Week 5 - 2017</h3>
+            <p>Last weeks winner: GOAT!</p>
+            <p>Pot size: $95.00.</p>
           </p>
         </div>
       </div>
