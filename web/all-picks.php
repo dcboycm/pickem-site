@@ -73,6 +73,9 @@
     </nav>
 
     <div class="center" id="all-picks">
+      <div class="alert alert-warning">
+        <strong>Hey, Listen!</strong> IF you haven't paid for your picks you won't show up here.
+      </div>
       <?php
         echo "<h1>Everyone's Picks - $today.</h1>";
         if ($totalPot < 1) {
