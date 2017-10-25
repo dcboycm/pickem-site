@@ -126,6 +126,16 @@
             <p>Last weeks winner: GOAT!</p>
             <p>Pot size: $95.00.</p>
           </p>
+          <p>
+            <h3>Week 6 - 2017</h3>
+            <p>Last weeks winner: GABE!</p>
+            <p>Pot size: $105.00.</p>
+          </p>
+          <p>
+            <h3>Week 7 - 2017</h3>
+            <p>Last weeks winner: KGal!</p>
+            <p>Pot size: $100.00.</p>
+          </p>
         </div>
       </div>
     </div>

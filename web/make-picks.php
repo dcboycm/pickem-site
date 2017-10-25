@@ -95,7 +95,7 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
-    <h2>Week 7 - October 19th - October 23rd</h2>
+    <h2>Week 8 - October 26th - October 30th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
       <table class="table center">
         <thead>
@@ -109,7 +109,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-19' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-26' order by id asc;");
         if ($today == "Thursday" && $time >= "17:25:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday") {
@@ -132,7 +132,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-22' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-29' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
@@ -149,13 +149,13 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-23' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-30' order by id asc;");
       include('./component/table_data.php');
       ?>
       </table>
 
         <div class="tiebreaker">
-          <h2>Tie-Breaker Points: <?php echo "PHI/WAS" ?></h2>
+          <h2>Tie-Breaker Points: <?php echo "KC/DEN" ?></h2>
         </div>
         <div style="text-align: center;" class="tiebreaker-points center">
           <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>
@@ -167,7 +167,7 @@
           echo "<div style='padding-top: 20px;'' class='center'>";
             echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
           echo "</div>";
-        } else if ($today == "Sunday" && $time <= "10:00:00") {
+        } else if ($today == "Sunday" && $time <= "06:30:00") {
           echo "<div style='padding-top: 20px;'' class='center'>";
             echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
           echo "</div>";
