@@ -107,32 +107,54 @@
             <p>Pot size: $140.00.</p>
           </p>
         </div>
+      </div>
+      <div class="col-1-2 updates">
         <div class="content">
           <p>
             <h3>Week 2 - 2017</h3>
             <p>Last weeks winner: Rollover!</p>
             <p>Pot size: $268.00.</p>
           </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
           <p>
             <h3>Week 3 - 2017</h3>
             <p>Last weeks winner: Rollover!</p>
             <p>Pot size: $386.00.</p>
           </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
           <p>
             <h3>Week 4 - 2017</h3>
             <p>Last weeks winner: GOAT!</p>
             <p>Pot size: $531.00.</p>
           </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
           <p>
             <h3>Week 5 - 2017</h3>
             <p>Last weeks winner: GOAT!</p>
             <p>Pot size: $95.00.</p>
           </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
           <p>
             <h3>Week 6 - 2017</h3>
             <p>Last weeks winner: GABE!</p>
             <p>Pot size: $105.00.</p>
           </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
           <p>
             <h3>Week 7 - 2017</h3>
             <p>Last weeks winner: KGal!</p>
@@ -140,7 +162,6 @@
           </p>
         </div>
       </div>
-    </div>
 
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsModal" aria-hidden="true">
     	<div class="modal-dialog modal-sm">
