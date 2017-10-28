@@ -69,9 +69,9 @@
             at the top of the page to see who is playing this week!
           </p>
         </div>
-      </div>
 
-      <div style="text-align: left;" class="col-1-2 news">
+        <hr>
+
         <div style="text-align: left;" class="content">
           <h2>League Rules:</h2>
           <p>
@@ -89,16 +89,15 @@
             hosting.
           </p>
         </div>
-      </div>
 
-      <div style="text-align: left;" class="col-1-2 news">
+        <hr>
+
         <div style="text-align: center;" class="content">
           <h2>Payment Methods:</h2>
           <a href="https://www.paypal.me/CurtisMiller"><img src=".\images\paypal.png" style="width:50px;height:50px;"/></a>
           <a href="https://venmo.com/Curtis-Miller-6"><img src=".\images\venmo.png" style="width:50px;height:50px;"/></a>
         </div>
       </div>
-    </div>
 
       <div class="col-1-2 updates">
         <div class="content">
