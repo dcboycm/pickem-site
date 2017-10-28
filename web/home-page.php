@@ -106,6 +106,8 @@
             <p>Last weeks winner: Rollover!</p>
             <p>Pot size: $140.00.</p>
           </p>
+        </div>
+        <div class="content">
           <p>
             <h3>Week 2 - 2017</h3>
             <p>Last weeks winner: Rollover!</p>
