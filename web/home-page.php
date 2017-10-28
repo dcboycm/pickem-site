@@ -100,25 +100,6 @@
       </div>
       <div class="col-1-2 updates">
         <div class="content">
-          <h2>Updates:</h2>
-          <p>
-            <h3>Week 1 - 2017</h3>
-            <p>Last weeks winner: Rollover!</p>
-            <p>Pot size: $140.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
-            <h3>Week 2 - 2017</h3>
-            <p>Last weeks winner: Rollover!</p>
-            <p>Pot size: $268.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
           <p>
             <h3>Week 3 - 2017</h3>
             <p>Last weeks winner: Rollover!</p>
