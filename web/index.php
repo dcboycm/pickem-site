@@ -2,7 +2,7 @@
 include("./include/config.php");
 session_start();
 
-$_SESSION['week_number'] = 8;
+$_SESSION['week_number'] = 9;
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 

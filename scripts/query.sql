@@ -1,4 +1,4 @@
-SELECT * FROM test_matches WHERE week = 8 ORDER BY id ASC;
+SELECT * FROM test_matches WHERE week = 8 ORDER BY user_id ASC;
 
 SELECT test_matches.id, nickname, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week, created_on_date
 	FROM test_matches 
