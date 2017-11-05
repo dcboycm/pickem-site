@@ -167,7 +167,7 @@
           echo "<div style='padding-top: 20px;'' class='center'>";
             echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
           echo "</div>";
-        } else if ($today == "Sunday" && $time <= "06:30:00") {
+        } else if ($today == "Sunday" && $time <= "11:00:00") {
           echo "<div style='padding-top: 20px;'' class='center'>";
             echo "<input type='submit' id='btn-submit' class='btn btn-custom btn-lg btn-block' value='Submit'>";
           echo "</div>";

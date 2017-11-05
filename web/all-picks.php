@@ -24,6 +24,7 @@
    $pickCount = pg_num_rows($result);
    $sheet = 5;
    $rollover = 0;
+   $percentage = (($sheet * $pickCount) + $rollover) * .05;
    $totalPot = (($sheet * $pickCount) + $rollover) - 5;
 ?>
 <!DOCTYPE html>
