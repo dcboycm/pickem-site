@@ -95,7 +95,7 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
-    <h2>Week 9 - November 2nd - November 6th</h2>
+    <h2>Week 10 - November 9th - November 13th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
       <table class="table center">
         <thead>
@@ -109,8 +109,8 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-2' order by id asc;");
-        if ($today == "Thursday" && $time >= "17:25:00") {
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-9' order by id asc;");
+        if ($today == "Thursday" && $time >= "18:25:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
           include('./component/thursday_data.php');
@@ -132,7 +132,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-5' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-12' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
@@ -149,13 +149,13 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-6' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-13' order by id asc;");
       include('./component/table_data.php');
       ?>
       </table>
 
         <div class="tiebreaker">
-          <h2>Tie-Breaker Points: <?php echo "DET/GB" ?></h2>
+          <h2>Tie-Breaker Points: <?php echo "CAR/MIA" ?></h2>
         </div>
         <div style="text-align: center;" class="tiebreaker-points center">
           <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>
