@@ -79,7 +79,6 @@
           <th>Tiebreaker</th>
           <th>Paid</th>
         </tr>
-        <tr>
           <?php
             foreach ($picks as $pick) {
               echo "<td>$nickname[0]</td>";
@@ -106,7 +105,6 @@
               }
             }
           ?>
-        </tr>
       </table>
     </div>
 
