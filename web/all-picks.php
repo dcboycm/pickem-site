@@ -22,8 +22,8 @@
 
    $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
    $pickCount = pg_num_rows($result);
-   $sheet = 5;
-   $rollover = 80;
+   $sheet = 10;
+   $rollover = 85;
    $percentage = (($sheet * $pickCount) + $rollover) * .05;
    $totalPot = (($sheet * $pickCount) + $rollover) - 5;
 ?>
@@ -95,6 +95,7 @@
           <th>Pick 5</th>
           <th>Tiebreaker</th>
         </tr>
+        <tr>
           <?php
             if ($today == "Sunday" || $today == "Monday") {
               foreach ($picks as $pick) {
@@ -124,8 +125,10 @@
 
             }
           ?>
+        </tr>
       </table>
     </div>
+    
     <script type="text/javascript" src="https://nm373.infusionsoft.com/app/webTracking/getTrackingCode"></script>
   </body>
 
