@@ -23,6 +23,7 @@
   <head>
     <meta charset="utf-8">
     <title>Pickem Site - Make Picks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -95,7 +96,7 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2017-2018</h1>
-    <h2>Week 11 - November 16th - November 20th</h2>
+    <h2>Week 12 - November 23rd - November 27th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
       <table class="table center">
         <thead>
@@ -109,7 +110,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-16' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-23' order by id asc;");
         if ($today == "Thursday" && $time >= "18:25:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
@@ -132,7 +133,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-19' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-26' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
@@ -149,13 +150,13 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-20' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-27' order by id asc;");
       include('./component/table_data.php');
       ?>
       </table>
 
         <div class="tiebreaker">
-          <h2>Tie-Breaker Points: <?php echo "SEA/ATL" ?></h2>
+          <h2>Tie-Breaker Points: <?php echo "BAL/HOU" ?></h2>
         </div>
         <div style="text-align: center;" class="tiebreaker-points center">
           <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50">  pts.</input>

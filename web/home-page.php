@@ -14,6 +14,7 @@
 <html>
 <head>
 <title>Pickem Site - Home Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -102,15 +103,6 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 6 - 2017</h3>
-            <p>Last weeks winner: GABE!</p>
-            <p>Pot size: $105.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
             <h3>Week 7 - 2017</h3>
             <p>Last weeks winner: KGal!</p>
             <p>Pot size: $100.00.</p>
@@ -141,6 +133,15 @@
             <h3>Week 10 - 2017</h3>
             <p>Last weeks winner: ROLLOVER!</p>
             <p>Pot size: $190.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 11 - 2017</h3>
+            <p>Last weeks winner: ROLLOVER!</p>
+            <p>Pot size: $285.00.</p>
           </p>
         </div>
       </div>
