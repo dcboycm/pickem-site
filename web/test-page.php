@@ -92,14 +92,10 @@
         </thead>
       <?php
       $dates = pg_query($conn, "select distinct match_date from weekly_matches where week_number = '$week_number';");
-        foreach ($dates as $date) {
-          echo "$date";
-        }
+        print_r($dates);
         foreach ($dates as $date) {
           $games = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '$date' order by id;");
-          foreach ($games as $game) {
-            echo "$game";
-          }
+          print_r($games);
           $team_home = pg_query($conn, "select fav_name from team where id = {$games['team_home']};");
           $home_fav = pg_fetch_row($team_home);
           $team_away = pg_query($conn, "select fav_name from team where id = {$games['team_away']};");
