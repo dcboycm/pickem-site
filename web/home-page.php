@@ -141,7 +141,7 @@
           <p>
             <h3>Week 11 - 2017</h3>
             <p>Last weeks winner: ROLLOVER!</p>
-            <p>Pot size: $285.00.</p>
+            <p>Pot size: $300.00.</p>
           </p>
         </div>
       </div>
