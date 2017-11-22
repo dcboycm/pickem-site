@@ -93,7 +93,8 @@
       <?php
       $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = '$week_number';");
       $dates = pg_fetch_all($result);
-        print_r($dates);
+      print_r($dates);
+      echo "<tbody>";
         for ($i=0; $i < $dates; $i++) {
           printf($dates[i]);
           $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '$date[i]' order by id;");
