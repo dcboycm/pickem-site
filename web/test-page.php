@@ -94,9 +94,9 @@
       $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = '$week_number';");
       $dates = pg_fetch_all($result);
         print_r($dates);
-        foreach ($dates as $date) {
-          printf($date);
-          $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '$date' order by id;");
+        for ($i=0; $i < $dates; $i++) {
+          printf($dates[i]);
+          $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '$date[i]' order by id;");
           $games = pg_fetch_all($result);
           print_r($games);
           $team_home = pg_query($conn, "select fav_name from team where id = {$games['team_home']};");
