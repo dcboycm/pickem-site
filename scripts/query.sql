@@ -1,9 +1,9 @@
-SELECT * FROM test_matches WHERE week = 10 ORDER BY user_id ASC;
+SELECT * FROM test_matches WHERE week = 11 ORDER BY id ASC;
 
 SELECT test_matches.id, nickname, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week, created_on_date
 	FROM test_matches 
 	INNER JOIN users ON (test_matches.user_id = users.email)
-	WHERE week = 10 ORDER BY id ASC;
+	WHERE week = 11 ORDER BY id ASC;
 	
 select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where week = 2 and paid = true;
 SELECT nickname FROM users WHERE email = 'curtischristophermiller@gmail.com';
@@ -12,7 +12,7 @@ select * from test_matches where user_id = 'curtischristophermiller@gmail.com' a
 UPDATE test_matches SET pick_1 = 13 WHERE id = 69;
 	
 INSERT into test_matches (id, user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week, created_on_date)
-	VALUES (129, 'curtischristophermiller@gmail.com', 25, 4, 9, 21, 26, 45, true, 7, '2017-10-18 02:53:51.869147+00');
+	VALUES (221, 'curtischristophermiller@gmail.com', 27, 18, 26, 22, 21, 45, true, 11, '2017-11-15 02:53:51.869147+00');
 	
 DELETE FROM test_matches WHERE id = 221;
 
