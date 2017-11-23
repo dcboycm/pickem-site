@@ -111,7 +111,7 @@
         </thead>
       <?php
       $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-23' order by id asc;");
-        if ($today == "Thursday" && $time >= "18:25:00") {
+        if ($today == "Thursday" && $time >= "10:25:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
           include('./component/thursday_data.php');
