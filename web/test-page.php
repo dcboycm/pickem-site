@@ -91,14 +91,38 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-23' order by id asc;");
-        if ($today == "Thursday" && $time >= "18:25:00") {
-          include('./component/thursday_data.php');
-        } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
-          include('./component/thursday_data.php');
-        } else {
-          include('./component/table_data.php');
+      $result = pg_query($conn, "select distinct match_date from weekly_matches where week_number = '$week_number';");
+      $dates = pg_fetch_all($result);
+      print_r($dates);
+      echo "<tbody>";
+        for ($i=0; $i <= count($dates); $i++) {
+          printf($dates[i]);
+          $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '$date[i]' order by id;");
+          $games = pg_fetch_all($result);
+          foreach ($games as $game) {
+            echo "<tr>";
+            print_r($games);
+            $team_home = pg_query($conn, "select fav_name from team where id = {$game['team_home']};");
+            $home_fav = pg_fetch_row($team_home);
+            $team_away = pg_query($conn, "select fav_name from team where id = {$game['team_away']};");
+            $away_fav = pg_fetch_row($team_away);
+            if ($game[team_home] == $game[team_fav]) {
+              echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
+              echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
+              echo "<td>{$row['spread']}</td>";
+              echo "<td><img src='./images/team_icons/{$away_fav[0]}.png'></img>{$away_fav[0]}</td>";
+              echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
+            } else {
+              echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_away]}'><br></td>";
+              echo "<td><img src='./images/team_icons/{$away_fav[0]}.png'></img>{$away_fav[0]}</td>";
+              echo "<td>{$row['spread']}</td>";
+              echo "<td><img src='./images/team_icons/{$home_fav[0]}.png'></img>@{$home_fav[0]}</td>";
+              echo "<td><input class='single-checkbox' type='checkbox' name='selectedTeamId[]' value='{$row[team_home]}'><br></td>";
+            }
+            echo "</tr>";
+          }
         }
+        echo "</tbody>";
       ?>
       </table>
 
@@ -114,7 +138,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-26' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-01' order by match_date;");
       $rows = pg_fetch_all($result);
       $i = 0;
       $j = 0;
@@ -160,7 +184,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-11-27' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-10-02' order by match_date;");
       $rows = pg_fetch_all($result);
       $i = 0;
       $j = 0;
