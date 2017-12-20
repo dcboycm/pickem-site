@@ -112,7 +112,7 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 7 - 2017</h3>
+            <h3>Week 12 - 2017</h3>
             <p>Last weeks winner: dcboycm!</p>
             <p>Pot size: $410.00.</p>
           </p>
