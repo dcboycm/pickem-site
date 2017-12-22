@@ -24,7 +24,7 @@
    $pickCount = pg_num_rows($result);
    $sheet = 5;
    $rollover = 190;
-   $totalPot = (($sheet * $pickCount));
+   $totalPot = (($sheet * $pickCount) + $rollover);
 ?>
 <!DOCTYPE html>
 <html>
