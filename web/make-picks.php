@@ -156,7 +156,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-12-24' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-12-31' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
