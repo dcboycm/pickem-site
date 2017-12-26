@@ -65,9 +65,9 @@
         <div class="content">
           <h2>News:</h2>
           <p>
-            It's the start of the 2017-2018 season. It's a new year and a new
-            way to select your picks. Please click on the Make Picks tab located
-            at the top of the page to see who is playing this week!
+            It's the end of the 2017-2018 season. A new year is upon us.
+            Please click on the Make Picks tab located at the top of the
+            page to see who is playing this week!
           </p>
         </div>
 
@@ -103,25 +103,7 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 10 - 2017</h3>
-            <p>Last weeks winner: ROLLOVER!</p>
-            <p>Pot size: $190.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
-            <h3>Week 11 - 2017</h3>
-            <p>Last weeks winner: ROLLOVER!</p>
-            <p>Pot size: $300.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
-            <h3>Week 7 - 2017</h3>
+            <h3>Week 12 - 2017</h3>
             <p>Last weeks winner: dcboycm!</p>
             <p>Pot size: $410.00.</p>
           </p>
@@ -142,6 +124,24 @@
             <h3>Week 14 - 2017</h3>
             <p>Last weeks winner: ROLLOVER!</p>
             <p>Pot size: $95.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 15 - 2017</h3>
+            <p>Last weeks winner: ROLLOVER!</p>
+            <p>Pot size: $190.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 16 - 2017</h3>
+            <p>Last weeks winner: ROLLOVER!</p>
+            <p>Pot size: $305.00.</p>
           </p>
         </div>
       </div>
