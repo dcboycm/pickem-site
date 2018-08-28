@@ -103,13 +103,13 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 12 - 2017</h3>
-            <p>Last weeks winner: dcboycm!</p>
-            <p>Pot size: $410.00.</p>
+            <h3>New year, New You!</h3>
+            <p>Pay for your season upfront!</p>
+            <p>17 weeks : $85</p>
           </p>
         </div>
       </div>
-      <div class="col-1-2 updates">
+      <!-- <div class="col-1-2 updates">
         <div class="content">
           <p>
             <h3>Week 13 - 2017</h3>
@@ -144,7 +144,7 @@
             <p>Pot size: $305.00.</p>
           </p>
         </div>
-      </div>
+      </div> -->
 
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsModal" aria-hidden="true">
     	<div class="modal-dialog modal-sm">
