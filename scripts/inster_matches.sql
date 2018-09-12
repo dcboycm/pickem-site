@@ -2,38 +2,38 @@
 select * from team;
 
 -- get all games for a specific week
-select count(*) from weekly_matches WHERE week_number = 1;
+select count(*) from weekly_matches WHERE week_number = 2;
 
 -- insert a game for the week
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(26, 2, 26, 3.5, 1, 2018, '2018-09-06');
+	VALUES(7, 3, , , 2, 2018, '2018-09-13');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(8, 27, 27, 6.0, 1, 2018, '2018-09-09');
+	VALUES(2, 5, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(20, 28, 20, 5.5, 1, 2018, '2018-09-09');
+	VALUES(4, 17, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(14, 7, 14, 3.0, 1, 2018, '2018-09-09');
+	VALUES(12, 20, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(3, 4, 3, 6.0, 1, 2018, '2018-09-09');
+	VALUES(31, 13, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(23, 15, 15, 3.0, 1, 2018, '2018-09-09');
+	VALUES(22, 8, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(22, 30, 22, 9.5, 1, 2018, '2018-09-09');
+	VALUES(24, 19, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(21, 13, 21, 6.5, 1, 2018, '2018-09-09');
+	VALUES(27, 16, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(19, 31, 31, 1.5, 1, 2018, '2018-09-09');
+	VALUES(30, 26, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(17, 16, 17, 3.5, 1, 2018, '2018-09-09');
+	VALUES(32, 14, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(10, 29, 10, 2.5, 1, 2018, '2018-09-09');
+	VALUES(18, 1, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(5, 9, 5, 3.0, 1, 2018, '2018-09-09');
+	VALUES(28, 11, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(1, 32, 1, 1.0, 1, 2018, '2018-09-09');
+	VALUES(10, 25, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(12, 6, 12, 8.0, 1, 2018, '2018-09-09');
+	VALUES(15, 21, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(11, 24, 11, 7.0, 1, 2018, '2018-09-10');
+	VALUES(9, 23, , , 2, 2018, '2018-09-16');
 INSERT INTO weekly_matches (team_home, team_away, team_fav, spread, week_number, week_year, match_date)
-	VALUES(25, 18, 18, 3.0, 1, 2018, '2018-09-10');
+	VALUES(6, 29, , , 2, 2018, '2018-09-17');
