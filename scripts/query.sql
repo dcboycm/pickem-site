@@ -1,4 +1,4 @@
-SELECT * FROM test_matches WHERE week = 1 ORDER BY user_id ASC;
+SELECT * FROM test_matches WHERE week = 2 ORDER BY user_id ASC;
 
 SELECT * FROM users ORDER BY email ASC;
 
@@ -8,7 +8,7 @@ select * from test_matches where week = 1;
 SELECT test_matches.id, nickname, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week, created_on_date
 	FROM test_matches
 	INNER JOIN users ON (test_matches.user_id = users.email)
-	WHERE week = 1 ORDER BY id ASC;
+	WHERE week = 2 ORDER BY id ASC;
 	
 select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid from test_matches where week = 2 and paid = true;
 SELECT nickname FROM users WHERE email = 'curtischristophermiller@gmail.com';
