@@ -118,33 +118,15 @@
           </p>
         </div>
       </div>
-      <!-- <div class="col-1-2 updates">
-        <div class="content">
-          <p>
-            <h3>Week 14 - 2017</h3>
-            <p>Last weeks winner: ROLLOVER!</p>
-            <p>Pot size: $95.00.</p>
-          </p>
-        </div>
-      </div>
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 15 - 2017</h3>
-            <p>Last weeks winner: ROLLOVER!</p>
-            <p>Pot size: $190.00.</p>
+            <h3>Week 2 - 2018</h3>
+            <p>Rollover!</p>
+            <p>Pot size: $110.00.</p>
           </p>
         </div>
       </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
-            <h3>Week 16 - 2017</h3>
-            <p>Last weeks winner: ROLLOVER!</p>
-            <p>Pot size: $305.00.</p>
-          </p>
-        </div>
-      </div> -->
 
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsModal" aria-hidden="true">
     	<div class="modal-dialog modal-sm">
