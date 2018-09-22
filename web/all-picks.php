@@ -22,8 +22,8 @@
 
    $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
    $pickCount = pg_num_rows($result);
-   $sheet = 5;
-   $rollover = 0;
+   $sheet = 10;
+   $rollover = 110;
    $totalPot = (($sheet * $pickCount) + $rollover);
 ?>
 <!DOCTYPE html>
@@ -79,7 +79,7 @@
       </div>
       <?php
         echo "<h1>Everyone's Picks - $today.</h1>";
-        if ($totalPot < 1) {
+        if ($totalPot <= 1) {
           echo "<h2>Total Pot Size - $$rollover.</h2>";
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";

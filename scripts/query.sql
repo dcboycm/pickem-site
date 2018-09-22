@@ -23,7 +23,7 @@ UPDATE test_matches SET pick_5 = 1 WHERE id = 316;
 INSERT into test_matches (id, user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker, paid, week, created_on_date)
 	VALUES (221, 'curtischristophermiller@gmail.com', 20, 16, 15, 18, 26, 45, true, 13, '2017-12-02 02:53:51.869147+00');
 	
-DELETE FROM test_matches WHERE id = 221;
+DELETE FROM test_matches WHERE id = 440;
 
 select * from team;
 select * from users order by id asc;
