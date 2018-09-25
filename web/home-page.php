@@ -127,6 +127,15 @@
           </p>
         </div>
       </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 3 - 2018</h3>
+            <p>Last weeks winner: DRAM!</p>
+            <p>Pot size: $200.00.</p>
+          </p>
+        </div>
+      </div>
 
     <div class="modal fade contact-modal" tabindex="-1" role="dialog" aria-labelledby="contactUsModal" aria-hidden="true">
     	<div class="modal-dialog modal-sm">
