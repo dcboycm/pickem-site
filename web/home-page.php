@@ -1,13 +1,13 @@
 <?php
-   include('session.php');
-   include('./include/config.php');
+  include('session.php');
+  include('./include/config.php');
 
-   $myusername = $_SESSION['login_user'];
-   $firstname = $_SESSION['first_name'];
-   $lastname = $_SESSION['last_name'];
+  $myusername = $_SESSION['login_user'];
+  $firstname = $_SESSION['first_name'];
+  $lastname = $_SESSION['last_name'];
 
-   $result = pg_query($conn, "select nickname from users where email = '$myusername';");
-   $nickname = pg_fetch_row($result);
+  $result = pg_query($conn, "select nickname from users where email = '$myusername';");
+  $nickname = pg_fetch_row($result);
 
 ?>
 <!DOCTYPE html>
@@ -133,6 +133,15 @@
             <h3>Week 3 - 2018</h3>
             <p>Last weeks winner: DRAM!</p>
             <p>Pot size: $200.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 4 - 2018</h3>
+            <p>Rollover!</p>
+            <p>Pot size: $100.00.</p>
           </p>
         </div>
       </div>
