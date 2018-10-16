@@ -1,30 +1,30 @@
 <?php
-   include('session.php');
-   include('./include/config.php');
-   $myusername = $_SESSION['login_user'];
-   $firstname = $_SESSION['first_name'];
-   $lastname = $_SESSION['last_name'];
-   $result = pg_query($conn, "select nickname from users where email = '$myusername';");
-   $nickname = pg_fetch_row($result);
-   $tz = 'America/Phoenix';
-   $timestamp = time();
-   $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
-   $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
-   $today = $dt->format('l');
-   $hour = $dt->format('H:i:s');
-   $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = '$week_number' AND paid = true;");
-   $paidMatches = pg_fetch_all($result);
+  include('session.php');
+  include('./include/config.php');
+  $myusername = $_SESSION['login_user'];
+  $firstname = $_SESSION['first_name'];
+  $lastname = $_SESSION['last_name'];
+  $result = pg_query($conn, "select nickname from users where email = '$myusername';");
+  $nickname = pg_fetch_row($result);
+  $tz = 'America/Phoenix';
+  $timestamp = time();
+  $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+  $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+  $today = $dt->format('l');
+  $hour = $dt->format('H:i:s');
+  $result = pg_query($conn, "SELECT user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker FROM test_matches where week = '$week_number' AND paid = true;");
+  $paidMatches = pg_fetch_all($result);
 
-   $week_number = $_SESSION["week_number"];
+  $week_number = $_SESSION["week_number"];
 
-   $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = '$week_number' and paid = true order by id asc;");
-   $picks = pg_fetch_all($result);
+  $result = pg_query($conn, "select user_id, pick_1, pick_2, pick_3, pick_4, pick_5, tiebreaker from test_matches where week = '$week_number' and paid = true order by id asc;");
+  $picks = pg_fetch_all($result);
 
-   $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
-   $pickCount = pg_num_rows($result);
-   $sheet = 5;
-   $rollover = 200;
-   $totalPot = (($sheet * $pickCount) + $rollover);
+  $result = pg_query($conn, "SELECT * FROM test_matches WHERE week = $week_number and paid = true;");
+  $pickCount = pg_num_rows($result);
+  $sheet = 5;
+  $rollover = 0;
+  $totalPot = (($sheet * $pickCount) + $rollover);
 ?>
 <!DOCTYPE html>
 <html>

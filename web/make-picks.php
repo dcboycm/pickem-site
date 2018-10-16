@@ -1,21 +1,21 @@
 <?php
-   include('session.php');
-   include('./include/config.php');
+  include('session.php');
+  include('./include/config.php');
 
-   $myusername = $_SESSION['login_user'];
-   $firstname = $_SESSION['first_name'];
-   $lastname = $_SESSION['last_name'];
+  $myusername = $_SESSION['login_user'];
+  $firstname = $_SESSION['first_name'];
+  $lastname = $_SESSION['last_name'];
 
-   $result = pg_query($conn, "select nickname from users where email = '$myusername';");
-   $nickname = pg_fetch_row($result);
+  $result = pg_query($conn, "select nickname from users where email = '$myusername';");
+  $nickname = pg_fetch_row($result);
 
-   $tz = 'America/Phoenix';
-   $timestamp = time();
-   $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
-   $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
-   $today = $dt->format('l');
-   $time = $dt->format('H:i:s');
-   $week_number = $_SESSION["week_number"];
+  $tz = 'America/Phoenix';
+  $timestamp = time();
+  $dt = new DateTime("now", new DateTimeZone($tz)); //first argument "must" be a string
+  $dt->setTimestamp($timestamp); //adjust the object to correct timestamp
+  $today = $dt->format('l');
+  $time = $dt->format('H:i:s');
+  $week_number = $_SESSION["week_number"];
 
 ?>
 <!DOCTYPE html>
@@ -96,7 +96,7 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2018-2019</h1>
-    <h2>Week 6 - October 11th - 15th</h2>
+    <h2>Week 7 - October 18th - 22nd</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
       <table class="table center">
         <thead>
@@ -110,7 +110,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-10-11' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-10-18' order by id asc;");
         if ($today == "Thursday" && $time >= "18:20:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
@@ -156,7 +156,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-10-14' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-10-21' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
@@ -173,7 +173,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-10-15' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-10-22' order by id asc;");
       include('./component/table_data.php');
       ?>
       </table>
