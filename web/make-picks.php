@@ -179,7 +179,7 @@
       </table>
 
         <div class="tiebreaker">
-          <h2>Tie-Breaker Points: <?php echo "SF/GB" ?></h2>
+          <h2>Tie-Breaker Points: <?php echo "ATL/NYG" ?></h2>
         </div>
         <div style="text-align: center;" class="tiebreaker-points center">
           <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50.5">  pts.</input>
