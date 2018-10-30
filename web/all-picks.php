@@ -79,7 +79,7 @@
       </div>
       <?php
         echo "<h1>Everyone's Picks - $today.</h1>";
-        if ($totalPot <= 1) {
+        if ($pickCount <= 1) {
           echo "<h2>Total Pot Size - $$rollover.</h2>";
         } else {
           echo "<h2>Total Pot Size - $$totalPot.</h2>";
