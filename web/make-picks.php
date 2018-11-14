@@ -110,7 +110,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-11-08' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-11-15' order by id asc;");
         if ($today == "Thursday" && $time >= "18:20:00") {
           include('./component/thursday_data.php');
         } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
@@ -156,7 +156,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-11-11' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-11-18' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
@@ -173,13 +173,13 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-11-12' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-11-19' order by id asc;");
       include('./component/table_data.php');
       ?>
       </table>
 
         <div class="tiebreaker">
-          <h2>Tie-Breaker Points: <?php echo "NYG/SF" ?></h2>
+          <h2>Tie-Breaker Points: <?php echo "KC/LAR" ?></h2>
         </div>
         <div style="text-align: center;" class="tiebreaker-points center">
           <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50.5">  pts.</input>
