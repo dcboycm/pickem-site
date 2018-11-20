@@ -103,15 +103,6 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 6 - 2018</h3>
-            <p>Last weeks winner: Amazeinc!</p>
-            <p>Pot size: $350.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
             <h3>Week 7 - 2018</h3>
             <p>Last weeks winner: Lou!</p>
             <p>Pot size: $80.00.</p>
@@ -142,6 +133,15 @@
             <h3>Week 10 - 2018</h3>
             <p>Rollover!</p>
             <p>Pot size: $75.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 11 - 2018</h3>
+            <p>Rollover!</p>
+            <p>Pot size: $170.00.</p>
           </p>
         </div>
       </div>
