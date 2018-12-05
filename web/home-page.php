@@ -103,15 +103,6 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 8 - 2018</h3>
-            <p>Last weeks winner: dcboycm!</p>
-            <p>Pot size: $75.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
             <h3>Week 9 - 2018</h3>
             <p>Last weeks winner: Justin T!</p>
             <p>Pot size: $80.00.</p>
@@ -142,6 +133,15 @@
             <h3>Week 12 - 2018</h3>
             <p>Last weeks winner: dcboycm!</p>
             <p>Pot size: $270.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 13 - 2018</h3>
+            <p>Last weeks winner: markw!</p>
+            <p>Pot size: $80.00.</p>
           </p>
         </div>
       </div>
