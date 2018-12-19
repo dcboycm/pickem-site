@@ -96,9 +96,9 @@
 
   <div class="center" id="make-picks">
 		<h1>Football Pool 2018-2019</h1>
-    <h2>Week 14 - December 6th - December 10th</h2>
+    <h2>Week 16 - December 22nd - December 24th</h2>
     <form action="submit-picks.php" method="post" onsubmit="return submitSheet();">
-      <table class="table center">
+      <!-- <table class="table center">
         <thead>
           <h2>Thursday</h2>
           <tr>
@@ -110,18 +110,18 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-6' order by id asc;");
-        if ($today == "Thursday" && $time >= "18:20:00") {
-          include('./component/thursday_data.php');
-        } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
-          include('./component/thursday_data.php');
-        } else {
-          include('./component/table_data.php');
-        }
+      // $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-13' order by id asc;");
+      //   if ($today == "Thursday" && $time >= "18:20:00") {
+      //     include('./component/thursday_data.php');
+      //   } else if ($today == "Friday" || $today == "Saturday" || $today == "Sunday") {
+      //     include('./component/thursday_data.php');
+      //   } else {
+      //     include('./component/table_data.php');
+      //   }
       ?>
-      </table>
+      </table> -->
 
-      <!-- <table class="table center">
+      <table class="table center">
         <thead>
           <h2>Saturday</h2>
           <tr>
@@ -133,16 +133,16 @@
           </tr>
         </thead>
       <?php
-      // $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2017-12-23' order by id asc;");
-      //   if ($today == "Saturday" && $time >= "14:25:00") {
-      //     include('./component/thursday_data.php');
-      //   } else if ($today == "Sunday") {
-      //     include('./component/thursday_data.php');
-      //   } else {
-      //     include('./component/table_data.php');
-      //   }
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-22' order by id asc;");
+        if ($today == "Saturday" && $time >= "14:25:00") {
+          include('./component/thursday_data.php');
+        } else if ($today == "Sunday") {
+          include('./component/thursday_data.php');
+        } else {
+          include('./component/table_data.php');
+        }
       ?>
-      </table> -->
+      </table>
 
       <table class="table center">
         <thead>
@@ -156,7 +156,7 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-9' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-23' order by id asc;");
         include('./component/table_data.php');
       ?>
       </table>
@@ -173,13 +173,13 @@
           </tr>
         </thead>
       <?php
-      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-10' order by id asc;");
+      $result = pg_query($conn, "select * from weekly_matches where week_number = '$week_number' and match_date = '2018-12-24' order by id asc;");
       include('./component/table_data.php');
       ?>
       </table>
 
         <div class="tiebreaker">
-          <h2>Tie-Breaker Points: <?php echo "MIN/SEA" ?></h2>
+          <h2>Tie-Breaker Points: <?php echo "DEN/OAK" ?></h2>
         </div>
         <div style="text-align: center;" class="tiebreaker-points center">
           <input style="text-align: center;" type="text" name="tiebreaker" id="tiebreaker" placeholder="50.5">  pts.</input>
