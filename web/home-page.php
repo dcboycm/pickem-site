@@ -103,15 +103,6 @@
       <div class="col-1-2 updates">
         <div class="content">
           <p>
-            <h3>Week 11 - 2018</h3>
-            <p>Rollover!</p>
-            <p>Pot size: $170.00.</p>
-          </p>
-        </div>
-      </div>
-      <div class="col-1-2 updates">
-        <div class="content">
-          <p>
             <h3>Week 12 - 2018</h3>
             <p>Last weeks winner: dcboycm!</p>
             <p>Pot size: $270.00.</p>
@@ -142,6 +133,15 @@
             <h3>Week 15 - 2018</h3>
             <p>Rollover!</p>
             <p>Pot size: $150.00.</p>
+          </p>
+        </div>
+      </div>
+      <div class="col-1-2 updates">
+        <div class="content">
+          <p>
+            <h3>Week 16 - 2018</h3>
+            <p>Rollover!</p>
+            <p>Pot size: $230.00.</p>
           </p>
         </div>
       </div>
