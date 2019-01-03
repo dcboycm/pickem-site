@@ -80,7 +80,7 @@
             <ol>
               <li>You have to pick 5 games.</li>
               <li>You have to win all 5 games.</li>
-              <li>Ties are decided by tiebreaker, closest to total score of Monday night game regardless of overage.</li>
+              <li>Ties are decided by tiebreaker, closest to total score of the last game or Monday night game regardless of overage.</li>
               <li>Sheets are $5 each unless it rolls over.</li>
             </ol>
             This year the Football Pool will be completely digital, all picks
